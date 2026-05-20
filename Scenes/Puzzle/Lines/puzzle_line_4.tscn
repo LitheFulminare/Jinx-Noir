@@ -11,58 +11,10 @@ offset_right = -295.04
 offset_bottom = -25.920002
 
 [node name="Text" parent="." index="3" unique_id=2049074672]
-text = " Os números nos amaldiçoam
+text = " Os numeros nos amaldiçoam
 "
 
-[node name="Blood_1" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="0" unique_id=937978439]
-z_index = 1
-layout_mode = 0
-offset_top = 9.0
-offset_right = 43.0
-offset_bottom = 23.0
-scale = Vector2(0.25524312, 0.8783908)
-mouse_filter = 2
-color = Color(0.6627451, 0.19215687, 0.19607843, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="BloodSplash" type="TextureRect" parent="Text/Blood/Blood_1" index="0" unique_id=1142866554]
-z_index = 2
-layout_mode = 0
-offset_left = -38.0
-offset_top = -6.0
-offset_right = 48.0
-offset_bottom = 38.0
-mouse_filter = 2
-texture = ExtResource("3_83u35")
-expand_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Blood_2" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="1" unique_id=271380817]
-z_index = 1
-layout_mode = 0
-offset_left = 24.000002
-offset_top = 5.0
-offset_right = 47.0
-offset_bottom = 20.0
-scale = Vector2(0.8000007, 1.1500988)
-mouse_filter = 2
-color = Color(0.6627451, 0.19215687, 0.19607843, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="BloodSplash" type="TextureRect" parent="Text/Blood/Blood_2" index="0" unique_id=137872097]
-z_index = 2
-layout_mode = 0
-offset_left = -3.9999971
-offset_top = 33.0
-offset_right = 41.89931
-offset_bottom = 76.244736
-rotation = -1.412123
-mouse_filter = 2
-texture = ExtResource("3_83u35")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Blood_3" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="2" unique_id=1751857366]
+[node name="Blood_3" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="0" unique_id=1751857366]
 z_index = 1
 layout_mode = 0
 offset_left = 68.0
@@ -89,7 +41,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_4" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="3" unique_id=378624285]
+[node name="Blood_4" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="1" unique_id=378624285]
 z_index = 1
 layout_mode = 0
 offset_left = 81.0
@@ -116,7 +68,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_5" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="4" unique_id=288135848]
+[node name="Blood_5" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="2" unique_id=288135848]
 z_index = 1
 layout_mode = 0
 offset_left = 108.0
@@ -143,7 +95,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_6" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="5" unique_id=2054184462]
+[node name="Blood_6" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="3" unique_id=2054184462]
 z_index = 1
 layout_mode = 0
 offset_left = 141.0
@@ -170,7 +122,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_7" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="6" unique_id=617712581]
+[node name="Blood_7" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="4" unique_id=617712581]
 z_index = 1
 layout_mode = 0
 offset_left = 163.0
@@ -197,7 +149,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_8" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="7" unique_id=834061269]
+[node name="Blood_8" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="5" unique_id=834061269]
 z_index = 1
 layout_mode = 0
 offset_left = 176.99998
@@ -224,7 +176,7 @@ texture = ExtResource("3_83u35")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_9" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="8" unique_id=186219055]
+[node name="Blood_9" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="6" unique_id=186219055]
 z_index = 1
 layout_mode = 0
 offset_left = 199.0

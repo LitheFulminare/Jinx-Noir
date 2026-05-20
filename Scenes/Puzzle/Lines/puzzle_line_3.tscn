@@ -16,12 +16,12 @@ text = " No sangue que uniria os mundos"
 [node name="Blood_1" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="0" unique_id=449258861]
 z_index = 1
 layout_mode = 0
-offset_left = -3.7999983
-offset_top = 11.919998
-offset_right = 21.780506
-offset_bottom = 23.35231
-rotation = 0.020086229
-scale = Vector2(1.0623637, 0.3837617)
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 27.580505
+offset_bottom = 21.432312
+rotation = -0.31472743
+scale = Vector2(0.49765664, 0.46133494)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
@@ -38,46 +38,26 @@ mouse_filter = 2
 texture = ExtResource("3_llg4w")
 expand_mode = 1
 
-[node name="Blood_2" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="1" unique_id=1697038756]
+[node name="Blood_3" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="1" unique_id=832191570]
 z_index = 1
 layout_mode = 0
-offset_left = 27.199997
-offset_top = 8.92
-offset_right = 52.780502
-offset_bottom = 20.352312
-rotation = 0.30669898
-scale = Vector2(0.57256967, 0.36985165)
-mouse_filter = 2
-color = Color(0.6627451, 0.19215687, 0.19607843, 1)
-
-[node name="BloodSplash" type="TextureRect" parent="Text/Blood/Blood_2" index="0" unique_id=1220463542]
-z_index = 2
-layout_mode = 0
-offset_left = -65.571
-offset_top = 38.84766
-offset_right = 69.884674
-offset_bottom = 86.045876
-rotation = -0.6780848
-scale = Vector2(0.9260237, 2.110586)
-mouse_filter = 2
-texture = ExtResource("3_llg4w")
-expand_mode = 1
-
-[node name="Blood_3" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="2" unique_id=832191570]
-z_index = 1
-layout_mode = 0
-offset_left = 53.199997
-offset_top = 13.92
-offset_right = 78.7805
-offset_bottom = 25.352312
-rotation = -0.13715374
-scale = Vector2(0.32151985, 0.36985165)
+offset_left = 71.00001
+offset_top = 11.000002
+offset_right = 96.58051
+offset_bottom = 22.432316
+rotation = 0.21770674
+scale = Vector2(0.95498043, 0.45087457)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
 [node name="BloodSplash" type="TextureRect" parent="Text/Blood/Blood_3" index="0" unique_id=1000665806]
 z_index = 2
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0033371232
+anchor_top = -0.6515018
+anchor_right = -0.0033371232
+anchor_bottom = -0.65150195
 offset_left = -65.571
 offset_top = 38.84766
 offset_right = 69.884674
@@ -89,15 +69,15 @@ texture = ExtResource("3_llg4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_4" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="3" unique_id=378013322]
+[node name="Blood_4" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="2" unique_id=378013322]
 z_index = 1
 layout_mode = 0
-offset_left = 83.2
-offset_top = 18.92
-offset_right = 108.7805
-offset_bottom = 30.352312
+offset_left = 117.00001
+offset_top = 18.0
+offset_right = 142.5805
+offset_bottom = 29.432312
 rotation = 3.4435072
-scale = Vector2(0.37040362, 0.22242911)
+scale = Vector2(0.32801613, 0.29072133)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
@@ -115,41 +95,46 @@ texture = ExtResource("3_llg4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_5" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="4" unique_id=1987839033]
+[node name="Blood_5" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="3" unique_id=1987839033]
 z_index = 1
 layout_mode = 0
-offset_left = 139.2
-offset_top = 14.919994
-offset_right = 164.7805
-offset_bottom = 26.352306
-rotation = -0.5627656
-scale = Vector2(0.5771308, 0.5214685)
+offset_left = 124.99999
+offset_top = 13.000002
+offset_right = 150.5805
+offset_bottom = 24.432314
+rotation = -0.17604059
+scale = Vector2(0.207047, 0.20055303)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
 [node name="BloodSplash" type="TextureRect" parent="Text/Blood/Blood_5" index="0" unique_id=1313045595]
 z_index = 2
-layout_mode = 0
-offset_left = -59.184845
-offset_top = 41.184574
-offset_right = 76.27083
-offset_bottom = 88.38279
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -15.850916
+anchor_top = -6.7915187
+anchor_right = -15.850916
+anchor_bottom = -6.7915187
+offset_left = 367.95905
+offset_top = 96.075745
+offset_right = 503.4147
+offset_bottom = 143.27396
 rotation = -0.6780848
-scale = Vector2(0.9260237, 1.1193962)
+scale = Vector2(0.61331546, 1.1893989)
 mouse_filter = 2
 texture = ExtResource("3_llg4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_6" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="5" unique_id=1463095393]
+[node name="Blood_6" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="4" unique_id=1463095393]
 z_index = 1
 layout_mode = 0
-offset_left = 158.2
-offset_top = 10.919998
-offset_right = 183.7805
-offset_bottom = 22.35231
-rotation = -0.017563373
-scale = Vector2(0.8421274, 1.0201421)
+offset_left = 170.0
+offset_top = 16.000002
+offset_right = 195.5805
+offset_bottom = 27.432314
+rotation = -0.794152
+scale = Vector2(0.38716048, 0.24521925)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
@@ -167,15 +152,15 @@ texture = ExtResource("3_llg4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_7" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="6" unique_id=657421078]
+[node name="Blood_7" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="5" unique_id=657421078]
 z_index = 1
 layout_mode = 0
-offset_left = 194.2
-offset_top = 13.919994
-offset_right = 219.7805
-offset_bottom = 25.352306
-rotation = -0.34809065
-scale = Vector2(0.6185571, 0.42998296)
+offset_left = 200.00002
+offset_top = 13.999998
+offset_right = 225.58054
+offset_bottom = 25.43231
+rotation = -0.4772515
+scale = Vector2(0.33711547, 0.18880028)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 
@@ -193,15 +178,15 @@ texture = ExtResource("3_llg4w")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Blood_8" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="7" unique_id=1588039598]
+[node name="Blood_8" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="6" unique_id=1588039598]
 z_index = 1
 layout_mode = 0
-offset_left = 218.2
-offset_top = 14.919994
-offset_right = 243.7805
-offset_bottom = 26.352306
-rotation = -0.34809065
-scale = Vector2(0.51273435, 0.42998296)
+offset_left = 184.99998
+offset_top = 13.000002
+offset_right = 210.5805
+offset_bottom = 24.432312
+rotation = -0.106231466
+scale = Vector2(0.4142514, 0.41128975)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 

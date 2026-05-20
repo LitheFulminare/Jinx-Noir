@@ -1,10 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://i5qt2ugkwip0"]
 
 [ext_resource type="StyleBox" uid="uid://k5en5b7tg2bh" path="res://Assets/Styles/hover_style.tres" id="1_3ej8q"]
-[ext_resource type="FontFile" uid="uid://dhp7b7f1l6ewd" path="res://Assets/Fonts/Biro_Script_reduced.ttf" id="1_wrgub"]
+[ext_resource type="FontFile" uid="uid://bxghl1ids2i73" path="res://Assets/Fonts/Scratches.otf" id="1_wrgub"]
 [ext_resource type="StyleBox" uid="uid://6iyja247pqax" path="res://Assets/Styles/normal_style.tres" id="2_wrgub"]
 [ext_resource type="StyleBox" uid="uid://cyk16i84484np" path="res://Assets/Styles/pressed_style.tres" id="3_6vd5y"]
-[ext_resource type="FontFile" uid="uid://cyddmc8q7kll1" path="res://Assets/Fonts/ScratchyRegular-eZyLO.ttf" id="5_wrgub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgub"]
 content_margin_left = 4.0
@@ -40,7 +39,7 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [resource]
-default_font = ExtResource("5_wrgub")
+default_font = ExtResource("1_wrgub")
 default_font_size = 24
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)

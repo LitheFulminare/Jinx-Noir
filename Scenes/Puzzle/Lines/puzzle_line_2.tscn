@@ -11,18 +11,23 @@ offset_right = -295.68
 offset_bottom = -28.08
 
 [node name="Text" parent="." index="3" unique_id=2049074672]
-text = " Em meio às trevas
+text = " Em meio as trevas
 "
 
 [node name="Blood_1" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="0" unique_id=1847018078]
 z_index = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.07118643
+anchor_top = 0.037037108
+anchor_right = -0.071186416
+anchor_bottom = 0.03703718
 offset_left = 46.0
 offset_top = 18.000002
 offset_right = 71.580505
 offset_bottom = 29.432312
 rotation = -0.7284337
-scale = Vector2(0.6961472, 0.3908884)
+scale = Vector2(0.5214583, 0.6064125)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 metadata/_edit_use_anchors_ = true
@@ -43,13 +48,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Blood_2" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="1" unique_id=2083681112]
 z_index = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.12203389
+anchor_top = 0.2592592
+anchor_right = -0.1220339
+anchor_bottom = 0.2592592
 offset_left = 76.0
 offset_top = 7.000001
 offset_right = 101.580505
 offset_bottom = 18.432312
-rotation = 0.3813151
-scale = Vector2(0.6409572, 0.57797223)
+rotation = -0.167404
+scale = Vector2(0.24327707, 0.10717015)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 metadata/_edit_use_anchors_ = true
@@ -70,13 +80,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Blood_3" type="ColorRect" parent="Text/Blood" parent_id_path=PackedInt32Array(544437492) index="2" unique_id=28740788]
 z_index = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16610175
+anchor_right = -0.16610177
 offset_left = 98.00002
 offset_top = 15.000011
 offset_right = 123.58053
 offset_bottom = 26.432323
 rotation = -0.5627656
-scale = Vector2(0.45497206, 0.3837617)
+scale = Vector2(0.18040287, 0.17772044)
 mouse_filter = 2
 color = Color(0.6627451, 0.19215687, 0.19607843, 1)
 metadata/_edit_use_anchors_ = true
