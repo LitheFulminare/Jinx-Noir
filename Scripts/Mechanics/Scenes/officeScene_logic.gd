@@ -9,6 +9,8 @@ var timeline_playing:= false
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var audio_player = $Audio_Player
 
+var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
+
 @export_category("Próxima Cena")
 @export var next_scene: PackedScene
 
@@ -41,4 +43,6 @@ func _on_timeline_ended() -> void:
 		animation_player.play("Fade_Out")
 		await animation_player.animation_finished
 		get_tree().change_scene_to_packed(next_scene)
+		
+		MusicManager.play_music(new_music, -6, true, 2)
 	cur_timeline = null
