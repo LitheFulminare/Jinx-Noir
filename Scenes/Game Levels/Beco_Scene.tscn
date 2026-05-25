@@ -203,6 +203,7 @@ position = Vector2(91.450066, 454.97852)
 rotation = -0.030724268
 scale = Vector2(0.59839666, 0.5484181)
 scene_ref = NodePath("../../../..")
+delete_after_interaction = false
 
 [node name="Placeholder_Camera" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=736206283 node_paths=PackedStringArray("scene_ref") instance=ExtResource("10_6xuvt")]
 position = Vector2(245.49783, 137.63797)
@@ -214,13 +215,13 @@ scene_ref = NodePath("../../../..")
 position = Vector2(382.08337, 46.72959)
 scale = Vector2(0.5862251, 0.6029746)
 scene_ref = NodePath("../../../..")
+delete_after_interaction = false
 
 [node name="Placeholder_Box" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=198399156 node_paths=PackedStringArray("scene_ref") instance=ExtResource("12_1x0hl")]
 position = Vector2(785.71423, 392.8572)
 scale = Vector2(0.5811703, 0.5730345)
 item_type = "box"
 scene_ref = NodePath("../../../..")
-delete_after_interaction = true
 
 [node name="Placeholder_Broom" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=512478918 node_paths=PackedStringArray("scene_ref") instance=ExtResource("13_keoxq")]
 position = Vector2(456.82568, 490.84116)

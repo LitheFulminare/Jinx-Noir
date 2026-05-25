@@ -3,24 +3,9 @@
 [ext_resource type="Script" uid="uid://bt4ab0sdbm4u1" path="res://Scripts/Mechanics/Scenes/mainMenu_manager.gd" id="1_cdisa"]
 [ext_resource type="PackedScene" uid="uid://dd3ja6w7yaep0" path="res://Scenes/Game Levels/Office_Scene.tscn" id="2_se15k"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_2bnp2"]
+[ext_resource type="Texture2D" uid="uid://bj31cioo8lpqu" path="res://Assets/Sprites/UI/menu.png" id="3_2dlhk"]
 [ext_resource type="PackedScene" uid="uid://d1fliddd0r1x8" path="res://Scenes/UI/Settings_Screen.tscn" id="3_ruads"]
-[ext_resource type="AudioStream" uid="uid://lu62bpxjup3b" path="res://Assets/Audio/SFX/Rain on window loop.ogg" id="5_2dlhk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dlhk"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.23753911, 0.23753914, 0.23753911, 0.6)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 10
+[ext_resource type="AudioStream" uid="uid://d24pga3qm4j7k" path="res://Assets/Audio/Music/Menu.ogg" id="5_2dlhk"]
 
 [sub_resource type="Animation" id="Animation_ruads"]
 resource_name = "Fade-Out"
@@ -117,29 +102,27 @@ grow_vertical = 2
 script = ExtResource("1_cdisa")
 level_to = ExtResource("2_se15k")
 
-[node name="Menu_BG" type="ColorRect" parent="." unique_id=790371902]
+[node name="Menu_BG" type="TextureRect" parent="." unique_id=394341370]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+texture = ExtResource("3_2dlhk")
+expand_mode = 1
 
 [node name="Button_Container" type="PanelContainer" parent="Menu_BG" unique_id=18230530]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.5
-offset_top = -107.5
-offset_right = 89.5
-offset_bottom = 107.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2dlhk")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -164.0
+offset_right = 201.0
+offset_bottom = -14.0
+grow_vertical = 0
+theme = ExtResource("3_2bnp2")
 
 [node name="Vertical_Layout" type="VBoxContainer" parent="Menu_BG/Button_Container" unique_id=2053573168]
 layout_direction = 2
@@ -147,23 +130,27 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_2bnp2")
+theme_override_constants/separation = 12
 alignment = 1
 
 [node name="Start_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=2046742699]
 layout_mode = 2
 theme = ExtResource("3_2bnp2")
+theme_override_font_sizes/font_size = 14
 text = "Iniciar Jogo"
 text_direction = 1
 
 [node name="Options_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=1791005115]
 layout_mode = 2
 theme = ExtResource("3_2bnp2")
+theme_override_font_sizes/font_size = 14
 text = "Configurações"
 text_direction = 1
 
 [node name="Exit_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=673625825]
 layout_mode = 2
 theme = ExtResource("3_2bnp2")
+theme_override_font_sizes/font_size = 14
 text = "Sair do Jogo"
 text_direction = 1
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cct720hgxob16"]
 
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_cxnq1"]
-[ext_resource type="Texture2D" uid="uid://cab17gwhu0pkp" path="res://Assets/Backgrounds/assets beco/lixeira1.png" id="2_hyr36"]
+[ext_resource type="Texture2D" uid="uid://cab17gwhu0pkp" path="res://Assets/Sprites/assets beco/lixeira1.png" id="2_hyr36"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]
 size = Vector2(537.31354, 385.80252)

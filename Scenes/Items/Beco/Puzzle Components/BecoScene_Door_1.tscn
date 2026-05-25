@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_82rd8"]
 [ext_resource type="Shader" uid="uid://dwi3saujatgxf" path="res://Shaders/Item Outline/outline_material.tres" id="1_y17lw"]
-[ext_resource type="Texture2D" uid="uid://btpdkp1wnripq" path="res://Assets/Backgrounds/assets beco/porta.png" id="2_y17lw"]
+[ext_resource type="Texture2D" uid="uid://btpdkp1wnripq" path="res://Assets/Sprites/assets beco/porta.png" id="2_y17lw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yc8mb"]
 shader = ExtResource("1_y17lw")

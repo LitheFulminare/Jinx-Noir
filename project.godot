@@ -34,8 +34,8 @@ directories/dch_directory={
 "protagonist": "res://Characters/protagonist.dch"
 }
 directories/dtl_directory={
-"beco_book": "res://Timelines/Office/Flavor/beco_book.dtl",
-"beco_book_done": "res://Timelines/Office/Flavor/beco_book_done.dtl",
+"beco_book": "res://Timelines/Beco/Puzzle/Hints/beco_book.dtl",
+"beco_book_done": "res://Timelines/Beco/Puzzle/Hints/beco_book_done.dtl",
 "beco_bottles": "res://Timelines/Beco/Flavor/beco_bottles.dtl",
 "beco_box": "res://Timelines/Beco/Puzzle/Hints/beco_box.dtl",
 "beco_broom": "res://Timelines/Beco/Flavor/beco_broom.dtl",
@@ -59,6 +59,7 @@ directories/dtl_directory={
 "beco_web": "res://Timelines/Beco/Flavor/beco_web.dtl",
 "office_blinds": "res://Timelines/Office/Flavor/office_blinds.dtl",
 "office_chair": "res://Timelines/Office/Flavor/office_chair.dtl",
+"office_door": "res://Timelines/Office/Important/office_door.dtl",
 "office_hanger": "res://Timelines/Office/Flavor/office_hanger.dtl",
 "office_incomplete_scene_1": "res://Timelines/Office/Hints to Incomplete Scene/office_incomplete_scene_1.dtl",
 "office_lamp": "res://Timelines/Office/Flavor/office_lamp.dtl",

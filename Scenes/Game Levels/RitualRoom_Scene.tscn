@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjn4fe8j5ldum" path="res://Assets/Placeholder/Levels/ritual_room.png" id="1_i4k8b"]
 [ext_resource type="Script" uid="uid://b55saolj2the2" path="res://Scripts/Mechanics/Scenes/ritualScene_logic.gd" id="1_mcrfp"]
+[ext_resource type="AudioStream" uid="uid://l68a8wu7c2c4" path="res://Assets/Audio/SFX/Rain loop.ogg" id="3_bb25a"]
 
 [sub_resource type="Animation" id="Animation_mcrfp"]
 resource_name = "Fade_In"
@@ -123,3 +124,6 @@ color = Color(0, 0, 0, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scene_Elements" unique_id=1350356664]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_bb25a")
+
+[node name="BG_Music" type="AudioStreamPlayer2D" parent="." unique_id=1316121338]
+stream = ExtResource("3_bb25a")

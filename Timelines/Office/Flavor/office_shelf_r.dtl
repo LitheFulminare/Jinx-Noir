@@ -1,5 +1,5 @@
-join protagonist (placeholder_protagonist) rightmost [animation="Slide From Left" length="0.3" wait="true" mirrored="true"]
+join protagonist (default) rightmost [animation="Slide From Left" length="0.3" wait="true" mirrored="true"]
 [wait time="0.2"]
-protagonist (sad): Que saco. Jurei que eu tinha deixado meu cigarro na gaveta…
+protagonist (sad): Tenho que dar um jeito nessa bagunça… meu cinzeiro também não me ajuda muito.
 [wait time="0.2"]
 leave protagonist [animation="Slide To Right" length="0.6"]

@@ -8,7 +8,6 @@ var inside_area: Selectable
 var initial_pos:= Vector2(100, 100)
 
 @onready var a_player:= $AnimationPlayer
-@onready var blood:= %Blood
 
 @export_range(1.1, 2, 0.1) var scale_up = 1.3
 
@@ -17,6 +16,7 @@ var original_scale:= Vector2(1, 1)
 
 func _ready() -> void:
 	initial_pos = position
+	original_scale = scale
 
 func _enable_interaction():
 	can_interact = true
@@ -43,7 +43,7 @@ func _selected(b: bool) -> void:
 		selected = true
 		_hover(false)
 		%Line_Areas.visible = true
-		scale = new_scale
+		scale *= new_scale
 	else:
 		selected = false
 		%Line_Areas.visible = false
@@ -55,7 +55,7 @@ func _set_in_area(area: Selectable):
 func _hover(h: bool):
 	if h:
 		hovered = true
-		scale = new_scale
+		scale *= new_scale
 	else:
 		hovered = false
 		scale = original_scale

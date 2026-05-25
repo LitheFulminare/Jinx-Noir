@@ -10,7 +10,7 @@
 "style": "placeholder_vn_style",
 "suffix": ""
 },
-&"default_portrait": "placeholder_protagonist",
+&"default_portrait": "curious",
 &"description": "",
 &"display_name": "Jynx Jink",
 &"mirror": true,
@@ -19,32 +19,14 @@
 &"portraits": {
 "curious": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/jynxcurious.png\""
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxcurious.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"disgust": {
-"export_overrides": {
-"image": "\"res://Assets/Sprites/jynxdisgust.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"fear": {
-"export_overrides": {
-"image": "\"res://Assets/Sprites/jynxfear.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"placeholder_protagonist": {
+"default": {
 "export_overrides": {
 "image": "\"res://Assets/Placeholder/Characters/placeholder_jinx.png\""
 },
@@ -53,9 +35,27 @@
 "scale": 1,
 "scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn"
 },
+"disgust": {
+"export_overrides": {
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxdisgust.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"fear": {
+"export_overrides": {
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxfear.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "ritual": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/jynxritual.png\""
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxritual.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -64,7 +64,7 @@
 },
 "sad": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/jynxsad.png\""
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxsad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -73,7 +73,7 @@
 },
 "scare": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/jynxscare.png\""
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxscare.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -82,7 +82,7 @@
 },
 "worried": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/jynxworry.png\""
+"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxworry.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

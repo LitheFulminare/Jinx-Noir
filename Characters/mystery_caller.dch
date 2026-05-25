@@ -10,23 +10,32 @@
 "style": "placeholder_vn_style",
 "suffix": ""
 },
-&"default_portrait": "placeholder_caller",
+&"default_portrait": "mystery_caller",
 &"description": "",
 &"display_name": "???",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"placeholder_caller": {
+"mystery_caller": {
 "export_overrides": {
-"image": "\"res://Assets/Placeholder/Characters/caller_sylhoute.png\""
+"image": "\"res://Assets/Sprites/mystery_man/anonimo.png\""
 },
 "mirror": true,
 "offset": Vector2(0, 0),
 "scale": 1.0,
 "scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn",
 "sound_mood": "Sound 1"
+},
+"mystery_caller2": {
+"export_overrides": {
+"image": "\"res://Assets/Sprites/mystery_man/anonimo2.png\""
+},
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
-&"scale": 0.65
+&"scale": 0.8
 }

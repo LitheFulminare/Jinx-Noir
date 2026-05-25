@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2myv0kgipi4d"]
 
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_2wh7p"]
-[ext_resource type="Texture2D" uid="uid://cax7hmow0avo" path="res://Assets/Backgrounds/assets beco/vassoura.png" id="1_synos"]
+[ext_resource type="Texture2D" uid="uid://cax7hmow0avo" path="res://Assets/Sprites/assets beco/vassoura.png" id="1_synos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]
 size = Vector2(87.45221, 49.86453)

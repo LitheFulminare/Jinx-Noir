@@ -1,0 +1,4 @@
+join protagonist (curious) left [animation="Slide From Left" length="0.6" wait="true" z_index="1"]
+protagonist: Beco da Rua XV… é perto daqui. Umas três quadras de distância.
+protagonist (default): É melhor eu ir logo.
+leave protagonist [animation="Slide To Right" wait="true"]

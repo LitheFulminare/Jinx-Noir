@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://din0k7f55wrqv"]
 
-[ext_resource type="Texture2D" uid="uid://wwxu8edqp20j" path="res://Assets/Backgrounds/assets beco/lampada.png" id="1_p1asm"]
+[ext_resource type="Texture2D" uid="uid://wwxu8edqp20j" path="res://Assets/Sprites/assets beco/lampada.png" id="1_p1asm"]
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_pkyds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]

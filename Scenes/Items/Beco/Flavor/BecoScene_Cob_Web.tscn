@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmhx88bg4qiwj"]
 
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_gh02g"]
-[ext_resource type="Texture2D" uid="uid://bu3pyvuga5q25" path="res://Assets/Backgrounds/assets beco/teia.png" id="1_w3grd"]
+[ext_resource type="Texture2D" uid="uid://bu3pyvuga5q25" path="res://Assets/Sprites/assets beco/teia.png" id="1_w3grd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]
 size = Vector2(272.38812, 138.88892)

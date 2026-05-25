@@ -9,6 +9,7 @@ var timeline_playing:= false
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var audio_player = $Audio_Player
 
+var phone_picked:= false
 var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
 
 @export_category("Próxima Cena")
@@ -26,6 +27,11 @@ func _on_item_interacted(i: Item) -> void:
 	match i.item_type:
 		"phone": 
 			Dialogic.start("office_phone_call")
+		"door":
+			if phone_picked:
+				Dialogic.start("office_door")
+			else:
+				Dialogic.start("office_incomplete_scene_1")
 		_:
 			Dialogic.start("office_" + i.item_type)
 			
@@ -40,6 +46,8 @@ func _on_timeline_ended() -> void:
 	timeline_playing = false # Diz que a timeline não está ativa
 	print("'", cur_timeline.get_identifier(), "'", " terminou: ", !timeline_playing) # Debug pra indicar qual timeline está terminou e se realmente está terminado
 	if cur_timeline.get_identifier() == "office_phone_call":
+		phone_picked = true
+	if cur_timeline.get_identifier() == "office_door":
 		animation_player.play("Fade_Out")
 		await animation_player.animation_finished
 		get_tree().change_scene_to_packed(next_scene)

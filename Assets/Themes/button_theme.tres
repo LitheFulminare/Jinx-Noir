@@ -2,7 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://dbupngq20hki0" path="res://Assets/Fonts/In-Game/mv-boli.ttf" id="1_ykl08"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ykl08"]
+
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_ykl08")
 default_font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_ykl08")

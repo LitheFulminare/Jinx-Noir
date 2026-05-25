@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1k0u5t53vji6"]
 
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_6daru"]
-[ext_resource type="Texture2D" uid="uid://buhi22xrbwf6m" path="res://Assets/Backgrounds/assets beco/cadernopuzzle.png" id="2_7mir5"]
+[ext_resource type="Texture2D" uid="uid://buhi22xrbwf6m" path="res://Assets/Sprites/assets beco/cadernopuzzle.png" id="2_7mir5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]
 size = Vector2(152.98509, 80.24692)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dawf61uem15cr"]
 
-[ext_resource type="Texture2D" uid="uid://dvjp84xbnye84" path="res://Assets/Backgrounds/assets beco/cadeira.png" id="1_13slv"]
+[ext_resource type="Texture2D" uid="uid://dvjp84xbnye84" path="res://Assets/Sprites/assets beco/cadeira.png" id="1_13slv"]
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_u8ycp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwdtm"]
