@@ -13,5 +13,5 @@ protagonist: Tá, cansei de esperar, vou tentar abrir.
 [wait time="1.0"]
 audio "res://Assets/Audio/SFX/Objects/Sangue Pingando 3.wav" [volume="4.5"]
 [wait time="0.3"]
-protagonist: Bem, vou investigar melhor os arredores.
 protagonist: Já imaginei que estivesse trancada, mas que barulho foi esse?
+protagonist: Bem, vou investigar melhor os arredores.
