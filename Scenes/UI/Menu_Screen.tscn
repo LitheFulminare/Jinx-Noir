@@ -130,7 +130,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_2bnp2")
-theme_override_constants/separation = 12
+theme_override_constants/separation = 17
 alignment = 1
 
 [node name="Start_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=2046742699]
