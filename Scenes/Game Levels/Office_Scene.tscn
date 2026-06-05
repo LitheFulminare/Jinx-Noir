@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b3h3ytrkd0ee5" path="res://Scripts/Mechanics/Globals/cursor_manager.gd" id="3_e1qge"]
 [ext_resource type="PackedScene" uid="uid://jpcg38jxvprg" path="res://Scenes/Items/Office/Puzzle Components/Office_Phone.tscn" id="3_s3noc"]
 [ext_resource type="Texture2D" uid="uid://5c2cayvyc6xb" path="res://Assets/Backgrounds/escritorio.png" id="3_xyajt"]
+[ext_resource type="BitMap" uid="uid://dbkwteculvyi7" path="res://Assets/Sprites/assets escritorio/click masks/shelf_blocker_click_mask.png" id="4_0hx8r"]
 [ext_resource type="PackedScene" uid="uid://dxl6rtqsu87qb" path="res://Scenes/UI/Pause_Screen.tscn" id="4_q8kq6"]
 [ext_resource type="PackedScene" uid="uid://bbdolkaqxed24" path="res://Scenes/Items/Office/Flavor/Office_Lamp.tscn" id="6_jheww"]
 [ext_resource type="AudioStream" uid="uid://lu62bpxjup3b" path="res://Assets/Audio/SFX/Rain on window loop.ogg" id="6_s3noc"]
@@ -155,6 +156,24 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6295754, 0.6890516)
 
+[node name="OfficeShelf_L" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=796953314 instance=ExtResource("8_sjxch")]
+z_index = 1
+layout_mode = 0
+offset_left = -95.91965
+offset_top = -265.488
+offset_right = 291.08035
+offset_bottom = 406.512
+scale = Vector2(0.5856042, 0.5856042)
+
+[node name="Shelf_Blocker" type="TextureButton" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=223443363]
+layout_mode = 0
+offset_left = -95.91965
+offset_top = -44.05951
+offset_right = 124.08035
+offset_bottom = 205.94049
+scale = Vector2(0.735, 0.735)
+texture_click_mask = ExtResource("4_0hx8r")
+
 [node name="Office_Blinds" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=982609040 node_paths=PackedStringArray("scene_ref") instance=ExtResource("8_03h1x")]
 layout_mode = 0
 offset_left = -390.13635
@@ -182,15 +201,6 @@ offset_bottom = 538.44055
 scale = Vector2(0.59780926, 0.61545354)
 scene_ref = NodePath("../../../..")
 delete_after_interaction = false
-
-[node name="OfficeShelf_L" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=796953314 instance=ExtResource("8_sjxch")]
-z_index = 1
-layout_mode = 0
-offset_left = -95.91966
-offset_top = -265.488
-offset_right = 291.08032
-offset_bottom = 406.512
-scale = Vector2(0.5856042, 0.5856042)
 
 [node name="OfficeShelf_R" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1915879513 instance=ExtResource("7_26bys")]
 z_index = 1
