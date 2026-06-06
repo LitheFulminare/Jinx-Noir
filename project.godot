@@ -120,7 +120,7 @@ animations/join_default="Slide From Left"
 animations/leave_default="Slide To Left"
 animations/cross_fade_default="Fade Cross"
 glossary/glossary_files=[]
-save/autosave=true
+save/autosave=false
 save/autosave_mode=0
 save/default_slot="autosave"
 
