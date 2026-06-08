@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://i5qt2ugkwip0"]
 
-[ext_resource type="FontFile" uid="uid://c3u4wiaionf7x" path="res://Assets/Fonts/Raleway (texto menu)/static/Raleway-Medium.ttf" id="1_ykl08"]
+[ext_resource type="FontFile" uid="uid://engdyxc8vib1" path="res://Assets/Fonts/Raleway (texto menu)/static/Raleway-LightItalic.ttf" id="1_ykl08"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykl08"]
 content_margin_left = 4.0
@@ -45,9 +45,10 @@ expand_margin_bottom = 4.0
 [resource]
 default_base_scale = 1.0
 default_font = ExtResource("1_ykl08")
-default_font_size = 24
+default_font_size = 26
 Button/styles/hover = SubResource("StyleBoxFlat_ykl08")
 Button/styles/normal = SubResource("StyleBoxEmpty_31csv")
 Button/styles/pressed = SubResource("StyleBoxTexture_31csv")
+Label/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/styles/hover = SubResource("StyleBoxFlat_31csv")
 PanelContainer/styles/panel = SubResource("StyleBoxEmpty_ykl08")

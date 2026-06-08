@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b177ns2hw3bk2" path="res://Assets/Sprites/UI/Menus/menubox.png" id="3_8balw"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_hahjl"]
 [ext_resource type="PackedScene" uid="uid://d1fliddd0r1x8" path="res://Scenes/UI/Settings_Screen.tscn" id="3_j33te"]
+[ext_resource type="Texture2D" uid="uid://cxjc260vhwk1f" path="res://Assets/Sprites/UI/Menus/Botões/menusquare.png" id="4_cy1dh"]
 
 [sub_resource type="Animation" id="Animation_niwg3"]
 resource_name = "Blur"
@@ -108,23 +109,52 @@ texture = ExtResource("3_8balw")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Vertical_Layout" type="VBoxContainer" parent="Pause_BG/Pause_Container" unique_id=1365656795]
-process_mode = 3
-process_priority = 1
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("3_hahjl")
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_BG/Pause_Container/Control/Paper Background" unique_id=1864129363]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -52.0
+offset_right = 64.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Resume_Button" type="Button" parent="Pause_BG/Pause_Container/Vertical_Layout" unique_id=566948709]
+[node name="Resume_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer" unique_id=1843640165]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
-theme = ExtResource("3_hahjl")
-text = "Retomar"
+texture_normal = ExtResource("4_cy1dh")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Exit_Button" type="Button" parent="Pause_BG/Pause_Container/Vertical_Layout" unique_id=1465584958]
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Resume_Button" unique_id=1290619037]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 17.0
+offset_right = 99.0
+offset_bottom = 51.0
+theme = ExtResource("3_hahjl")
+text = "Voltar"
+
+[node name="Exit_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer" unique_id=933477555]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+texture_normal = ExtResource("4_cy1dh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Exit_Button" unique_id=41507740]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 15.0
+offset_right = 98.0
+offset_bottom = 49.0
 theme = ExtResource("3_hahjl")
 text = "Sair"
+horizontal_alignment = 1
 
 [node name="Pause_FX" type="AnimationPlayer" parent="." unique_id=662403710]
 libraries/ = SubResource("AnimationLibrary_dunkq")
@@ -132,5 +162,5 @@ libraries/ = SubResource("AnimationLibrary_dunkq")
 [node name="Settings_Screen" parent="." unique_id=1642139216 instance=ExtResource("3_j33te")]
 visible = false
 
-[connection signal="pressed" from="Pause_BG/Pause_Container/Vertical_Layout/Resume_Button" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause_BG/Pause_Container/Vertical_Layout/Exit_Button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Resume_Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Exit_Button" to="." method="_ready"]
