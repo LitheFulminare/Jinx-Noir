@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://baq80rb3dvrbk" path="res://Scripts/Mechanics/Scenes/settingsMenu_manager.gd" id="1_bftun"]
 [ext_resource type="LabelSettings" uid="uid://ve11v46rvj85" path="res://Assets/Themes/settings_label.tres" id="2_cwmog"]
+[ext_resource type="Texture2D" uid="uid://cusnvnk6a8y4f" path="res://Assets/Sprites/UI/Menus/menuconfigfundo.png" id="2_g15v8"]
 [ext_resource type="FontFile" uid="uid://c3u4wiaionf7x" path="res://Assets/Fonts/Raleway (texto menu)/static/Raleway-Medium.ttf" id="3_cwmog"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_g15v8"]
 [ext_resource type="Texture2D" uid="uid://bccy06sc0otfq" path="res://Assets/Placeholder/Icons/fullscreen.png" id="4_bv61s"]
@@ -54,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bftun")
 
-[node name="Settings_BG" type="ColorRect" parent="." unique_id=1978185744]
+[node name="Settings_BG" type="TextureRect" parent="." unique_id=1458550918]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -62,7 +63,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.12212009, 0.11852705, 0.108811535, 0.54509807)
+texture = ExtResource("2_g15v8")
+expand_mode = 1
 
 [node name="Settings_Container" type="MarginContainer" parent="Settings_BG" unique_id=271673640]
 layout_mode = 1
@@ -234,7 +236,7 @@ layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("3_g15v8")
-text = "Done"
+text = "Voltar"
 
 [node name="Transition_FX" type="AnimationPlayer" parent="." unique_id=1723853167]
 libraries/ = SubResource("AnimationLibrary_jay2q")
