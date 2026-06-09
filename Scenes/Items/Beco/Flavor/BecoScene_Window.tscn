@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cs3k18cyqi8yq"]
+
+[ext_resource type="Texture2D" uid="uid://pu6gt0g26ye4" path="res://Assets/Sprites/assets beco/janela.png" id="1_bsfir"]
+[ext_resource type="BitMap" uid="uid://bcf4w6pbw0dda" path="res://Assets/Sprites/assets beco/click masks/janela_click_mask.png" id="2_bsfir"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="3_2v4mk"]
+
+[node name="Placeholder_Window" type="TextureButton" unique_id=611493086]
+z_index = 2
+scale = Vector2(0.268, 0.324)
+texture_hover = ExtResource("1_bsfir")
+texture_click_mask = ExtResource("2_bsfir")
+script = ExtResource("3_2v4mk")
+item_type = "window"
+delete_after_interaction = false

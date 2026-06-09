@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cj23nctcbpsx7"]
+
+[ext_resource type="Texture2D" uid="uid://du5vo25e2ae5w" path="res://Assets/Sprites/assets beco/lixeira2.png" id="1_vdr0f"]
+[ext_resource type="BitMap" uid="uid://dfhef3tc0jjhl" path="res://Assets/Sprites/assets beco/click masks/lixeira2_click_mask.png" id="2_ira1e"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="3_6aswu"]
+
+[node name="BecoSceneSign" type="TextureButton" unique_id=1425186902]
+texture_hover = ExtResource("1_vdr0f")
+texture_click_mask = ExtResource("2_ira1e")
+script = ExtResource("3_6aswu")
+item_type = "sign"
+delete_after_interaction = false

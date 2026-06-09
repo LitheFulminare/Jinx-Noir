@@ -21,7 +21,7 @@ func _ready() -> void:
 func _on_item_interacted(i: Item) -> void:
 	match i.item_type:
 		"metal_door":
-			if !TimelineManager.timelines_finished.has("beco_metal_door_2"):
+			if !TimelineManager._check_complete_timelines("beco_metal_door_2"):
 				Dialogic.start(TimelineManager._get_door_timeline())
 			else:
 				animation_player.play("Fade_Out")
@@ -37,5 +37,10 @@ func _on_item_interacted(i: Item) -> void:
 				Dialogic.VAR.got_book = true
 			else:
 				Dialogic.start("beco_book_done")
+		"window":
+			if TimelineManager._check_complete_timelines("beco_trash_1") or TimelineManager._check_complete_timelines("beco_trash_2") or TimelineManager._check_complete_timelines("beco_trash_3"):
+				Dialogic.start("beco_window")
+			else:
+				Dialogic.start("beco_incomplete_scene_1")
 		_:
 			Dialogic.start("beco_" + i.item_type)

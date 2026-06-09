@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://smg8dtvjjf77"]
+
+[ext_resource type="Texture2D" uid="uid://bjrbv3jswgw3l" path="res://Assets/Sprites/assets escritorio/relogio.png" id="1_8sv8r"]
+[ext_resource type="BitMap" uid="uid://c36kwd05kro8h" path="res://Assets/Sprites/assets escritorio/click masks/relogio_click_mask.png" id="2_8sv8r"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="3_s31ed"]
+
+[node name="Office_Clock" type="TextureButton" unique_id=660719719]
+z_index = 2
+offset_right = 156.0
+offset_bottom = 183.0
+texture_hover = ExtResource("1_8sv8r")
+texture_click_mask = ExtResource("2_8sv8r")
+script = ExtResource("3_s31ed")
+item_type = "clock"
