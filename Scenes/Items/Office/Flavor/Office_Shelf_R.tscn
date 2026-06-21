@@ -11,4 +11,3 @@ texture_click_mask = ExtResource("2_3063v")
 script = ExtResource("1_4a70d")
 item_type = "shelf_r"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_c55df")

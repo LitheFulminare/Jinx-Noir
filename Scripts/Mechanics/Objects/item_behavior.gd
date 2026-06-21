@@ -30,6 +30,9 @@ func _ready() -> void:
 		
 ## Função para mudar o cursor com o sinal do sprite de quando o mouse entra
 func _change_cursor() -> void:
+	if disabled:
+		return
+	
 	Input.set_custom_mouse_cursor(CursorManager.hover_icon)
 	
 ## Função para resetar o cursor com o sinal do sprite de quando o mouse sai

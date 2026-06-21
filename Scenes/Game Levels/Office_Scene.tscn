@@ -204,7 +204,7 @@ scale = Vector2(0.59780926, 0.61545354)
 scene_ref = NodePath("../../../..")
 delete_after_interaction = false
 
-[node name="OfficeShelf_R" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1915879513 node_paths=PackedStringArray("scene_ref") instance=ExtResource("7_26bys")]
+[node name="(DISABLED) OfficeShelf_R" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1915879513 node_paths=PackedStringArray("scene_ref") instance=ExtResource("7_26bys")]
 z_index = 1
 layout_mode = 0
 offset_left = 53.863373
@@ -212,6 +212,7 @@ offset_top = -133.34518
 offset_right = 379.86337
 offset_bottom = 369.65482
 scale = Vector2(0.5836534, 0.58365345)
+disabled = true
 scene_ref = NodePath("../../../..")
 
 [node name="Office_Lamp" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1025107382 node_paths=PackedStringArray("scene_ref") instance=ExtResource("6_jheww")]
