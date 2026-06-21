@@ -16,6 +16,12 @@ var first_time_open:= true
 func _ready() -> void:
 	TimelineManager.notebook_ref = self
 	_verify_save_path(save_path)
+	reset_text_sprites()
+	
+func reset_text_sprites() -> void:
+	for text: PuzzleText in areas_ref:
+		if text.text_data:
+			text.text_data._set_current_sprite(1)
 	
 func _verify_save_path(path: String):
 	DirAccess.make_dir_absolute(save_path)

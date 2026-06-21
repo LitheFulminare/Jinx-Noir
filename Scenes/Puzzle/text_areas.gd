@@ -8,8 +8,8 @@ class_name PuzzleText
 
 ## Faz com que o sprite inicial da área seja sempre sua versão censurada
 func _ready() -> void:
+	print("PuzzleText chamou ready()")
 	if text_data:
-		text_data._set_current_sprite(1)
 		ResourceSaver.save(text_data, text_data.resource_path)
 		text_data = ResourceLoader.load(text_data.resource_path)
 	## Atualiza a UI por segurança, para que sempre que começe um jogo esteja com os sprites certos
