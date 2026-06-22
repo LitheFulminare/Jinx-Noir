@@ -38,6 +38,7 @@ func _areas_to_clean(text_num: int):
 	ResourceSaver.save(areas_data[text_num - 1], areas_data[text_num - 1].resource_path)
 	areas_data[text_num - 1] = ResourceLoader.load(areas_data[text_num - 1].resource_path)
 	
+## Chamada depois de deixar as linhas 1 a 4 corretas
 func clean_line_5() -> void:
 	_areas_to_clean(5)
 	

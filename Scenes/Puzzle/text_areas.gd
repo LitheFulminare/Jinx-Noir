@@ -67,10 +67,14 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		if str(data.text_data.text_num) == name.substr(name.length() - 1):
 			TimelineManager.correct_lines.append(int(name.substr(name.length() - 1)))
 			if (TimelineManager.correct_lines.has(1) && 
-				TimelineManager.correct_lines.has(2) &&
-				TimelineManager.correct_lines.has(3) &&
-				TimelineManager.correct_lines.has(4)):
-				TimelineManager.clean_text_5()
+				TimelineManager.correct_lines.has(2)):
+					if (TimelineManager.correct_lines.has(3) &&
+						TimelineManager.correct_lines.has(4) &&
+						!TimelineManager.correct_lines.has(5)):
+						TimelineManager.clean_text_5()
+						Dialogic.start("beco_notebook_4")
+					elif !TimelineManager._check_complete_timelines("beco_notebook_3"):
+						Dialogic.start("beco_notebook_3")
 		else: 
 			while TimelineManager.correct_lines.has(data.text_data.text_num):
 				TimelineManager.correct_lines.erase(data.text_data.text_num)
