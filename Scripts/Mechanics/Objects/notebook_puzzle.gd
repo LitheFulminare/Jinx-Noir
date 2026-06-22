@@ -38,6 +38,9 @@ func _areas_to_clean(text_num: int):
 	ResourceSaver.save(areas_data[text_num - 1], areas_data[text_num - 1].resource_path)
 	areas_data[text_num - 1] = ResourceLoader.load(areas_data[text_num - 1].resource_path)
 	
+func clean_line_5() -> void:
+	_areas_to_clean(5)
+	
 func _on_close_pressed() -> void:
 	visible = false
 	for i in b_scene.interactable_items.get_children():

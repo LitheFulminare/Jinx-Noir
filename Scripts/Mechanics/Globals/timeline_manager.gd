@@ -71,3 +71,6 @@ func _on_timeline_ended() -> void:
 	if !timelines_finished.has(cur_timeline.get_identifier()) and cur_timeline.get_identifier() != "beco_start":
 		timelines_finished.append(cur_timeline.get_identifier())
 	cur_timeline = null
+
+func clean_text_5() -> void:
+	notebook_ref.clean_line_5()

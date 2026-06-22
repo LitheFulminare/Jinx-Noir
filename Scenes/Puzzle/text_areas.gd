@@ -1,6 +1,8 @@
 extends Panel
 class_name PuzzleText
 
+signal lines_1_to_4_correct
+
 ## Nomiei de 'text' o sprite do texto que é pra estar sendo mostrado
 @onready var text: TextureRect = $Text
 ## O resource do texto vem aqui, para identificar número e sprites censurados e limpos
@@ -70,6 +72,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 			TimelineManager.correct_lines.has(3) &&
 			TimelineManager.correct_lines.has(4)):
 			print("Linhas 1 a 4 corretas")
+			TimelineManager.clean_text_5()
 			
 	## Faz com que o espaço selecionado tenha o novo texto atribuído a ele }
 	text_data = data.text_data # }
