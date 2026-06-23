@@ -46,7 +46,10 @@ func _on_item_interacted(i: Item) -> void:
 				TimelineManager.becoManager = null
 				get_tree().change_scene_to_packed(next_scene)
 		"notebook":
-			Dialogic.start(TimelineManager._get_notebook_timeline())
+			var notebook_timeline: String = TimelineManager._get_notebook_timeline()
+			# Não começa uma timeline caso o jogador esteja nas 2 primeiras frases do puzzle
+			if notebook_timeline != "":
+				Dialogic.start(notebook_timeline)
 		"trash":
 			Dialogic.start(TimelineManager._get_trash_timeline())
 		"book":

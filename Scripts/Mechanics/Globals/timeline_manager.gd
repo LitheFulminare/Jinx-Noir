@@ -59,7 +59,7 @@ func _get_trash_timeline() -> String:
 		return "beco_trash_4"
 	else:
 		return "beco_incomplete_scene_2"
-	
+
 func _get_notebook_timeline() -> String:
 	if !_check_complete_timelines("beco_notebook_1") and !_check_complete_timelines("beco_trash_1") and !_check_complete_timelines("beco_trash_2") and !_check_complete_timelines("beco_trash_3"):
 		return "beco_notebook_1"
@@ -70,8 +70,11 @@ func _get_notebook_timeline() -> String:
 	elif !_check_complete_timelines("beco_notebook_4") and correct_lines.has(2) and correct_lines.has(3):
 		notebook_ref._areas_to_clean(5)
 		return "beco_notebook_4"
-	else:
+	elif !PuzzleManager.puzzle_started:
 		return "beco_incomplete_scene_1"
+		
+	# Previne tocar a timeline 1 e mostrar o caderno ao mesmo tempo
+	return ""
 
 ## Quando uma timeline começar.
 func _on_timeline_started() -> void:
