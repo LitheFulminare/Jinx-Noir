@@ -36,7 +36,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		return
 	
 	# Remove da lista até o jogador soltar o texto na posição correta
-	remove_line()
+	remove_line(text_data)
 	
 	## Caso tenha algo no espaço, cria um preview do objeto, para o jogador ver o que ele está arrastando
 	var preview = duplicate()
@@ -62,10 +62,17 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	
 ## Após soltar o item, irá adiciona-lô ao espaço que estava sendo arrastado para cima
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	## Cria um valor temporário caso já tenha uma das frases no espaço }
-	var tmp_text = text_data # }
+	# data é de onde o jogador está arrastando
 	
-	add_line(data)
+	## Cria um valor temporário caso já tenha uma das frases no espaço }
+	# text_data é o texto atual no espaço que o jogador soltou o texto
+	var tmp_text = text_data # }
+	print(data)
+	
+	add_line(data.text_data, self)
+	if tmp_text != null && tmp_text != data.text_data:
+		remove_line(tmp_text)
+		add_line(tmp_text, data)
 	
 	## Faz com que o espaço selecionado tenha o novo texto atribuído a ele } 
 	text_data = data.text_data # }
@@ -78,18 +85,22 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	data._update_ui() # }
 
 ## Testa se o texto está no lugar correto e adiciona no array. Também gerencia os diálogos.
-func add_line(data: Variant) -> void:
-	if !name.begins_with("A"):
+func add_line(text_data: TextData, new_place: PuzzleText) -> void:
+	
+	if !new_place.name.begins_with("A"):
 		return
 		
 	# se o nome começar com "A" ->
-	if str(data.text_data.text_num) != name.substr(name.length() - 1):
+	if str(text_data.text_num) != new_place.name.substr(new_place.name.length() - 1):
+		print("Texto " + str(text_data.text_num) + " no local " + 
+			str(new_place.name.substr(new_place.name.length() - 1)))
+		print("Texto no lugar incorreto")
 		return
 		
 	# se o texto estiver no lugar correto ->
 	# adiciona texto no array e chama os diálogos
-	TimelineManager.correct_lines.append(int(name.substr(name.length() - 1)))
-	print("Adding " + str(data.text_data.text_num) + " to array")
+	TimelineManager.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
+	print("Adding " + str(text_data.text_num) + " to array")
 	if (TimelineManager.correct_lines.has(1) && 
 		TimelineManager.correct_lines.has(2)):
 			if (TimelineManager.correct_lines.has(3) &&
@@ -101,7 +112,7 @@ func add_line(data: Variant) -> void:
 				Dialogic.start("beco_notebook_3")
 
 ## Remove o texto do array caso esteja nele.
-func remove_line() -> void:
+func remove_line(text_data: TextData) -> void:
 	if TimelineManager.correct_lines.has(text_data.text_num):
 		TimelineManager.correct_lines.erase(text_data.text_num)
 		print("Removing " + str(text_data.text_num) + " from array")
