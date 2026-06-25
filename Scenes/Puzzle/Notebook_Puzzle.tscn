@@ -12,7 +12,7 @@
 [ext_resource type="Resource" uid="uid://cqb8ei64h5pw4" path="res://Scenes/Puzzle/Resources/text_5.tres" id="10_wd4mk"]
 [ext_resource type="Resource" uid="uid://wla3je3xmfme" path="res://Scenes/Puzzle/Resources/text_2.tres" id="11_wd4mk"]
 [ext_resource type="Resource" uid="uid://bw56bgt2akse5" path="res://Scenes/Puzzle/Resources/text_1.tres" id="12_cg02q"]
-[ext_resource type="Resource" uid="uid://dryeoy5wypgnw" path="res://Scenes/Puzzle/Resources/text_4.tres" id="13_n811j"]
+[ext_resource type="Resource" uid="uid://bb2g4nym7bst4" path="res://Scenes/Puzzle/Resources/text_4.tres" id="13_n811j"]
 
 [sub_resource type="Animation" id="Animation_n811j"]
 length = 0.001
