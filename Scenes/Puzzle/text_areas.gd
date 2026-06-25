@@ -120,7 +120,7 @@ func add_line(text_data: TextData, new_place: PuzzleText) -> void:
 				Dialogic.start("beco_notebook_3")
 
 ## Remove o texto do array caso esteja nele.
-func remove_line(text_data: TextData) -> void:
-	if TimelineManager.correct_lines.has(text_data.text_num):
-		TimelineManager.correct_lines.erase(text_data.text_num)
-		print("Removing " + str(text_data.text_num) + " from array")
+func remove_line(data_to_remove: TextData) -> void:
+	if TimelineManager.correct_lines.has(data_to_remove.text_num):
+		TimelineManager.correct_lines.erase(data_to_remove.text_num)
+		print("Removing " + str(data_to_remove.text_num) + " from array")
