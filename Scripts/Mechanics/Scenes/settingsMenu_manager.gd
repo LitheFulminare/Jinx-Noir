@@ -49,18 +49,12 @@ func load_settings() -> void:
 	music_mute_button.button_pressed = config.get_value("audio", "music_muted")
 	sfx_mute_button.button_pressed = config.get_value("audio", "sfx_muted")
 	
-	var screen_mode_str: String = config.get_value("video", "screen_mode")
-	var screen_mode_int: int
-	match screen_mode_str:
-		"exclusive_fullscreen": screen_mode_int = 0
-		"windowed": screen_mode_int = 1
-		"borderless_window": screen_mode_int = 2
-	screen_mode_button.selected = screen_mode_int
-	_on_screen_options_selected(screen_mode_int)
+	screen_mode_button.selected = config.get_value("video", "screen_mode")
+	_on_screen_options_selected(config.get_value("video", "screen_mode"))
 
 ## Pega os valores nos nós de Control e salva no arquivo config.ini
 func save_settings() -> void:
-	config.set_value("video", "screen_mode", get_screen_mode())
+	config.set_value("video", "screen_mode", screen_mode_button.selected)
 	
 	config.set_value("audio", "master_volume", master_volume_slider.value)
 	config.set_value("audio", "music_volume", music_volume_slider.value)
@@ -71,14 +65,6 @@ func save_settings() -> void:
 	config.set_value("audio", "sfx_muted", sfx_mute_button.button_pressed)
 	
 	config.save(SETTINGS_FILE_PATH)
-
-## Retorna ou uma String baseado no modo de tela selecionado
-func get_screen_mode() -> String:
-	match screen_mode_button.selected:
-		0: return "exclusive_fullscreen"
-		1: return "windowed"
-		2: return "borderless_window"
-	return ""
 
 ## Altera o volume do bus Master
 func _on_master_volume_changed(value: float) -> void:
