@@ -16,6 +16,7 @@ var current_item: Item
 var current_tips: int = 0
 
 func _ready() -> void:
+	SaveManager.game_loaded.connect(on_game_loaded)
 	SaveManager.load_save() # provisório
 	
 	TimelineManager.becoManager = self
@@ -25,7 +26,10 @@ func _ready() -> void:
 	Dialogic.start("beco_start")
 	
 	GameState.current_scene = SceneID.ALLEY_SCENE
-	
+
+func on_game_loaded() -> void:
+	return
+
 func increase_tips(last_tip: bool) -> void:
 	if !current_item.any_tips_left:
 		return
