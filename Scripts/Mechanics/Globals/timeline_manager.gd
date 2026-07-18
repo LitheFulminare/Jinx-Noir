@@ -17,7 +17,6 @@ var alley_manager: AlleyManager
 func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
 	
-	Dialogic.text_signal.connect(increase_tips)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
 

@@ -59,7 +59,8 @@ func _on_button_up() -> void:
 			if i != notebook:
 				i.visible = false
 			else:
-				i._open_notebook()
+				var _notebook := i as Notebook
+				_notebook._open_notebook()
 	if delete_after_interaction:
 		queue_free() # Destrói o item
 	_reset_cursor()

@@ -170,26 +170,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.56, 0.56)
 
-[node name="NotebookPuzzle" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=375376209 node_paths=PackedStringArray("b_scene") instance=ExtResource("8_ulfh7")]
-unique_name_in_owner = true
-visible = false
-z_index = 0
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.44756174
-anchor_top = 0.49709684
-anchor_right = 0.44756174
-anchor_bottom = 0.49709693
-offset_left = -287.2983
-offset_top = -238.29669
-offset_right = 789.02966
-offset_bottom = 553.78125
-scale = Vector2(0.67192763, 0.6064517)
-expand_mode = 1
-stretch_mode = 4
-b_scene = NodePath("../../../..")
-metadata/_edit_use_anchors_ = true
-
 [node name="Notebook" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=114531261 node_paths=PackedStringArray("scene_ref", "notebook") instance=ExtResource("3_wgc12")]
 layout_mode = 0
 offset_left = 508.92862
@@ -202,6 +182,7 @@ scene_ref = NodePath("../../../..")
 delete_after_interaction = false
 open_after_interaction = true
 notebook = NodePath("../NotebookPuzzle")
+timeline_uid = "uid://dx061ukmmugty"
 
 [node name="MetalDoor" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=1451948297 node_paths=PackedStringArray("scene_ref") instance=ExtResource("4_6xvgo")]
 layout_mode = 0
@@ -321,6 +302,35 @@ offset_bottom = 464.28577
 ignore_texture_size = true
 stretch_mode = 0
 scene_ref = NodePath("../../../..")
+
+[node name="InteractionBlocker" type="Control" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=1198878886]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NotebookPuzzle" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=375376209 node_paths=PackedStringArray("b_scene") instance=ExtResource("8_ulfh7")]
+unique_name_in_owner = true
+visible = false
+z_index = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44756174
+anchor_top = 0.49709684
+anchor_right = 0.44756174
+anchor_bottom = 0.49709693
+offset_left = -287.2983
+offset_top = -238.29669
+offset_right = 789.02966
+offset_bottom = 553.78125
+scale = Vector2(0.67192763, 0.6064517)
+expand_mode = 1
+stretch_mode = 4
+b_scene = NodePath("../../../..")
+metadata/_edit_use_anchors_ = true
 
 [node name="Fade_Color" type="ColorRect" parent="Scene_Elements" unique_id=434344345]
 z_index = 6

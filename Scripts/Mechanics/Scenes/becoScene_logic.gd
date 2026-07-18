@@ -8,6 +8,7 @@ var has_trash = false
 @onready var interactable_items = $Scene_Elements/Beco_BG/Interactable_Items
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var notebook_ref: Notebook = %NotebookPuzzle
+@onready var interaction_blocker: Control = %InteractionBlocker
 
 @export_category("Próxima Cena")
 @export var next_scene: PackedScene
@@ -21,6 +22,9 @@ func _ready() -> void:
 	
 	TimelineManager.alley_manager = self
 	
+	Dialogic.text_signal.connect(_handle_dialogic_signals)
+	notebook_ref.closed.connect(notebook_closed)
+	
 	animation_player.play("Fade_In")
 	await animation_player.animation_finished
 	Dialogic.start("beco_start")
@@ -30,6 +34,11 @@ func _ready() -> void:
 ## Synchronizes notebook puzzle state.
 func on_game_loaded() -> void:
 	return
+
+func _handle_dialogic_signals(arg: String) -> void:
+	match arg:
+		"open_notebook":
+			open_notebook()
 
 func increase_tips(last_tip: bool) -> void:
 	if !current_item.any_tips_left:
@@ -44,36 +53,27 @@ func increase_tips(last_tip: bool) -> void:
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
 	current_item = item
+	if item.timeline_uid == "" or item.timeline_uid == null:
+		return
 	Dialogic.start(item.timeline_uid)
 	
-	return
+	#match item.item_type:
+		#"notebook":
+			#var notebook_timeline: String = TimelineManager._get_notebook_timeline()
+			## Não começa uma timeline caso o jogador esteja nas 2 primeiras frases do puzzle
+			#if notebook_timeline != "":
+				#Dialogic.start(notebook_timeline)
+
+func open_notebook() -> void:
+	interaction_blocker.visible = true
+	notebook_ref._open_notebook()
+
+## Allows interactions with the items again. Called when player presses X button on notebook.
+func notebook_closed() -> void:
+	interaction_blocker.visible = false
 	
-	match item.item_type:
-		"metal_door":
-			if !TimelineManager._check_complete_timelines("beco_metal_door_2"):
-				Dialogic.start(TimelineManager._get_door_timeline())
-			else:
-				animation_player.play("Fade_Out")
-				await animation_player.animation_finished
-				TimelineManager.alley_manager = null
-				get_tree().change_scene_to_packed(next_scene)
-		"notebook":
-			var notebook_timeline: String = TimelineManager._get_notebook_timeline()
-			# Não começa uma timeline caso o jogador esteja nas 2 primeiras frases do puzzle
-			if notebook_timeline != "":
-				Dialogic.start(notebook_timeline)
-		"trash":
-			Dialogic.start(TimelineManager._get_trash_timeline())
-		"book":
-			if !Dialogic.VAR.got_book:
-				Dialogic.start("beco_" + item.item_type)
-				Dialogic.VAR.got_book = true
-			else:
-				Dialogic.start("beco_book_done")
-		"window":
-			if TimelineManager._check_complete_timelines("beco_trash_1") or TimelineManager._check_complete_timelines("beco_trash_2") or TimelineManager._check_complete_timelines("beco_trash_3"):
-				Dialogic.start("beco_window")
-			else:
-				Dialogic.start("beco_window_incomplete")
-		_:
-			Dialogic.start("beco_" + item.item_type)
+func go_to_ritual_room() -> void:
+	animation_player.play("Fade_Out")
+	await animation_player.animation_finished
+	TimelineManager.alley_manager = null
+	get_tree().change_scene_to_packed(next_scene)

@@ -59,6 +59,7 @@ directories/dtl_directory={
 "metal door": "res://Timelines/Alley/Metal Door/metal door.dtl",
 "metal door book complete": "res://Timelines/Alley/Metal Door/metal door book complete.dtl",
 "metal door book incomplete": "res://Timelines/Alley/Metal Door/metal door book incomplete.dtl",
+"notebook": "res://Timelines/Alley/Notebook/notebook.dtl",
 "office_blinds": "res://Timelines/Office/Flavor/office_blinds.dtl",
 "office_chair": "res://Timelines/Office/Flavor/office_chair.dtl",
 "office_clock": "res://Timelines/Office/Flavor/office_clock.dtl",
@@ -81,6 +82,7 @@ layout/default_style="res://Assets/Layout_Styles/placeholder_vn_style.tres"
 variables={
 "Alley": {
 "book_complete": false,
+"has_cleaned_a_line": false,
 "interacted_with_book": false,
 "interacted_with_trash": false
 },

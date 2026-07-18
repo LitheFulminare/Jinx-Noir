@@ -1,6 +1,9 @@
 join protagonist (curious) rightmost [animation="Slide From Left" length="0.6" wait="true" z_index="1" mirrored="true"]
 protagonist: Uh… um caderno? A chuva não parece ser capaz de atingi-lo… estranho.
 protagonist (default): Vamos ver o que temos aqui…
+[wait time="0.75"]
+[signal arg="open_notebook"]
+[wait time="1.0" hide_text="false"]
 protagonist (worried): O que… o que é isso? Tem várias manchas de sangue, mas algumas palavras estão visíveis… e a caligrafia é idêntica à minha.
 protagonist (curious): Sangue… os… sonhos… trevas… patas?”. A maioria das palavras estão rasuradas, é difícil tirar alguma coisa daqui. E as outras páginas parecem todas vazias… Secas, intactas, mas vazias.
 protagonist (default): É melhor dar mais uma olhada pelos arredores desse beco.

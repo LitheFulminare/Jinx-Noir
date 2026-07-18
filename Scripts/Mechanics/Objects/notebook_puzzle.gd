@@ -1,6 +1,8 @@
 class_name Notebook
 extends Control
 
+signal closed()
+
 @onready var visibility_player: AnimationPlayer = $Visibility_Player
 @onready var notebook_audio: AudioStreamPlayer2D = $Notebook_Audio
 @onready var areas_data: Array[TextData] = [load("res://Scenes/Puzzle/Resources/text_1.tres"), load("res://Scenes/Puzzle/Resources/text_2.tres"), load("res://Scenes/Puzzle/Resources/text_3.tres"), load("res://Scenes/Puzzle/Resources/text_4.tres"), load("res://Scenes/Puzzle/Resources/text_5.tres")]
@@ -58,8 +60,9 @@ func save_progression() -> void:
 	SaveManager.save()
 
 func _on_close_pressed() -> void:
+	closed.emit()
 	save_progression()
 	visible = false
-	for i in b_scene.interactable_items.get_children():
-		if i != self:
-			i.visible = true
+	#for i in b_scene.interactable_items.get_children():
+		#if i != self:
+			#i.visible = true
