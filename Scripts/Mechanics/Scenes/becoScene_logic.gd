@@ -1,13 +1,13 @@
-extends Node2D
-class_name BecoManager
 ## Gerenciador da cena do beco que controla como a cena irá progredir
+class_name BecoManager
+extends Node2D
 
 @export var tip_label: Label
-var notebook_ref: Notebook = null
 var has_trash = false
 
 @onready var interactable_items = $Scene_Elements/Beco_BG/Interactable_Items
 @onready var animation_player = $Scene_Elements/AnimationPlayer
+@onready var notebook_ref: Notebook = %NotebookPuzzle
 
 @export_category("Próxima Cena")
 @export var next_scene: PackedScene
@@ -17,16 +17,17 @@ var current_tips: int = 0
 
 func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
-	SaveManager.load_save() # provisório
+	#SaveManager.load_save() # temporary, other script will call the game to load
 	
 	TimelineManager.becoManager = self
-	notebook_ref = $Scene_Elements/Beco_BG/Interactable_Items/NotebookPuzzle
+	
 	animation_player.play("Fade_In")
 	await animation_player.animation_finished
 	Dialogic.start("beco_start")
 	
 	GameState.current_scene = SceneID.ALLEY_SCENE
 
+## Synchronizes notebook puzzle state.
 func on_game_loaded() -> void:
 	return
 

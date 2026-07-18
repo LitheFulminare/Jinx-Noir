@@ -171,6 +171,7 @@ grow_vertical = 2
 scale = Vector2(0.56, 0.56)
 
 [node name="NotebookPuzzle" parent="Scene_Elements/Beco_BG/Interactable_Items" unique_id=375376209 node_paths=PackedStringArray("b_scene") instance=ExtResource("8_ulfh7")]
+unique_name_in_owner = true
 visible = false
 z_index = 0
 layout_mode = 1

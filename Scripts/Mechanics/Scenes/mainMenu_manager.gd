@@ -1,5 +1,5 @@
-extends Control
 class_name MainMenu_Manager
+extends Control
 ## Script para gerenciar como o menu deve agir
 
 @export_category("Level Configurations")

@@ -1,6 +1,14 @@
 ## Salva e carrega as informaçõe do GameState de um arquivo.
 extends Node
 
+# TODO 
+# Now the timelines are saved in the file when exiting the notebook and loaded again into GameState
+# when the alley scene starts. 
+# However, something to do with the puzzle_started won't let the player interact with the notebook.
+# I have to fix this.
+# Also, the notebook state has to be update when loading and the correct lines should be checked.
+# Should move some of the TimelineManager logic to the BecoManager too.
+
 signal game_saved()
 signal game_loaded()
 
