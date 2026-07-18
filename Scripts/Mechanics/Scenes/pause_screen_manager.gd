@@ -1,5 +1,6 @@
-extends CanvasLayer
 ## Controlar como funciona o pause do jogo
+class_name PauseScreenManager
+extends CanvasLayer
 
 @onready var animation_player = $Pause_FX
 @onready var background = $Pause_BG

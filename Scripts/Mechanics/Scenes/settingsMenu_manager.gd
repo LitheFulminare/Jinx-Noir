@@ -1,6 +1,7 @@
-class_name Settings_Manager
-extends Control
 ## Controla como o menu de opções funciona
+class_name SettingsManager
+extends Control
+
 @export_category("Valores Iniciais")
 @export_range(0, 1, 0.01, "prefer_slider") var volume_default: float = 0.7
 

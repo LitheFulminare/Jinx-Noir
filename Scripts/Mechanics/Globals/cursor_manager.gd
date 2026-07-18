@@ -1,6 +1,5 @@
-extends Node
-class_name Cursor_Manager
 ## Script para poder guardar os cursores que vão ser usados no jogo dependendo do que o mouse está fazendo
+extends Node
 
 const PATA = preload("res://Assets/Placeholder/Cursors/default.png")
 const PATAHOVER = preload("res://Assets/Placeholder/Cursors/hover.png")

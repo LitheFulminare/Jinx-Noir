@@ -1,5 +1,5 @@
 ## Gerenciador da cena do beco que controla como a cena irá progredir
-class_name BecoManager
+class_name AlleyManager
 extends Node2D
 
 @export var tip_label: Label
@@ -19,7 +19,7 @@ func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
 	#SaveManager.load_save() # temporary, other script will call the game to load
 	
-	TimelineManager.becoManager = self
+	TimelineManager.alley_manager = self
 	
 	animation_player.play("Fade_In")
 	await animation_player.animation_finished
@@ -52,7 +52,7 @@ func _on_item_interacted(i: Item) -> void:
 			else:
 				animation_player.play("Fade_Out")
 				await animation_player.animation_finished
-				TimelineManager.becoManager = null
+				TimelineManager.alley_manager = null
 				get_tree().change_scene_to_packed(next_scene)
 		"notebook":
 			var notebook_timeline: String = TimelineManager._get_notebook_timeline()

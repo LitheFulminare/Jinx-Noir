@@ -12,7 +12,7 @@ var timeline_playing:= false
 ## Objetos que devem ser interagidos pelo jogador antes de seguir a timeline
 var timelines_finished: Array[String] = []
 
-var becoManager: BecoManager
+var alley_manager: AlleyManager
 
 func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
@@ -25,7 +25,7 @@ func on_game_loaded() -> void:
 	timelines_finished = GameState.timelines_finished.duplicate()
 
 func increase_tips(last_tip: bool) -> void:
-	becoManager.increase_tips(last_tip)
+	alley_manager.increase_tips(last_tip)
 
 func _check_complete_timelines(t: String) -> bool:
 	return timelines_finished.has(t)

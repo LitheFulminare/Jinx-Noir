@@ -7,7 +7,7 @@ extends Node
 # However, something to do with the puzzle_started won't let the player interact with the notebook.
 # I have to fix this.
 # Also, the notebook state has to be update when loading and the correct lines should be checked.
-# Should move some of the TimelineManager logic to the BecoManager too.
+# Should move some of the TimelineManager logic to the AlleyManager too.
 
 signal game_saved()
 signal game_loaded()

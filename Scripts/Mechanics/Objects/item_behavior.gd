@@ -1,6 +1,7 @@
-extends TextureButton
-class_name Item
 ## Script para configurarmos os itens que forem criados
+class_name Item
+extends TextureButton
+
 #@onready var col_area:= $collision_area
 #@onready var shader_outline: ShaderMaterial = self.material # será removido
 ## Pra colocar um tipo para o item, default sendo 'leek'

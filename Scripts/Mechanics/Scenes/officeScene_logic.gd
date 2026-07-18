@@ -1,5 +1,6 @@
-extends Node2D
 ## Gerenciador da cena principal que controla como a cena irá progredir
+class_name OfficeSceneManager
+extends Node2D
 
 ## Para poder guardar qual 'timeline' está em cena atualmente
 var cur_timeline: DialogicTimeline
@@ -49,9 +50,13 @@ func _on_timeline_ended() -> void:
 	if cur_timeline.get_identifier() == "office_phone_call":
 		phone_picked = true
 	if cur_timeline.get_identifier() == "office_door":
-		animation_player.play("Fade_Out")
-		await animation_player.animation_finished
-		get_tree().change_scene_to_packed(next_scene)
+		go_to_alley()
 		
-		MusicManager.play_music(new_music, -6, true, 2)
 	cur_timeline = null
+
+func go_to_alley() -> void:
+	animation_player.play("Fade_Out")
+	await animation_player.animation_finished
+	get_tree().change_scene_to_packed(next_scene)
+	
+	MusicManager.play_music(new_music, -6, true, 2)

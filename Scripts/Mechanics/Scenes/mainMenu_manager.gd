@@ -1,6 +1,6 @@
-class_name MainMenu_Manager
-extends Control
 ## Script para gerenciar como o menu deve agir
+class_name MainMenuManager
+extends Control
 
 @export_category("Level Configurations")
 ## Qual nível o botão deverá ir (caso tiver um botão de trocar de nível)

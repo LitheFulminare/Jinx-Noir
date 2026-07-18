@@ -1,5 +1,5 @@
-extends Control
 class_name Notebook
+extends Control
 
 @onready var visibility_player: AnimationPlayer = $Visibility_Player
 @onready var notebook_audio: AudioStreamPlayer2D = $Notebook_Audio
@@ -9,7 +9,7 @@ class_name Notebook
 #var save_path = "user://save"
 #var save_name = "puzzleSave.tres"
 
-@export var b_scene: BecoManager
+@export var b_scene: AlleyManager
 
 var first_time_open:= true
 
