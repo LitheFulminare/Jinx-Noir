@@ -38,28 +38,21 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "alley_trash": "res://Timelines/Beco/Flavor/alley_trash.dtl",
-"beco_book": "res://Timelines/Beco/Puzzle/Hints/beco_book.dtl",
-"beco_book_done": "res://Timelines/Beco/Puzzle/Hints/beco_book_done.dtl",
+"beco_book": "res://Timelines/Beco/Flavor/beco_book.dtl",
 "beco_bottles": "res://Timelines/Beco/Flavor/beco_bottles.dtl",
-"beco_box": "res://Timelines/Beco/Puzzle/Hints/beco_box.dtl",
+"beco_box": "res://Timelines/Beco/Flavor/beco_box.dtl",
 "beco_broom": "res://Timelines/Beco/Flavor/beco_broom.dtl",
 "beco_camera": "res://Timelines/Beco/Flavor/beco_camera.dtl",
 "beco_incomplete_scene_1": "res://Timelines/Beco/Puzzle/Hints to Incomplete Scene/beco_incomplete_scene_1.dtl",
 "beco_incomplete_scene_2": "res://Timelines/Beco/Puzzle/Hints to Incomplete Scene/beco_incomplete_scene_2.dtl",
 "beco_incomplete_scene_3": "res://Timelines/Beco/Puzzle/Hints to Incomplete Scene/beco_incomplete_scene_3.dtl",
 "beco_lamp": "res://Timelines/Beco/Flavor/beco_lamp.dtl",
-"beco_metal_door_1": "res://Timelines/Beco/Puzzle/Metal Door Interactions/beco_metal_door_1.dtl",
-"beco_metal_door_2": "res://Timelines/Beco/Puzzle/Metal Door Interactions/beco_metal_door_2.dtl",
 "beco_notebook_1": "res://Timelines/Beco/Puzzle/Notebook Interactions/beco_notebook_1.dtl",
 "beco_notebook_2": "res://Timelines/Beco/Puzzle/Notebook Interactions/beco_notebook_2.dtl",
 "beco_notebook_3": "res://Timelines/Beco/Puzzle/Notebook Interactions/beco_notebook_3.dtl",
 "beco_notebook_4": "res://Timelines/Beco/Puzzle/Notebook Interactions/beco_notebook_4.dtl",
 "beco_sign": "res://Timelines/Beco/Flavor/beco_sign.dtl",
 "beco_start": "res://Timelines/Beco/Flavor/beco_start.dtl",
-"beco_trash_1": "res://Timelines/Beco/Puzzle/Trash Interactions/beco_trash_1.dtl",
-"beco_trash_2": "res://Timelines/Beco/Puzzle/Trash Interactions/beco_trash_2.dtl",
-"beco_trash_3": "res://Timelines/Beco/Puzzle/Trash Interactions/beco_trash_3.dtl",
-"beco_trash_4": "res://Timelines/Beco/Puzzle/Trash Interactions/beco_trash_4.dtl",
 "beco_w_box": "res://Timelines/Beco/Flavor/beco_w_box.dtl",
 "beco_web": "res://Timelines/Beco/Flavor/beco_web.dtl",
 "beco_window": "res://Timelines/Beco/Flavor/beco_window.dtl",
@@ -88,6 +81,7 @@ layout/default_style="res://Assets/Layout_Styles/placeholder_vn_style.tres"
 variables={
 "Alley": {
 "book_complete": false,
+"interacted_with_book": false,
 "interacted_with_trash": false
 },
 "got_book": false
