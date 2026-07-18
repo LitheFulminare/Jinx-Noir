@@ -42,10 +42,13 @@ func increase_tips(last_tip: bool) -> void:
 	tip_label.text = "Pistas: " + str(current_tips) + " /14"
 	
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
-func _on_item_interacted(i: Item) -> void:
-	current_item = i
+func _on_item_interacted(item: Item) -> void:
+	current_item = item
+	Dialogic.start(item.timeline_uid)
 	
-	match i.item_type:
+	return
+	
+	match item.item_type:
 		"metal_door":
 			if !TimelineManager._check_complete_timelines("beco_metal_door_2"):
 				Dialogic.start(TimelineManager._get_door_timeline())
@@ -63,7 +66,7 @@ func _on_item_interacted(i: Item) -> void:
 			Dialogic.start(TimelineManager._get_trash_timeline())
 		"book":
 			if !Dialogic.VAR.got_book:
-				Dialogic.start("beco_" + i.item_type)
+				Dialogic.start("beco_" + item.item_type)
 				Dialogic.VAR.got_book = true
 			else:
 				Dialogic.start("beco_book_done")
@@ -73,4 +76,4 @@ func _on_item_interacted(i: Item) -> void:
 			else:
 				Dialogic.start("beco_window_incomplete")
 		_:
-			Dialogic.start("beco_" + i.item_type)
+			Dialogic.start("beco_" + item.item_type)

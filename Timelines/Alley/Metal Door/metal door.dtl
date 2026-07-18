@@ -1,4 +1,4 @@
 if {Alley.book_complete} == true:
 	jump metal door book complete/
 else:
-	jump book incomplete/
+	jump metal door book incomplete/

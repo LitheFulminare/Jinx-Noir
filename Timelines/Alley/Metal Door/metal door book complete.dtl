@@ -8,4 +8,4 @@ protagonist (worried): Olá? Não vai me responder?
 [wait time="0.6"]
 audio sfx "res://Assets/Audio/SFX/Objects/door_opening.wav" [volume="-5.0"]
 [wait time="1.2"]
-protagonist: Absurdamente específico, ainda acho que estou sonhando. Mas pelo menos deu certo. Hora de continuar a investigação.
+protagonist (default): Absurdamente específico, ainda acho que estou sonhando. Mas pelo menos deu certo. Hora de continuar a investigação.

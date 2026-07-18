@@ -1,6 +1,5 @@
 join protagonist (default) rightmost [animation="Slide From Left" length="0.4" wait="true" z_index="1" mirrored="true"]
 protagonist (default): Ah, essa deve ser a entrada pro prédio…
-[wait time="0.1"]
 protagonist (curious): Hmmm… é metálica, e parece ter se oxidado um tanto por conta da chuva, eu imagino… mas não vejo nada demais. Será que alguém atende se eu bater?
 audio "res://Assets/Audio/SFX/Objects/Knock 2.wav" [volume="0.0"]
 protagonist (default): ...
