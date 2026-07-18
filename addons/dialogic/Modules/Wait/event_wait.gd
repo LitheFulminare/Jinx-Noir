@@ -30,7 +30,7 @@ func _execute() -> void:
 	dialogic.current_state = dialogic.States.WAITING
 
 	if hide_text and dialogic.has_subsystem("Text"):
-		dialogic.Text.update_dialog_text('', true)
+		#dialogic.Text.update_dialog_text('', true)
 		dialogic.Text.hide_textbox()
 
 	_tween = dialogic.get_tree().create_tween()
