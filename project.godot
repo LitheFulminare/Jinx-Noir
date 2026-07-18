@@ -81,9 +81,17 @@ layout/style_list=["res://Assets/Layout_Styles/placeholder_vn_style.tres"]
 layout/default_style="res://Assets/Layout_Styles/placeholder_vn_style.tres"
 variables={
 "Alley": {
-"book_complete": false,
+"Notebook": {
 "has_cleaned_a_line": false,
+"times_cleaned": 1.0
+},
+"book_complete": false,
 "interacted_with_book": false,
+"interacted_with_box": false,
+"interacted_with_broom": false,
+"interacted_with_door": false,
+"interacted_with_lamp": false,
+"interacted_with_sign": false,
 "interacted_with_trash": false
 },
 "got_book": false

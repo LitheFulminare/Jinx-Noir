@@ -1,1 +1,15 @@
+if {Alley.Notebook.has_cleaned_a_line} == false:
+	protagonist (default): É melhor dar mais uma olhada pelos arredores desse beco.
+	[end_timeline]
+join protagonist rightmost [mirrored="true"]
+if {Alley.Notebook.times_cleaned} == 1.0:
+	# Last line cleaned is 1
+elif {Alley.Notebook.times_cleaned} == 2.0:
+	# Last line cleaned is 2
+elif {Alley.Notebook.times_cleaned} == 3.0:
+	# Last line cleaned is 3
+elif {Alley.Notebook.times_cleaned} == 4.0:
+	# Last line cleaned is 4
+elif {Alley.Notebook.times_cleaned} == 5.0:
+	# Last line cleaned is 5
 [signal arg="open_notebook"]
