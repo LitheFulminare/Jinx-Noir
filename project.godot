@@ -37,6 +37,7 @@ directories/dch_directory={
 "protagonist": "res://Characters/protagonist.dch"
 }
 directories/dtl_directory={
+"alley_trash": "res://Timelines/Beco/Flavor/alley_trash.dtl",
 "beco_book": "res://Timelines/Beco/Puzzle/Hints/beco_book.dtl",
 "beco_book_done": "res://Timelines/Beco/Puzzle/Hints/beco_book_done.dtl",
 "beco_bottles": "res://Timelines/Beco/Flavor/beco_bottles.dtl",
@@ -62,7 +63,9 @@ directories/dtl_directory={
 "beco_w_box": "res://Timelines/Beco/Flavor/beco_w_box.dtl",
 "beco_web": "res://Timelines/Beco/Flavor/beco_web.dtl",
 "beco_window": "res://Timelines/Beco/Flavor/beco_window.dtl",
-"beco_window_incomplete": "res://Timelines/Beco/Flavor/beco_window_incomplete.dtl",
+"book incomplete": "res://Timelines/Beco/Flavor/Metal Door/metal door book incomplete.dtl",
+"metal door": "res://Timelines/Beco/Flavor/Metal Door/metal door.dtl",
+"metal door book complete": "res://Timelines/Beco/Flavor/Metal Door/metal door book complete.dtl",
 "office_blinds": "res://Timelines/Office/Flavor/office_blinds.dtl",
 "office_chair": "res://Timelines/Office/Flavor/office_chair.dtl",
 "office_clock": "res://Timelines/Office/Flavor/office_clock.dtl",
@@ -83,6 +86,10 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://Assets/Layout_Styles/placeholder_vn_style.tres"]
 layout/default_style="res://Assets/Layout_Styles/placeholder_vn_style.tres"
 variables={
+"Alley": {
+"book_complete": false,
+"interacted_with_trash": false
+},
 "got_book": false
 }
 text/letter_speed=0.05

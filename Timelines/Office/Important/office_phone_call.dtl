@@ -1,8 +1,8 @@
 join protagonist (default) rightmost [animation="Slide From Right" wait="true" z_index="1" mirrored="true"]
 protagonist (default): Jynx, detetive felina particular à disposição. Como posso lhe ajudar?
-join mystery_caller (mystery_caller) leftmost [animation="Slide From Left" wait="true" z_index="1"]
+join mystery_caller (mystery) leftmost [animation="Slide From Left" wait="true" z_index="1"]
 audio "res://Assets/Audio/SFX/Objects/phone_static.wav" [volume="-5.0"]
-mystery_caller (mystery_caller): ...
+mystery_caller (mystery): ...
 protagonist (curious): Alô?
 audio "res://Assets/Audio/SFX/Objects/phone_static.wav" [volume="-5.0"]
 mystery_caller: ...

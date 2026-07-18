@@ -1,0 +1,11 @@
+join protagonist (sad) rightmost [animation="Slide From Left" length="0.4" wait="true" mirrored="true"]
+protagonist (sad): Nada mudou… que droga…
+join mystery_caller (mystery) leftmost
+mystery_caller (mystery): A senha…
+protagonist (scare): Quem está aí??? Como assim senha? Não me assusta assim não!
+mystery_caller (mystery): …
+protagonist (worried): Olá? Não vai me responder?
+[wait time="0.6"]
+audio sfx "res://Assets/Audio/SFX/Objects/door_opening.wav" [volume="-5.0"]
+[wait time="1.2"]
+protagonist: Absurdamente específico, ainda acho que estou sonhando. Mas pelo menos deu certo. Hora de continuar a investigação.
