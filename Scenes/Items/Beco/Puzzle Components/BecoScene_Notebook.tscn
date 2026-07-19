@@ -21,7 +21,6 @@ script = ExtResource("1_6daru")
 item_type = "notebook"
 delete_after_interaction = null
 open_after_interaction = null
-hovered_texture = ExtResource("2_7mir5")
 
 [node name="Notebook_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

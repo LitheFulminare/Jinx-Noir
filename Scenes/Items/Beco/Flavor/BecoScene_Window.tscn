@@ -12,3 +12,4 @@ texture_click_mask = ExtResource("2_bsfir")
 script = ExtResource("3_2v4mk")
 item_type = "window"
 delete_after_interaction = false
+timeline_uid = "uid://2r0rmiy3t104"

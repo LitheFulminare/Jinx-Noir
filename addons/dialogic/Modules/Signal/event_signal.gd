@@ -29,7 +29,7 @@ func _execute() -> void:
 		else:
 			push_error("[Dialogic] Encountered invalid dictionary in signal event.")
 	else:
-		dialogic.emit_signal('signal_event', argument)
+		dialogic.emit_signal('text_signal', argument)
 	finish()
 
 #endregion

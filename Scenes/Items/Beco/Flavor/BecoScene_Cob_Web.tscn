@@ -11,7 +11,7 @@ texture_hover = ExtResource("1_w3grd")
 texture_click_mask = ExtResource("2_iu3e3")
 script = ExtResource("1_gh02g")
 item_type = "web"
-hovered_texture = ExtResource("1_w3grd")
+timeline_uid = "uid://bnh8154lejk3o"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

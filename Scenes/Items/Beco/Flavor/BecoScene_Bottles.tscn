@@ -14,4 +14,4 @@ texture_click_mask = ExtResource("2_m3pmx")
 script = ExtResource("1_voj3b")
 item_type = "bottles"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_ikr7m")
+timeline_uid = "uid://dbcnvjhsfmr3h"

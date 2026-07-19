@@ -14,7 +14,7 @@ texture_click_mask = ExtResource("2_on72y")
 script = ExtResource("1_2wh7p")
 item_type = "broom"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_synos")
+timeline_uid = "uid://dlcoeb68v6mgr"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

@@ -1,0 +1,15 @@
+if {Alley.Notebook.has_cleaned_a_line} == true:
+	protagonist (default): Uma das linhas ficou legível…
+else:
+	protagonist (curious): “Sangue… os… sonhos…”
+	protagonist (curious): “Em… trevas…”
+	protagonist (default): “Em suas patas”
+	protagonist (curious): Parece que uma das linhas dessa escritura ficou compreensível. Interessante…
+	protagonist (worried): Que isso? Eu consigo mudar o lugar dessa linha com minhas próprias patas…
+	protagonist (curious): Sinto que estou sonhando. Será que eu preciso encaixar ela no lugar certo?
+protagonist (curious): “Em suas patas”
+protagonist (curious): O que isso sequer significa…? Bem, eu sou uma gata, eu tenho patas, e aí? Vários animais tem!
+protagonist (curious): Hmm… se eu me lembro bem, é a mesma frase que estava escrito naquele bilhete para o zelador…
+protagonist (default): Coincidência ou não, é bom anotar.
+protagonist (default): Mas em qual ordem do texto esse verso iria…?
+set {Alley.Notebook.has_cleaned_a_line} = true

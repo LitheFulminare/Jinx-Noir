@@ -17,6 +17,7 @@ scale = Vector2(0.268, 0.324)
 texture_hover = ExtResource("2_y17lw")
 texture_click_mask = ExtResource("3_yc8mb")
 script = ExtResource("1_82rd8")
+timeline_uid = "uid://bx4i0pcs2ktno"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 bus = &"SFX"

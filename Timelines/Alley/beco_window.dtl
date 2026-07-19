@@ -1,0 +1,8 @@
+join protagonist rightmost [animation="Slide From Right" mirrored="true"]
+protagonist: Tem uma janela aqui, bem pequena, eu não conseguiria passar por aí.
+protagonist (curious): E não dá pra ver nada do outro lado… mas… tem algo marcado aqui.
+if {Alley.interacted_with_trash} == true:
+	protagonist: É uma pata felina. Dianteira, de cinco unhas, exatamente o que tinha no lixo…
+else:
+	protagonist: É uma pata felina. Dianteira, de cinco unhas, e não parece ser um desenho…
+protagonist (default): Ok, só consigo concluir a existência de uma pata por enquanto. É melhor eu voltar a investigar os arredores.

@@ -13,7 +13,7 @@ texture_hover = ExtResource("2_hyr36")
 texture_click_mask = ExtResource("2_501aj")
 script = ExtResource("1_cxnq1")
 item_type = "trash"
-hovered_texture = ExtResource("2_hyr36")
+timeline_uid = "uid://b5py3mj3rv58l"
 
 [node name="Trash_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

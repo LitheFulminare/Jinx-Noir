@@ -1,6 +1,8 @@
 class_name Notebook
 extends Control
 
+signal closed()
+
 @onready var visibility_player: AnimationPlayer = $Visibility_Player
 @onready var notebook_audio: AudioStreamPlayer2D = $Notebook_Audio
 @onready var areas_data: Array[TextData] = [load("res://Scenes/Puzzle/Resources/text_1.tres"), load("res://Scenes/Puzzle/Resources/text_2.tres"), load("res://Scenes/Puzzle/Resources/text_3.tres"), load("res://Scenes/Puzzle/Resources/text_4.tres"), load("res://Scenes/Puzzle/Resources/text_5.tres")]
@@ -12,6 +14,13 @@ extends Control
 @export var b_scene: AlleyManager
 
 var first_time_open:= true
+
+const TEXT_REQUIREMENTS := {
+	1: ["trash", "broom"],
+	2: ["broom", "lamp", "sign"],
+	3: ["trash", "sign"],
+	4: ["box", "book"]
+}
 
 func _ready() -> void:
 	TimelineManager.notebook_ref = self
@@ -27,21 +36,59 @@ func initialize_texts() -> void:
 #func _verify_save_path(path: String):
 	#DirAccess.make_dir_absolute(save_path)
 
+## Checks if all lines are in place.
+func check_lines() -> void:
+	if !TimelineManager.has_all_correct_lines():
+		return
+	if TimelineManager.timelines_finished.has("notebook just solved"):
+		return
+	Dialogic.start("uid://86s08msnla8r") # notebook just solved timeline
+
 func _open_notebook():
 	visibility_player.play("open_notebook")
 
 	if first_time_open:
 		first_time_open = false
 
-func _areas_to_clean(text_num: int):
-	print("areas_to_clean() chamado com parâmetro " + str(text_num))
-	areas_data[text_num - 1]._set_current_sprite(2)
+func _areas_to_clean(texts: Array[int]):#text_num: int):
+	print("areas_to_clean() called with arg " + str(texts))
+	
+	var texts_cleaned: Array[int] = []
+	for text_num: int in texts:
+		if areas_data[text_num - 1].is_censored:
+			texts_cleaned.append(text_num)
+			Dialogic.VAR.Alley.Notebook.last_line_cleaned = float(text_num)
+			areas_data[text_num - 1]._set_current_sprite(2)
+		else:
+			print(str(text_num) + " is already clean")
+		
+	if texts_cleaned.size() == 0:
+		return
+	
+	if texts_cleaned.size() == 1:
+		Dialogic.start("uid://b7cbwfakv6m8c")
+	else:
+		Dialogic.start("uid://b5ubuaynhbgq")
+	
 	#ResourceSaver.save(areas_data[text_num - 1], areas_data[text_num - 1].resource_path)
 	#areas_data[text_num - 1] = ResourceLoader.load(areas_data[text_num - 1].resource_path)
+
+func clean_multiple_texts(num1: int, num2: int) -> void:
+	if !areas_data[num1 -1].is_censored and !areas_data[num1 - 2].is_censored:
+		return
+	
+	print("Cleaning texts 2 and 3 at the same time")
+	areas_data[num1 - 1]._set_current_sprite(2)
+	areas_data[num2 - 1]._set_current_sprite(2)
+	
+	# play sound
+	# await
+	# play sound
+	# start timeline
 	
 ## Chamada depois de deixar as linhas 1 a 4 corretas
 func clean_line_5() -> void:
-	_areas_to_clean(5)
+	_areas_to_clean([5])
 
 func save_progression() -> void:
 	var notebook_state: Array[int]
@@ -58,8 +105,6 @@ func save_progression() -> void:
 	SaveManager.save()
 
 func _on_close_pressed() -> void:
+	closed.emit()
 	save_progression()
 	visible = false
-	for i in b_scene.interactable_items.get_children():
-		if i != self:
-			i.visible = true

@@ -17,26 +17,14 @@ var alley_manager: AlleyManager
 func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
 	
-	Dialogic.text_signal.connect(increase_tips)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
 
 func on_game_loaded() -> void:
 	timelines_finished = GameState.timelines_finished.duplicate()
 
-func increase_tips(last_tip: bool) -> void:
-	alley_manager.increase_tips(last_tip)
-
 func _check_complete_timelines(t: String) -> bool:
 	return timelines_finished.has(t)
-
-func _get_door_timeline() -> String:
-	if !_check_complete_timelines("beco_metal_door_1") and !_check_complete_timelines("beco_notebook_4"):
-		return "beco_metal_door_1"
-	if _check_complete_timelines("beco_notebook_4") and has_all_correct_lines():
-		return "beco_metal_door_2"
-	else:
-		return "beco_incomplete_scene_3"
 
 func has_all_correct_lines() -> bool:
 	return (correct_lines.has(1) &&
@@ -44,42 +32,6 @@ func has_all_correct_lines() -> bool:
 			correct_lines.has(3) &&
 			correct_lines.has(4) &&
 			correct_lines.has(5))
-
-func _get_trash_timeline() -> String:
-	if !_check_complete_timelines("beco_trash_1") and !_check_complete_timelines("beco_trash_2"):
-		if _check_complete_timelines("beco_metal_door_1") and _check_complete_timelines("beco_notebook_1"):
-			if !PuzzleManager.puzzle_started:
-				PuzzleManager.puzzle_started = true
-			notebook_ref._areas_to_clean(1); notebook_ref._areas_to_clean(4)
-			return "beco_trash_2"
-		else:
-			return "beco_trash_1"
-	elif !_check_complete_timelines("beco_trash_3"):
-		if !PuzzleManager.puzzle_started:
-			PuzzleManager.puzzle_started = true
-		notebook_ref._areas_to_clean(1); notebook_ref._areas_to_clean(4)
-		return "beco_trash_3"
-	elif !_check_complete_timelines("beco_trash_4") and correct_lines.has(1) and correct_lines.has(4):
-		notebook_ref._areas_to_clean(2); notebook_ref._areas_to_clean(3)
-		return "beco_trash_4"
-	else:
-		return "beco_incomplete_scene_2"
-
-func _get_notebook_timeline() -> String:
-	if !_check_complete_timelines("beco_notebook_1") and !_check_complete_timelines("beco_trash_1") and !_check_complete_timelines("beco_trash_2") and !_check_complete_timelines("beco_trash_3"):
-		return "beco_notebook_1"
-	elif !_check_complete_timelines("beco_notebook_2") and _check_complete_timelines("beco_metal_door_1") and (_check_complete_timelines("beco_trash_2") or _check_complete_timelines("beco_trash_3")):
-		return "beco_notebook_2"
-	elif !_check_complete_timelines("beco_notebook_3") and _check_complete_timelines("beco_trash_4"):
-		return "beco_notebook_3"
-	elif !_check_complete_timelines("beco_notebook_4") and correct_lines.has(2) and correct_lines.has(3):
-		notebook_ref._areas_to_clean(5)
-		return "beco_notebook_4"
-	elif !PuzzleManager.puzzle_started:
-		return "beco_incomplete_scene_1"
-		
-	# Previne tocar a timeline 1 e mostrar o caderno ao mesmo tempo
-	return ""
 
 ## Quando uma timeline começar.
 func _on_timeline_started() -> void:

@@ -10,14 +10,14 @@
 "style": "placeholder_vn_style",
 "suffix": ""
 },
-&"default_portrait": "mystery_caller",
+&"default_portrait": "mystery",
 &"description": "",
 &"display_name": "???",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"mystery_caller": {
+"mystery": {
 "export_overrides": {
 "image": "\"res://Assets/Sprites/mystery_man/anonimo.png\""
 },
@@ -27,7 +27,7 @@
 "scene": "res://addons/dialogic/Modules/HighlightPortrait/simple_highlight_portrait.tscn",
 "sound_mood": "Sound 1"
 },
-"mystery_caller2": {
+"red eye": {
 "export_overrides": {
 "image": "\"res://Assets/Sprites/mystery_man/anonimo2.png\""
 },

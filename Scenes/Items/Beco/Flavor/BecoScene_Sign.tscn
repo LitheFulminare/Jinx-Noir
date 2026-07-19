@@ -10,3 +10,4 @@ texture_click_mask = ExtResource("2_ira1e")
 script = ExtResource("3_6aswu")
 item_type = "sign"
 delete_after_interaction = false
+timeline_uid = "uid://dbiight8vkg2m"

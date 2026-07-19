@@ -1,0 +1,21 @@
+join protagonist (sad) rightmost [animation="Slide From Left" length="0.4" wait="true" mirrored="true"]
+protagonist (sad): Nada mudou… que droga…
+join mystery_caller (mystery) leftmost
+mystery_caller (mystery): A senha…
+protagonist (scare): Quem está aí??? Como assim senha? Não me assusta assim não!
+mystery_caller (mystery): …
+protagonist (worried): Olá? Não vai me responder?
+mystery_caller (mystery): ...
+protagonist (default): Ah, tudo bem então. Eu me viro sozinha.
+protagonist (curious): Enfim, senha né? Acho que tem a ver com o próprio texto na caderneta. Espero que dê certo.
+protagonist (ritual): Em suas patas,
+protagonist (ritual): Em meio às trevas,
+protagonist (ritual): No sangue que uniria os mundos,
+protagonist (ritual): No sangue que uniria os mundos,
+protagonist (ritual): Os números nos amaldiçoam,
+protagonist (ritual): Assim como os pesadelos e os sonhos.
+[wait time="0.6"]
+audio sfx "res://Assets/Audio/SFX/Objects/door_opening.wav" [volume="-5.0"]
+[wait time="1.2"]
+protagonist (default): Absurdamente específico, ainda acho que estou sonhando. Mas pelo menos deu certo. Hora de continuar a investigação.
+[signal arg="go_to_ritual_room"]

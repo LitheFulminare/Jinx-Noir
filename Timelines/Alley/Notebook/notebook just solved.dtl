@@ -1,0 +1,4 @@
+# PLAY SOUND HERE
+protagonist (default): O mesmo barulho que tava vindo do caderno… agora parece ter saído da porta!
+protagonist (default): Espero que isso seja um bom sinal…
+set {Alley.book_complete} = true

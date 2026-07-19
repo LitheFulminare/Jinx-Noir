@@ -12,7 +12,7 @@ texture_click_mask = ExtResource("2_c37jl")
 script = ExtResource("1_kx1vl")
 item_type = "camera"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_udhjc")
+timeline_uid = "uid://dh3jqiq3dthoq"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

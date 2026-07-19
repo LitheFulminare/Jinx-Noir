@@ -109,15 +109,20 @@ func add_line(text_data: TextData, new_place: PuzzleText) -> void:
 	# adiciona texto no array e chama os diálogos
 	TimelineManager.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
 	print("Adding " + str(text_data.text_num) + " to array")
-	if (TimelineManager.correct_lines.has(1) && 
-		TimelineManager.correct_lines.has(2)):
-			if (TimelineManager.correct_lines.has(3) &&
-				TimelineManager.correct_lines.has(4) &&
-				!TimelineManager.correct_lines.has(5)):
-				TimelineManager.clean_text_5()
-				Dialogic.start("beco_notebook_4")
-			elif !TimelineManager._check_complete_timelines("beco_notebook_3"):
-				Dialogic.start("beco_notebook_3")
+	if TimelineManager.correct_lines.size() == 3:
+		if !TimelineManager.timelines_finished.has("notebook_line_5"):
+			notebook._areas_to_clean([5])
+			Dialogic.start("uid://dx061ukmmugty")
+	#if (TimelineManager.correct_lines.has(1) && 
+		#TimelineManager.correct_lines.has(2)):
+			#if (TimelineManager.correct_lines.has(3) &&
+				#TimelineManager.correct_lines.has(4) &&
+				#!TimelineManager.correct_lines.has(5)):
+				#TimelineManager.clean_text_5()
+				#Dialogic.start("beco_notebook_4")
+			#elif !TimelineManager._check_complete_timelines("beco_notebook_3"):
+				#Dialogic.start("beco_notebook_3")
+	notebook.check_lines()
 
 ## Remove o texto do array caso esteja nele.
 func remove_line(data_to_remove: TextData) -> void:

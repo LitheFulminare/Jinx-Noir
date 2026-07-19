@@ -1,0 +1,14 @@
+join protagonist (default) rightmost [mirrored="true"]
+if {Alley.Notebook.has_cleaned_a_line} == false:
+	# Sound
+	protagonist (curious): Que barulho foi esse? Parece ter vindo direto do caderno.
+	# Sound
+	protagonist (default): Se repetiu. Melhor eu dar uma olhada.
+else:
+	# Sound x2
+	protagonist (curious): Dessa vez o barulho se repetiu. Que estranho.
+	protagonist (default): De qualquer forma, hora de voltar pro caderno.
+set {Alley.Notebook.has_cleaned_a_line} = true
+set {Alley.Notebook.times_cleaned} += 2.0
+[signal arg="open_notebook"]
+jump notebook/

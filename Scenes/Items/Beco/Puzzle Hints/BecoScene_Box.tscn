@@ -12,7 +12,7 @@ texture_click_mask = ExtResource("2_y2oy2")
 script = ExtResource("1_u8ycp")
 item_type = "chair"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_13slv")
+timeline_uid = "uid://bcuv7xkty1q3v"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0
