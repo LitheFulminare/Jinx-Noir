@@ -2,19 +2,16 @@
 class_name AlleyManager
 extends Node2D
 
-@export var tip_label: Label
 var has_trash = false
 
 @onready var interactable_items = $Scene_Elements/Beco_BG/Interactable_Items
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var notebook: Notebook = %NotebookPuzzle
+## Blocks interaction with items when the notebook is open.
 @onready var interaction_blocker: Control = %InteractionBlocker
 
 @export_category("Próxima Cena")
 @export var next_scene: PackedScene
-
-var current_item: Item
-var current_tips: int = 0
 
 var interactions: Array[String] = []
 
@@ -60,20 +57,9 @@ func _check_interactions() -> void:
 			clean_texts.append(text)
 	if clean_texts.size() > 0:
 		notebook._areas_to_clean(clean_texts)
-
-func increase_tips(last_tip: bool) -> void:
-	if !current_item.any_tips_left:
-		return
-	
-	current_tips += 1
-	if last_tip:
-		current_item.any_tips_left = false
-		
-	tip_label.text = "Pistas: " + str(current_tips) + " /14"
 	
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
-	current_item = item
 	if item.item_type != "notebook":
 		Dialogic.start(item.timeline_uid)
 		return

@@ -57,9 +57,6 @@ func _areas_to_clean(texts: Array[int]):#text_num: int):
 	if texts_cleaned.size() == 0:
 		return
 	
-	# This needs to be here or the notebook won't open
-	#Dialogic.VAR.Alley.Notebook.has_cleaned_a_line = true
-	
 	if texts_cleaned.size() == 1:
 		Dialogic.start("uid://b7cbwfakv6m8c")
 	else:
@@ -103,6 +100,3 @@ func _on_close_pressed() -> void:
 	closed.emit()
 	save_progression()
 	visible = false
-	#for i in b_scene.interactable_items.get_children():
-		#if i != self:
-			#i.visible = true

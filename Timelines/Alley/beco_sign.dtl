@@ -1,4 +1,4 @@
-join protagonist (curious) rightmost [animation="Slide From Right"]
+join protagonist (curious) rightmost [animation="Slide From Right" mirrored="true"]
 protagonist: Hm, uma placa. Tem algo escrito… em letras miúdas.
 AVISO\: A luminária acima da porta está com mal funcionamento. Parece que algum mosquito deu um jeito de entrar e sujar com sangue.
 Em meio à situação, por favor não confie no que não possa ser enxergado corretamente. Não apenas pelo desgaste elétrico, mas também pelo sangue

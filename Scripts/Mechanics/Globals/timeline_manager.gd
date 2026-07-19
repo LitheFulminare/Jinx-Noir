@@ -23,19 +23,8 @@ func _ready() -> void:
 func on_game_loaded() -> void:
 	timelines_finished = GameState.timelines_finished.duplicate()
 
-func increase_tips(last_tip: bool) -> void:
-	alley_manager.increase_tips(last_tip)
-
 func _check_complete_timelines(t: String) -> bool:
 	return timelines_finished.has(t)
-
-func _get_door_timeline() -> String:
-	if !_check_complete_timelines("beco_metal_door_1") and !_check_complete_timelines("beco_notebook_4"):
-		return "beco_metal_door_1"
-	if _check_complete_timelines("beco_notebook_4") and has_all_correct_lines():
-		return "beco_metal_door_2"
-	else:
-		return "beco_incomplete_scene_3"
 
 func has_all_correct_lines() -> bool:
 	return (correct_lines.has(1) &&

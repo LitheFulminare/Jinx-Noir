@@ -1,5 +1,5 @@
 set {Alley.interacted_with_trash} = true
-join protagonist (curious) rightmost
+join protagonist (curious) rightmost [mirrored="true"]
 protagonist (curious): Uma lata de lixo. Verde musgo, molhada por conta da chuva, parece ter sido atingida por alguma coisa afiada…
 protagonist (curious): Levemente danificada nas laterais, nada de relevante na tampa.
 protagonist (default): Agora, hora de ver a parte de dentro…
