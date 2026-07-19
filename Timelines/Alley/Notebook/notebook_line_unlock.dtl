@@ -12,6 +12,7 @@ elif {Alley.Notebook.times_cleaned} == 4.0:
 	protagonist: O barulho denovo… espero que essa seja a última vez.
 elif {Alley.Notebook.times_cleaned} == 5.0:
 	protagonist: Tá, agora é a última vez, tenho certeza. Vou ter pesadelos com esse som…
+	jump notebook/
 set {Alley.Notebook.times_cleaned} += 1.0
 [signal arg="open_notebook"]
 [wait time="1.5"]
