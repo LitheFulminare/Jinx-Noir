@@ -1,4 +1,4 @@
-join protagonist rightmost [animation="Slide From Right"]
+join protagonist rightmost [animation="Slide From Right" mirrored="true"]
 protagonist: Tem uma janela aqui, bem pequena, eu não conseguiria passar por aí.
 protagonist (curious): E não dá pra ver nada do outro lado… mas… tem algo marcado aqui.
 if {Alley.interacted_with_trash} == true:

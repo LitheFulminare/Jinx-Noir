@@ -39,6 +39,8 @@ func _handle_dialogic_signals(arg: String) -> void:
 	match arg:
 		"open_notebook":
 			open_notebook()
+		"go_to_ritual_room":
+			go_to_ritual_room()
 
 ## Called everytime a timeline ends.
 func _check_interactions() -> void:

@@ -1,4 +1,4 @@
-join protagonist (default) rightmost
+join protagonist (default) rightmost [mirrored="true"]
 if {Alley.Notebook.has_cleaned_a_line} == false:
 	# Sound
 	protagonist (curious): Que barulho foi esse? Parece ter vindo direto do caderno.

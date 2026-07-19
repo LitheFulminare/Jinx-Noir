@@ -36,6 +36,14 @@ func initialize_texts() -> void:
 #func _verify_save_path(path: String):
 	#DirAccess.make_dir_absolute(save_path)
 
+## Checks if all lines are in place.
+func check_lines() -> void:
+	if !TimelineManager.has_all_correct_lines():
+		return
+	if TimelineManager.timelines_finished.has("notebook just solved"):
+		return
+	Dialogic.start("uid://86s08msnla8r") # notebook just solved timeline
+
 func _open_notebook():
 	visibility_player.play("open_notebook")
 
