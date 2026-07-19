@@ -6,4 +6,3 @@ if {Alley.interacted_with_trash} == true:
 else:
 	protagonist: É uma pata felina. Dianteira, de cinco unhas, e não parece ser um desenho…
 protagonist (default): Ok, só consigo concluir a existência de uma pata por enquanto. É melhor eu voltar a investigar os arredores.
-do TimelineManager.increase_tips(true)

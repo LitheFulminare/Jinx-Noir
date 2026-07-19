@@ -14,4 +14,4 @@ audio "res://Assets/Audio/SFX/Objects/Sangue Pingando 3.wav" [volume="4.5"]
 [wait time="0.3"]
 protagonist (worried): Trancada, óbvio. Mas… que barulho foi esse?
 protagonist (default): Bem, vou investigar melhor os arredores.
-do TimelineManager.increase_tips(true)
+set {Alley.interacted_with_door} = true

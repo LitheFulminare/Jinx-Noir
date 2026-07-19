@@ -6,6 +6,6 @@ if {Alley.interacted_with_book} == false:
 	protagonist (curious): Parece antigo, de tipo, uns 50 anos atrás…
 	E foi aí que o ---- cometeu um terrível erro\: --- --- nome -- quatro letras para -- filhote. O --- é que eles ---- pensando? --- antes da --- feira… e depois do parto carmesim. E então, --- nasceu amaldiçoada.
 	protagonist (worried): Que… estranho.
-	do TimelineManager.increase_tips(true)
+	set {Alley.interacted_with_book} = true
 else:
 	E foi aí que o ---- cometeu um terrível erro\: --- --- nome -- quatro letras para -- filhote. O --- é que eles ---- pensando? --- antes da --- feira… e depois do parto carmesim. E então, --- nasceu amaldiçoada.

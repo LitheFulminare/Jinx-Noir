@@ -1,0 +1,18 @@
+join protagonist rightmost [mirrored="true"]
+# Sound
+# Wait
+if {Alley.Notebook.times_cleaned} == 1.0:
+	protagonist: Que barulho foi esse? Parece ter vindo direto do caderno.
+	protagonist: Seria uma boa eu dar uma olhada.
+elif {Alley.Notebook.times_cleaned} == 2.0:
+	protagonist: O mesmo barulho de antes. Espero que alguma coisa tenha mudado.
+elif {Alley.Notebook.times_cleaned} == 3.0:
+	protagonist: Melhor eu seguir o protocolo. Hora de voltar pro caderno.
+elif {Alley.Notebook.times_cleaned} == 4.0:
+	protagonist: O barulho denovo… espero que essa seja a última vez.
+elif {Alley.Notebook.times_cleaned} == 5.0:
+	protagonist: Tá, agora é a última vez, tenho certeza. Vou ter pesadelos com esse som…
+set {Alley.Notebook.times_cleaned} += 1.0
+[signal arg="open_notebook"]
+[wait time="1.5"]
+jump notebook/

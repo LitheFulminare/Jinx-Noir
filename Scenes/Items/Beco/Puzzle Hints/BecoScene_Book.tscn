@@ -14,7 +14,7 @@ texture_click_mask = ExtResource("2_ovou2")
 script = ExtResource("1_f0uhb")
 item_type = "book"
 delete_after_interaction = false
-hovered_texture = ExtResource("2_xtp12")
+timeline_uid = "uid://cla05fytr8ml7"
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0
