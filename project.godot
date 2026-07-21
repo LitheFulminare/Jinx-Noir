@@ -151,6 +151,16 @@ glossary/glossary_files=[]
 save/autosave=false
 save/autosave_mode=0
 save/default_slot="autosave"
+audio/type_sound_bus="SFX"
+layout/end_behaviour=0
+event_default_overrides={
+"Clear": {
+"clear_background": false,
+"clear_music": false,
+"clear_portrait_positions": false,
+"clear_style": false
+}
+}
 
 [display]
 
