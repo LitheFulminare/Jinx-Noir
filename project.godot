@@ -104,6 +104,9 @@ variables={
 "interacted_with_sign": false,
 "interacted_with_trash": false
 },
+"Office": {
+"answered_phone": false
+},
 "got_book": false
 }
 text/letter_speed=0.05

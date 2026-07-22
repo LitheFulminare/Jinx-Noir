@@ -20,3 +20,4 @@ leave mystery_caller [animation="Fade Out" wait="true"]
 [wait time="0.2"]
 audio sfx "res://Assets/Audio/SFX/Objects/Phone_hang_up.wav"
 protagonist (default): Ah… ela desligou. Bem, pelo menos é algo pra matar meu tédio.
+set {Office.answered_phone} = true

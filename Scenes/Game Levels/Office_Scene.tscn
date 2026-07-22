@@ -203,6 +203,7 @@ offset_bottom = 538.44055
 scale = Vector2(0.59780926, 0.61545354)
 scene_ref = NodePath("../../../..")
 delete_after_interaction = false
+timeline_uid = "uid://cn7k50ne7kkj2"
 
 [node name="(DISABLED) OfficeShelf_R" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1915879513 node_paths=PackedStringArray("scene_ref") instance=ExtResource("7_26bys")]
 z_index = 1
@@ -234,6 +235,7 @@ rotation = 0.007945925
 scale = Vector2(0.5650997, 0.56813204)
 item_type = "phone"
 scene_ref = NodePath("../../../..")
+timeline_uid = "uid://dy1hfwdofxhbp"
 
 [node name="Office_Chair" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1858440459 node_paths=PackedStringArray("scene_ref") instance=ExtResource("11_0hx8r")]
 layout_mode = 0

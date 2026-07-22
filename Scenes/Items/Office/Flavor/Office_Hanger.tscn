@@ -11,4 +11,4 @@ texture_click_mask = ExtResource("2_k0mmj")
 script = ExtResource("1_rt4hr")
 item_type = "hanger"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_euybr")
+timeline_uid = "uid://doe1l3gj52655"

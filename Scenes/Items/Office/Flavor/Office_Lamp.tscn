@@ -11,4 +11,4 @@ texture_click_mask = ExtResource("2_6tv2e")
 script = ExtResource("1_rlofg")
 item_type = "lamp"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_feeyw")
+timeline_uid = "uid://c31pvmc5msr5q"

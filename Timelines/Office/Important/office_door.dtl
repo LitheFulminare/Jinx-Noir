@@ -1,4 +1,9 @@
-join protagonist (curious) left [animation="Slide From Left" length="0.6" wait="true" z_index="1"]
-protagonist: Beco da Rua XV… é perto daqui. Umas três quadras de distância.
-protagonist (default): É melhor eu ir logo.
-leave protagonist [animation="Slide To Right" wait="true"]
+join protagonist (curious) rightmost [animation="Slide From Left" length="0.6" wait="true" z_index="1" mirrored="true"]
+if {Office.answered_phone} == true:
+	protagonist: Beco da Rua XV… é perto daqui. Umas três quadras de distância.
+	protagonist (default): É melhor eu ir logo.
+	leave protagonist [animation="Slide To Left"]
+	[wait time="1.5"]
+	[signal arg="go_to_alley"]
+else:
+	protagonist (default): Eu preciso atender o telefone antes...
