@@ -1,11 +1,18 @@
-join protagonist (default) rightmost [mirrored="true"]
 if {Alley.Notebook.has_cleaned_a_line} == false:
-	# Sound
+	audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav" [bus="SFX"]
+	[wait time="1.0"]
+	join protagonist (default) rightmost [mirrored="true"]
 	protagonist (curious): Que barulho foi esse? Parece ter vindo direto do caderno.
-	# Sound
+	[wait time="0.5"]
+	audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav" [bus="SFX"]
+	[wait time="0.5"]
 	protagonist (default): Se repetiu. Melhor eu dar uma olhada.
 else:
-	# Sound x2
+	audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav" [sync=""]
+	[wait time="1.2"]
+	audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav"
+	[wait time="1.0"]
+	join protagonist (default) rightmost [mirrored="true"]
 	protagonist (curious): Dessa vez o barulho se repetiu. Que estranho.
 	protagonist (default): De qualquer forma, hora de voltar pro caderno.
 set {Alley.Notebook.has_cleaned_a_line} = true
