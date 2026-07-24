@@ -5,13 +5,9 @@ extends Node2D
 var has_trash = false
 
 @onready var interactable_items = $Scene_Elements/Beco_BG/Interactable_Items
-@onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var notebook: Notebook = %NotebookPuzzle
 ## Blocks interaction with items when the notebook is open.
 @onready var interaction_blocker: Control = %InteractionBlocker
-
-@export_category("Próxima Cena")
-@export var next_scene: PackedScene
 
 var interactions: Array[String] = []
 
@@ -25,8 +21,6 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_check_interactions)
 	notebook.closed.connect(notebook_closed)
 	
-	animation_player.play("Fade_In")
-	await animation_player.animation_finished
 	Dialogic.start("beco_start")
 	
 	GameState.current_scene = SceneID.ALLEY_SCENE
@@ -79,7 +73,5 @@ func notebook_closed() -> void:
 	interaction_blocker.visible = false
 	
 func go_to_ritual_room() -> void:
-	animation_player.play("Fade_Out")
-	await animation_player.animation_finished
+	# Change scene here
 	TimelineManager.alley_manager = null
-	get_tree().change_scene_to_packed(next_scene)

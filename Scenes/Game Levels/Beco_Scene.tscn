@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cnw2ei7sdvg4l"]
 
 [ext_resource type="Script" uid="uid://w4kxkpanccg1" path="res://Scripts/Mechanics/Scenes/becoScene_logic.gd" id="1_rwci3"]
-[ext_resource type="PackedScene" uid="uid://6dm6tvn0abm4" path="res://Scenes/Game Levels/RitualRoom_Scene.tscn" id="2_4qler"]
 [ext_resource type="PackedScene" uid="uid://1k0u5t53vji6" path="res://Scenes/Items/Beco/Puzzle Components/BecoScene_Notebook.tscn" id="3_wgc12"]
 [ext_resource type="PackedScene" uid="uid://bpfnqi71pwocb" path="res://Scenes/Items/Beco/Puzzle Components/BecoScene_Door_1.tscn" id="4_6xvgo"]
 [ext_resource type="Texture2D" uid="uid://cn3wb3j71dnuu" path="res://Assets/Backgrounds/Beco.png" id="4_h26ys"]
@@ -20,100 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://cs3k18cyqi8yq" path="res://Scenes/Items/Beco/Flavor/BecoScene_Window.tscn" id="17_kuu5w"]
 [ext_resource type="PackedScene" uid="uid://cj23nctcbpsx7" path="res://Scenes/Items/Beco/Flavor/BecoScene_Sign.tscn" id="18_l515w"]
 
-[sub_resource type="Animation" id="Animation_4qler"]
-resource_name = "Fade_In"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade_Color:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fade_Color:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tkmna"]
-resource_name = "Fade_Out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade_Color:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.02),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fade_Color:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ulfh7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade_Color:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Fade_Color:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkmna"]
-_data = {
-&"Fade_In": SubResource("Animation_4qler"),
-&"Fade_Out": SubResource("Animation_tkmna"),
-&"RESET": SubResource("Animation_ulfh7")
-}
-
 [node name="BecoScene" type="Node2D" unique_id=1615627716]
 scale = Vector2(0.56, 0.56)
 script = ExtResource("1_rwci3")
-next_scene = ExtResource("2_4qler")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=1264917687]
 
@@ -328,23 +236,6 @@ expand_mode = 1
 stretch_mode = 4
 b_scene = NodePath("../../../..")
 metadata/_edit_use_anchors_ = true
-
-[node name="Fade_Color" type="ColorRect" parent="Scene_Elements" unique_id=434344345]
-z_index = 6
-z_as_relative = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scene_Elements" unique_id=338705949]
-libraries/ = SubResource("AnimationLibrary_tkmna")
 
 [node name="Pause_Screen" parent="." unique_id=602457543 instance=ExtResource("7_xo8tj")]
 layer = 1261

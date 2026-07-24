@@ -2,10 +2,6 @@
 class_name MainMenuManager
 extends Control
 
-@export_category("Level Configurations")
-## Qual nível o botão deverá ir (caso tiver um botão de trocar de nível)
-@export var level_to: PackedScene
-
 @onready var options_menu_ref = $Settings_Screen
 @onready var options_animationPlayer = null
 @onready var animation_player = $Transition_FX
@@ -21,10 +17,7 @@ func _ready() -> void:
 ## Quando o botão "Iniciar" for pressionado
 func _on_start_pressed() -> void:
 	MusicManager.play_music(gameplay_theme, -6, true, 2)
-	
-	animation_player.play("Fade-Out")
-	await animation_player.animation_finished
-	get_tree().change_scene_to_packed(level_to) # Vai para cena indicada pelo Level_To
+	SceneLoader.load_scene(Constants.SCENE_PATHS.office)
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
