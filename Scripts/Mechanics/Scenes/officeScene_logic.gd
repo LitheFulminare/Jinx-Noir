@@ -9,6 +9,9 @@ var timeline_playing:= false
 @onready var interactable_items = $Scene_Elements/Placeholder_BG/Interactable_Items
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var audio_player = $Audio_Player
+@onready var door: Item = %Door
+@onready var phone: Item = %Phone
+@onready var phone_audio_player: AudioStreamPlayer2D = %PhoneAudioPlayer
 
 var phone_picked:= false
 var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
@@ -18,40 +21,46 @@ var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
+	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
 
 	animation_player.play("Fade_In")
 	GameState.current_scene = SceneID.OFFICE_SCENE
 
+func _handle_dialogic_signals(method_name: String) -> void:
+	if has_method(method_name):
+		call(method_name)
+		return
+	printerr("Tried to call an inexistent method.")
+
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
-func _on_item_interacted(i: Item) -> void:
-	match i.item_type:
-		"phone": 
-			Dialogic.start("office_phone_call")
-		"door":
-			if phone_picked:
-				Dialogic.start("office_door")
-			else:
-				Dialogic.start("office_incomplete_scene_1")
-		_:
-			Dialogic.start("office_" + i.item_type)
-			
+func _on_item_interacted(item: Item) -> void:
+	_check_interactions(item)
+	Dialogic.start(item.timeline_uid)
+
+func _check_interactions(item: Item):
+	if !item.interacted_once:
+		item.interacted_once = true
+		Dialogic.VAR.Office.items_interacted += 1
+	if Dialogic.VAR.Office.items_interacted == 4:
+		phone_audio_player.play()
+		phone.disabled = false
+
+func phone_call_started() -> void:
+	phone_audio_player.stop()
+
+func phone_call_over() -> void:
+	door.disabled = false
+
 ## Quando uma timeline começar
 func _on_timeline_started() -> void:
 	cur_timeline = Dialogic.current_timeline #  Guarda qual timeline é na variável
 	timeline_playing = true # Diz que tem uma timeline ativa
-	print("'", cur_timeline.get_identifier(), "'", " começou: ", timeline_playing) # Debug pra indicar qual timeline está tocando e se realmente está tocando
 	
 ## Quando uma timeline terminar 
 func _on_timeline_ended() -> void:
 	timeline_playing = false # Diz que a timeline não está ativa
-	print("'", cur_timeline.get_identifier(), "'", " terminou: ", !timeline_playing) # Debug pra indicar qual timeline está terminou e se realmente está terminado
-	if cur_timeline.get_identifier() == "office_phone_call":
-		phone_picked = true
-	if cur_timeline.get_identifier() == "office_door":
-		go_to_alley()
-		
 	cur_timeline = null
 
 func go_to_alley() -> void:

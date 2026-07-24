@@ -104,6 +104,10 @@ variables={
 "interacted_with_sign": false,
 "interacted_with_trash": false
 },
+"Office": {
+"answered_phone": false,
+"items_interacted": 0.0
+},
 "got_book": false
 }
 text/letter_speed=0.05
@@ -151,6 +155,16 @@ glossary/glossary_files=[]
 save/autosave=false
 save/autosave_mode=0
 save/default_slot="autosave"
+audio/type_sound_bus="SFX"
+layout/end_behaviour=0
+event_default_overrides={
+"Clear": {
+"clear_background": false,
+"clear_music": false,
+"clear_portrait_positions": false,
+"clear_style": false
+}
+}
 
 [display]
 

@@ -1,7 +1,7 @@
 join protagonist (default) rightmost [mirrored="true"]
+label After character spawn
 if {Alley.Notebook.last_line_cleaned} == 1.0:
 	jump notebook_line_1/
-	# Comment called after jumping to timeline notebok__line_1
 elif {Alley.Notebook.last_line_cleaned} == 2.0:
 	jump notebook_line_2/
 elif {Alley.Notebook.last_line_cleaned} == 3.0:

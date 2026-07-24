@@ -11,4 +11,4 @@ texture_click_mask = ExtResource("2_llou4")
 script = ExtResource("1_bwq6m")
 item_type = "chair"
 delete_after_interaction = false
-hovered_texture = ExtResource("1_q76ie")
+timeline_uid = "uid://66rxysp5lyu4"

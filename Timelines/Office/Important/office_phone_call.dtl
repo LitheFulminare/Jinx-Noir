@@ -1,4 +1,6 @@
 join protagonist (default) rightmost [animation="Slide From Right" wait="true" z_index="1" mirrored="true"]
+[signal arg="phone_call_started"]
+[wait time="0.5"]
 protagonist (default): Jynx, detetive felina particular à disposição. Como posso lhe ajudar?
 join mystery_caller (mystery) leftmost [animation="Slide From Left" wait="true" z_index="1"]
 audio "res://Assets/Audio/SFX/Objects/phone_static.wav" [volume="-5.0"]
@@ -20,3 +22,6 @@ leave mystery_caller [animation="Fade Out" wait="true"]
 [wait time="0.2"]
 audio sfx "res://Assets/Audio/SFX/Objects/Phone_hang_up.wav"
 protagonist (default): Ah… ela desligou. Bem, pelo menos é algo pra matar meu tédio.
+# This variable might be obsolete now
+set {Office.answered_phone} = true
+[signal arg="phone_call_over"]

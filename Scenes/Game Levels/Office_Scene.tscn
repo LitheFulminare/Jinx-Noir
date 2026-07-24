@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bxe1w5clrd6a5" path="res://Scenes/Items/Office/Puzzle Components/Office_Door.tscn" id="10_xyajt"]
 [ext_resource type="PackedScene" uid="uid://c2i3jody8lnp3" path="res://Scenes/Items/Office/Flavor/Office_Chair.tscn" id="11_0hx8r"]
 [ext_resource type="PackedScene" uid="uid://smg8dtvjjf77" path="res://Scenes/Items/Office/Flavor/Office_Clock.tscn" id="13_2rppr"]
+[ext_resource type="AudioStream" uid="uid://4s4r02dcud3b" path="res://Assets/Audio/SFX/Objects/Phone_Ringing.wav" id="16_v53m3"]
 
 [sub_resource type="Animation" id="Animation_wkffy"]
 resource_name = "Fade_In"
@@ -120,31 +121,22 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -49.95145
-offset_top = -44.71193
-offset_right = 47.53705
-offset_bottom = 54.058594
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.89077675, 0.8127115)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="Scene_Elements/Placeholder_BG" unique_id=1304905371]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -356.75922
-offset_top = -226.00066
-offset_right = 1790.9999
-offset_bottom = 1096.5479
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.334, 0.334)
 texture = ExtResource("3_xyajt")
+expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Interactable_Items" type="Control" parent="Scene_Elements/Placeholder_BG" unique_id=484792981]
 layout_mode = 1
@@ -160,11 +152,13 @@ scale = Vector2(0.6295754, 0.6890516)
 [node name="OfficeShelf_L" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=796953314 node_paths=PackedStringArray("scene_ref") instance=ExtResource("8_sjxch")]
 z_index = 1
 layout_mode = 0
-offset_left = -95.91965
-offset_top = -265.488
-offset_right = 291.08035
-offset_bottom = 406.512
+offset_left = -85.77211
+offset_top = -214.78795
+offset_right = 266.83533
+offset_bottom = 372.5559
 scale = Vector2(0.5856042, 0.5856042)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
 [node name="Shelf_Blocker" type="TextureButton" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=223443363]
@@ -176,33 +170,42 @@ offset_bottom = 205.94049
 scale = Vector2(0.735, 0.735)
 texture_click_mask = ExtResource("4_0hx8r")
 
-[node name="Office_Blinds" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=982609040 node_paths=PackedStringArray("scene_ref") instance=ExtResource("8_03h1x")]
+[node name="Blinds" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=982609040 node_paths=PackedStringArray("scene_ref") instance=ExtResource("8_03h1x")]
 layout_mode = 0
-offset_left = -390.13635
-offset_top = -224.41656
-offset_right = 194.86365
-offset_bottom = 267.58344
+offset_left = -349.7037
+offset_top = -179.95749
+offset_right = 161.62497
+offset_bottom = 234.2955
 scale = Vector2(0.6006544, 0.58155483)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
-[node name="Office_Coat_Hanger" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=2079518193 node_paths=PackedStringArray("scene_ref") instance=ExtResource("9_srdwx")]
+[node name="CoatHanger" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=2079518193 node_paths=PackedStringArray("scene_ref") instance=ExtResource("9_srdwx")]
 layout_mode = 0
-offset_left = -391.9196
-offset_top = -181.55946
-offset_right = -157.91959
-offset_bottom = 432.44055
+offset_left = -357.38373
+offset_top = -148.02956
+offset_right = -126.34241
+offset_bottom = 362.9272
 scale = Vector2(0.54311234, 0.5907823)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
-[node name="Placeholder_Door" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=627670481 node_paths=PackedStringArray("scene_ref") instance=ExtResource("10_xyajt")]
+[node name="Door" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=627670481 node_paths=PackedStringArray("scene_ref") instance=ExtResource("10_xyajt")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 269.62228
-offset_top = -256.55942
-offset_right = 653.6223
-offset_bottom = 538.44055
+offset_left = 238.25581
+offset_top = -198.824
+offset_right = 578.3503
+offset_bottom = 437.8494
 scale = Vector2(0.59780926, 0.61545354)
+disabled = true
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 delete_after_interaction = false
+timeline_uid = "uid://cn7k50ne7kkj2"
 
 [node name="(DISABLED) OfficeShelf_R" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1915879513 node_paths=PackedStringArray("scene_ref") instance=ExtResource("7_26bys")]
 z_index = 1
@@ -215,42 +218,53 @@ scale = Vector2(0.5836534, 0.58365345)
 disabled = true
 scene_ref = NodePath("../../../..")
 
-[node name="Office_Lamp" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1025107382 node_paths=PackedStringArray("scene_ref") instance=ExtResource("6_jheww")]
+[node name="Lamp" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1025107382 node_paths=PackedStringArray("scene_ref") instance=ExtResource("6_jheww")]
 layout_mode = 0
-offset_left = -67.38956
-offset_top = -45.845215
-offset_right = 54.610443
-offset_bottom = 108.154785
+offset_left = -65.123245
+offset_top = -33.379208
+offset_right = 50.44188
+offset_bottom = 97.6326
 scale = Vector2(0.5497757, 0.5760248)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
-[node name="Placeholder_Phone" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=114531261 node_paths=PackedStringArray("scene_ref") instance=ExtResource("3_s3noc")]
+[node name="Phone" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=114531261 node_paths=PackedStringArray("scene_ref") instance=ExtResource("3_s3noc")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = -222.522
-offset_top = 9.511902
-offset_right = -73.522
-offset_bottom = 117.5119
+offset_left = -203.31161
+offset_top = 11.610153
+offset_right = -67.19632
+offset_bottom = 111.15459
 rotation = 0.007945925
 scale = Vector2(0.5650997, 0.56813204)
+disabled = true
+ignore_texture_size = true
+stretch_mode = 0
 item_type = "phone"
 scene_ref = NodePath("../../../..")
+timeline_uid = "uid://dy1hfwdofxhbp"
 
-[node name="Office_Chair" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1858440459 node_paths=PackedStringArray("scene_ref") instance=ExtResource("11_0hx8r")]
+[node name="Chair" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=1858440459 node_paths=PackedStringArray("scene_ref") instance=ExtResource("11_0hx8r")]
 layout_mode = 0
-offset_left = -1.4136963
-offset_top = -31.55951
-offset_right = 283.5863
-offset_bottom = 400.4405
+offset_left = -9.530275
+offset_top = -18.866491
+offset_right = 264.08673
+offset_bottom = 339.4888
 scale = Vector2(0.56309426, 0.59937143)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
-[node name="Office_Clock" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=660719719 node_paths=PackedStringArray("scene_ref") instance=ExtResource("13_2rppr")]
+[node name="Clock" parent="Scene_Elements/Placeholder_BG/Interactable_Items" unique_id=660719719 node_paths=PackedStringArray("scene_ref") instance=ExtResource("13_2rppr")]
 layout_mode = 0
-offset_left = 139.4537
-offset_top = -238.70229
-offset_right = 295.4537
-offset_bottom = -55.702286
+offset_left = 119.12789
+offset_top = -187.21384
+offset_right = 265.8664
+offset_bottom = -35.735474
 scale = Vector2(0.57369876, 0.5985257)
+ignore_texture_size = true
+stretch_mode = 0
 scene_ref = NodePath("../../../..")
 
 [node name="Fade_Color" type="ColorRect" parent="Scene_Elements" unique_id=1765385306]
@@ -278,6 +292,13 @@ stream = ExtResource("6_s3noc")
 volume_db = -10.0
 autoplay = true
 bus = &"Muffled Rain"
+
+[node name="PhoneAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=674924747]
+unique_name_in_owner = true
+scale = Vector2(0.99999994, 1)
+stream = ExtResource("16_v53m3")
+volume_db = -9.0
+bus = &"SFX"
 
 [node name="PauseScreen" parent="." unique_id=1931167145 instance=ExtResource("4_q8kq6")]
 process_priority = 1

@@ -16,7 +16,7 @@ func _ready() -> void:
 	## Atualiza a UI por segurança, para que sempre que começe um jogo esteja com os sprites certos
 	_update_ui()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_update_ui()
 	
 ## Faz a mudança de texto que está em cada espaço da grid
@@ -30,7 +30,7 @@ func _update_ui() -> void:
 	text.texture = text_data.current_sprite
 
 ## Seleciona a textura que deve ser arrastada para outro espaço
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	## Se não tiver algo no espaço, irá acontecer nada
 	if !text_data || text_data.is_censored:
 		return
@@ -54,14 +54,14 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	return self # }
 
 ## Faz possível o arrastamento de itens do tipo 'textdata'
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 	if TextData:
 		return true
 		
 	return false
 
 ## Após soltar o item, irá adiciona-lô ao espaço que estava sendo arrastado para cima
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# data é de onde o jogador está arrastando
 	
 	if text_data != null:
@@ -93,14 +93,13 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	data._update_ui() # }
 
 ## Testa se o texto está no lugar correto e adiciona no array. Também gerencia os diálogos.
-func add_line(text_data: TextData, new_place: PuzzleText) -> void:
-	
+func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
 	if !new_place.name.begins_with("A"):
 		return
 		
 	# se o nome começar com "A" ->
-	if str(text_data.text_num) != new_place.name.substr(new_place.name.length() - 1):
-		print("Texto " + str(text_data.text_num) + " no local " + 
+	if str(_text_data.text_num) != new_place.name.substr(new_place.name.length() - 1):
+		print("Texto " + str(_text_data.text_num) + " no local " + 
 			str(new_place.name.substr(new_place.name.length() - 1)))
 		print("Texto no lugar incorreto")
 		return
@@ -108,20 +107,11 @@ func add_line(text_data: TextData, new_place: PuzzleText) -> void:
 	# se o texto estiver no lugar correto ->
 	# adiciona texto no array e chama os diálogos
 	TimelineManager.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
-	print("Adding " + str(text_data.text_num) + " to array")
+	print("Adding " + str(_text_data.text_num) + " to array")
 	if TimelineManager.correct_lines.size() == 3:
 		if !TimelineManager.timelines_finished.has("notebook_line_5"):
 			notebook._areas_to_clean([5])
-			Dialogic.start("uid://dx061ukmmugty")
-	#if (TimelineManager.correct_lines.has(1) && 
-		#TimelineManager.correct_lines.has(2)):
-			#if (TimelineManager.correct_lines.has(3) &&
-				#TimelineManager.correct_lines.has(4) &&
-				#!TimelineManager.correct_lines.has(5)):
-				#TimelineManager.clean_text_5()
-				#Dialogic.start("beco_notebook_4")
-			#elif !TimelineManager._check_complete_timelines("beco_notebook_3"):
-				#Dialogic.start("beco_notebook_3")
+			Dialogic.start("uid://dx061ukmmugty") # "notebook" timeline
 	notebook.check_lines()
 
 ## Remove o texto do array caso esteja nele.

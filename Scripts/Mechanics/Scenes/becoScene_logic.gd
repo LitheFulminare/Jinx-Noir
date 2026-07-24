@@ -35,12 +35,11 @@ func _ready() -> void:
 func on_game_loaded() -> void:
 	return
 
-func _handle_dialogic_signals(arg: String) -> void:
-	match arg:
-		"open_notebook":
-			open_notebook()
-		"go_to_ritual_room":
-			go_to_ritual_room()
+func _handle_dialogic_signals(method_name: String) -> void:
+	if has_method(method_name):
+		call(method_name)
+		return
+	printerr("Tried to call an inexistent method.")
 
 ## Called everytime a timeline ends.
 func _check_interactions() -> void:

@@ -1,6 +1,6 @@
+audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav" [bus="SFX"]
+[wait time="1.0"]
 join protagonist rightmost [mirrored="true"]
-# Sound
-# Wait
 if {Alley.Notebook.times_cleaned} == 1.0:
 	protagonist: Que barulho foi esse? Parece ter vindo direto do caderno.
 	protagonist: Seria uma boa eu dar uma olhada.
@@ -13,7 +13,8 @@ elif {Alley.Notebook.times_cleaned} == 4.0:
 elif {Alley.Notebook.times_cleaned} == 5.0:
 	protagonist: Tá, agora é a última vez, tenho certeza. Vou ter pesadelos com esse som…
 	# Jump to notebook
+if {Alley.Notebook.last_line_cleaned} != 5.0:
+	[signal arg="open_notebook"]
 set {Alley.Notebook.times_cleaned} += 1.0
-[signal arg="open_notebook"]
 [wait time="1.5"]
-jump notebook/
+jump notebook/After character spawn
