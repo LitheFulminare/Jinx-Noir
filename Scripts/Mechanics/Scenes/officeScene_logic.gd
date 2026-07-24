@@ -9,6 +9,9 @@ var timeline_playing:= false
 @onready var interactable_items = $Scene_Elements/Placeholder_BG/Interactable_Items
 @onready var animation_player = $Scene_Elements/AnimationPlayer
 @onready var audio_player = $Audio_Player
+@onready var door: Item = %Door
+@onready var phone: Item = %Phone
+@onready var phone_audio_player: AudioStreamPlayer2D = %PhoneAudioPlayer
 
 var phone_picked:= false
 var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
@@ -33,8 +36,23 @@ func _handle_dialogic_signals(method_name: String) -> void:
 
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
+	_check_interactions(item)
 	Dialogic.start(item.timeline_uid)
-	
+
+func _check_interactions(item: Item):
+	if !item.interacted_once:
+		item.interacted_once = true
+		Dialogic.VAR.Office.items_interacted += 1
+	if Dialogic.VAR.Office.items_interacted == 4:
+		phone_audio_player.play()
+		phone.disabled = false
+
+func phone_call_started() -> void:
+	phone_audio_player.stop()
+
+func phone_call_over() -> void:
+	door.disabled = false
+
 ## Quando uma timeline começar
 func _on_timeline_started() -> void:
 	cur_timeline = Dialogic.current_timeline #  Guarda qual timeline é na variável

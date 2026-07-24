@@ -105,7 +105,8 @@ variables={
 "interacted_with_trash": false
 },
 "Office": {
-"answered_phone": false
+"answered_phone": false,
+"items_interacted": 0.0
 },
 "got_book": false
 }

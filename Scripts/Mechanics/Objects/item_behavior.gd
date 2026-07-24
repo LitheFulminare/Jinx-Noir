@@ -15,6 +15,7 @@ extends TextureButton
 #@export var hovered_texture: Texture2D # será removido
 
 var object_held:= false
+var interacted_once := false
 
 func _ready() -> void:
 	mouse_entered.connect(_change_cursor)

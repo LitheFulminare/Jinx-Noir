@@ -12,4 +12,5 @@ texture_hover = ExtResource("1_8sv8r")
 texture_click_mask = ExtResource("2_8sv8r")
 script = ExtResource("3_s31ed")
 item_type = "clock"
+delete_after_interaction = false
 timeline_uid = "uid://naliolcdl2au"
