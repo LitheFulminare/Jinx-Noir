@@ -269,6 +269,7 @@ color = Color(0, 0, 0, 1)
 [node name="Settings_Screen" parent="." unique_id=1642139216 instance=ExtResource("3_ruads")]
 visible = false
 layout_mode = 1
+volume_default = 0.7
 
 [node name="Transition_FX" type="AnimationPlayer" parent="." unique_id=625350323]
 root_node = NodePath("../Menu_BG/Button_Container")

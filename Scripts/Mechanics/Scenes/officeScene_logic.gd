@@ -13,7 +13,7 @@ var timeline_playing:= false
 @onready var phone_audio_player: AudioStreamPlayer2D = %PhoneAudioPlayer
 
 var phone_picked:= false
-var new_music := preload("res://Assets/Audio/Music/Beco.ogg")
+var new_music := preload("res://Assets/Audio/Music/Beco 2.ogg")
 
 # Chamado quando o jogo inicia
 func _ready() -> void:

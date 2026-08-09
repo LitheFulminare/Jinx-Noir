@@ -25,7 +25,10 @@ func _on_timeline_started() -> void:
 ## Quando uma timeline terminar 
 func _on_timeline_ended() -> void:
 	timeline_playing = false # Diz que a timeline não está ativa
-	print("'", cur_timeline.get_identifier(), "'", " terminou: ", !timeline_playing) # Debug pra indicar qual timeline está terminou e se realmente está terminado
+	
+	if cur_timeline == null:
+		return
+		
 	if cur_timeline.get_identifier() == "ritualRoom_start":
 		anim_player.play("Fade_Out")
 		await anim_player.animation_finished
@@ -37,6 +40,6 @@ func _on_timeline_ended() -> void:
 		await anim_player.animation_finished
 		anim_player.play("Creditos_Out")
 		await anim_player.animation_finished
-		get_tree().change_scene_to_file("res://Scenes/UI/Menu_Screen.tscn")
+		SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
 		
 	cur_timeline = null

@@ -21,12 +21,11 @@ func _on_start_pressed() -> void:
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
-	animation_player.play("Fade-Out")
-	await animation_player.animation_finished
-	background = false
-	options_menu_ref.visible = true
-	options_animationPlayer.play("Fade-In")
-	
+	#animation_player.play("Fade-Out")
+	#await animation_player.animation_finished
+	#background = false
+	options_menu_ref.show_menu()
+
 ## Quando o botão "Sair" for pressionado
 func _on_exit_pressed() -> void:
 	animation_player.play("Fade-Out")

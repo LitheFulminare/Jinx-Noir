@@ -19,18 +19,47 @@ extends Control
 var current_parent: Node
 ## Variáveis dos nodes na cena do menu de opções
 @onready var animation_player = $Transition_FX
-@onready var background = $Settings_BG
+@onready var background = $Settings_BG	
 
 # usado na hora de mudar o volume de cada bus de áudio
 var music_bus_index: int
 var sfx_bus_index: int
 
+var buttons: Array[Control]
+
 func _ready() -> void:
+	buttons.append_array([
+		master_volume_slider,
+		music_volume_slider,
+		sfx_volume_slider,
+		master_mute_button,
+		music_mute_button,
+		sfx_mute_button,
+		screen_mode_button
+		])
+	
 	current_parent = get_parent()
 	music_bus_index = AudioServer.get_bus_index("Music")
 	sfx_bus_index = AudioServer.get_bus_index("SFX")
 	load_settings()
 	
+func show_menu() -> void:
+	visible = true
+	animation_player.play("Fade-In")
+	await animation_player.animation_finished
+	_set_mouse_filter(MOUSE_FILTER_STOP)
+
+func hide_menu() -> void:
+	save_settings()
+	_set_mouse_filter(MOUSE_FILTER_IGNORE)
+	animation_player.play_backwards("Fade-In")
+	await animation_player.animation_finished
+	visible = false
+
+func _set_mouse_filter(filter: Control.MouseFilter) -> void:
+	for button in buttons:
+		button.mouse_filter = filter
+
 ## Aplica no jogo os valores do arquivo "config.ini". Caso não exista, usa os valores default
 func load_settings() -> void:
 	var config: ConfigFile = ConfigFileManager.load_settings()
@@ -92,8 +121,10 @@ func _on_screen_options_selected(index: int) -> void:
 		2: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_done_pressed() -> void:
-	save_settings()
+	print("Done pressed, fading out")
+	hide_menu()
 	
+	return
 	match current_parent.name:
 		"Menu_Screen": 
 			for i in current_parent.get_children():

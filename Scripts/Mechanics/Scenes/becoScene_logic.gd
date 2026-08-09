@@ -74,4 +74,5 @@ func notebook_closed() -> void:
 	
 func go_to_ritual_room() -> void:
 	# Change scene here
+	SceneLoader.load_scene(Constants.SCENE_PATHS.ritual_room)
 	TimelineManager.alley_manager = null

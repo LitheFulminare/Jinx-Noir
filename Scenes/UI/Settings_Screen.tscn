@@ -54,6 +54,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bftun")
+volume_default = null
 master_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Master_Volume_Section/Master_Volume_Slider")
 music_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Music_Volume_Section/Music_Volume_Slider")
 sfx_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/SFX_Volume_Slider")
