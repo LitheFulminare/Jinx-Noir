@@ -7,6 +7,9 @@ extends CanvasLayer
 @onready var options_menu_ref = $Settings_Screen
 @onready var options_animationPlayer = null
 
+@export var pause_buttons: Control
+@export var confirm_exit_buttons: Control
+
 const SETTINGS_SCENE_PATH = preload("uid://d1fliddd0r1x8")
 var settings_scene: SettingsManager
 
@@ -18,16 +21,17 @@ func _ready() -> void:
 	visible = false
 
 ## Quando o jogador apertar o 'esc' para pausar, irá verificar se estava no menu ou in-game
-func _input(event: InputEvent) -> void: 
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause_game"):
 		settings_scene.hide()
-		if get_tree().paused:
+		if get_tree().paused: # unpause
 			get_tree().paused = false
+			settings_scene.hide_menu()
 			animation_player.play_backwards("Blur")
 			await animation_player.animation_finished
 			visible = false
-		else:
-			settings_scene.hide()
+		else: # pause
+			_on_return_button_pressed()
 			get_tree().paused = true
 			visible = true
 			animation_player.play("Blur")
@@ -43,4 +47,13 @@ func _on_settings_button_pressed() -> void:
 	settings_scene.show_menu()
 
 func _on_exit_pressed() -> void:
-	get_tree().quit()
+	pause_buttons.hide()
+	confirm_exit_buttons.show()
+
+func _on_confirm_button_pressed() -> void:
+	get_tree().paused = false
+	SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
+
+func _on_return_button_pressed() -> void:
+	pause_buttons.show()
+	confirm_exit_buttons.hide()

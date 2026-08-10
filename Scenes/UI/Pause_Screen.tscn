@@ -70,9 +70,11 @@ _data = {
 &"RESET": SubResource("Animation_dunkq")
 }
 
-[node name="Pause_Screen" type="CanvasLayer" unique_id=602457543]
+[node name="Pause_Screen" type="CanvasLayer" unique_id=602457543 node_paths=PackedStringArray("pause_buttons", "confirm_exit_buttons")]
 process_mode = 3
 script = ExtResource("1_dunkq")
+pause_buttons = NodePath("Pause_BG/Pause_Container/Control/Paper Background/PauseButtons")
+confirm_exit_buttons = NodePath("Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons")
 
 [node name="Pause_BG" type="ColorRect" parent="." unique_id=1300590507]
 material = ExtResource("1_niwg3")
@@ -111,7 +113,7 @@ texture = ExtResource("3_8balw")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause_BG/Pause_Container/Control/Paper Background" unique_id=1864129363]
+[node name="PauseButtons" type="VBoxContainer" parent="Pause_BG/Pause_Container/Control/Paper Background" unique_id=1864129363]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -127,7 +129,7 @@ grow_vertical = 2
 theme_override_constants/separation = -2
 alignment = 1
 
-[node name="Resume_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer" unique_id=1843640165]
+[node name="Resume_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons" unique_id=1843640165]
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -137,7 +139,7 @@ texture_hover = ExtResource("6_4b52o")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Resume_Button" unique_id=1290619037]
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Resume_Button" unique_id=1290619037]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,7 +156,7 @@ theme = ExtResource("3_hahjl")
 text = "Voltar"
 horizontal_alignment = 1
 
-[node name="SettingsButton" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer" unique_id=1395728802]
+[node name="SettingsButton" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons" unique_id=1395728802]
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -164,7 +166,7 @@ texture_hover = ExtResource("6_4b52o")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/SettingsButton" unique_id=1065870302]
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/SettingsButton" unique_id=1065870302]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -181,7 +183,7 @@ theme = ExtResource("3_hahjl")
 text = "Opções"
 horizontal_alignment = 1
 
-[node name="Exit_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer" unique_id=933477555]
+[node name="Exit_Button" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons" unique_id=933477555]
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -191,7 +193,7 @@ texture_hover = ExtResource("6_4b52o")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Exit_Button" unique_id=1368112241]
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Exit_Button" unique_id=1368112241]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -208,6 +210,85 @@ theme = ExtResource("3_hahjl")
 text = "Sair"
 horizontal_alignment = 1
 
+[node name="ConfirmExitButtons" type="VBoxContainer" parent="Pause_BG/Pause_Container/Control/Paper Background" unique_id=1646480647]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -68.845245
+offset_right = 65.0
+offset_bottom = 119.154816
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons" unique_id=1125036601]
+layout_mode = 2
+theme = ExtResource("3_hahjl")
+theme_override_font_sizes/font_size = 21
+text = "Deseja voltar
+para o menu?"
+horizontal_alignment = 1
+
+[node name="ConfirmButton" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons" unique_id=998929]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("4_cy1dh")
+texture_pressed = ExtResource("5_l4ffd")
+texture_hover = ExtResource("6_4b52o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons/ConfirmButton" unique_id=1677061081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -16.154755
+offset_right = 57.0
+offset_bottom = 20.845245
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hahjl")
+text = "Sim"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="TextureButton" parent="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons" unique_id=1958792597]
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+texture_normal = ExtResource("4_cy1dh")
+texture_pressed = ExtResource("5_l4ffd")
+texture_hover = ExtResource("6_4b52o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons/ReturnButton" unique_id=1259913202]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -16.5
+offset_right = 57.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_hahjl")
+text = "Não"
+horizontal_alignment = 1
+
 [node name="Pause_FX" type="AnimationPlayer" parent="." unique_id=662403710]
 libraries/ = SubResource("AnimationLibrary_dunkq")
 
@@ -215,8 +296,10 @@ libraries/ = SubResource("AnimationLibrary_dunkq")
 visible = false
 volume_default = 0.7
 
-[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Resume_Button" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/VBoxContainer/Exit_Button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Resume_Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Exit_Button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons/ReturnButton" to="." method="_on_return_button_pressed"]
 
 [editable path="Settings_Screen"]
