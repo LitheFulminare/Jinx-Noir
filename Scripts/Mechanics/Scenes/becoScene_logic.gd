@@ -10,6 +10,10 @@ var has_trash = false
 @onready var interaction_blocker: Control = %InteractionBlocker
 
 var interactions: Array[String] = []
+var is_introduction_sequence := true
+
+var metal_door_timeline := "uid://dhamrvbgaelw6"
+var notebook_no_lines_timeline := "uid://bmehg03r48ibq"
 
 func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
@@ -35,7 +39,7 @@ func _handle_dialogic_signals(method_name: String) -> void:
 		return
 	printerr("Tried to call an inexistent method.")
 
-## Called everytime a timeline ends.
+## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.
 func _check_interactions() -> void:
 	if !Dialogic.VAR.Alley.interacted_with_door:
 		return
@@ -60,7 +64,7 @@ func _on_item_interacted(item: Item) -> void:
 		return
 	
 	if !Dialogic.VAR.Alley.Notebook.has_cleaned_a_line:
-		Dialogic.start("uid://bmehg03r48ibq")
+		Dialogic.start(notebook_no_lines_timeline)
 	else:
 		open_notebook()
 
@@ -71,6 +75,9 @@ func open_notebook() -> void:
 ## Allows interactions with the items again. Called when player presses X button on notebook.
 func notebook_closed() -> void:
 	interaction_blocker.visible = false
+	if is_introduction_sequence:
+		Dialogic.start(metal_door_timeline)
+		is_introduction_sequence = false
 	
 func go_to_ritual_room() -> void:
 	# Change scene here
