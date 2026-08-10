@@ -34,11 +34,13 @@ func _on_item_interacted(item: Item) -> void:
 	_check_interactions(item)
 	Dialogic.start(item.timeline_uid)
 
+## Check everytime an interaction ends to see if the phone should ring
 func _check_interactions(item: Item):
 	if !item.interacted_once:
 		item.interacted_once = true
 		Dialogic.VAR.Office.items_interacted += 1
 	if Dialogic.VAR.Office.items_interacted == 4:
+		await get_tree().create_timer(1.5).timeout
 		phone_audio_player.play()
 		phone.disabled = false
 

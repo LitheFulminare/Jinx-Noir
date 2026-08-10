@@ -59,7 +59,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_t4e6g"]
-length = 2.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
