@@ -14,6 +14,10 @@ func _ready() -> void:
 	MusicManager.play_music(menu_theme)
 	options_animationPlayer = options_menu_ref.get_node("Transition_FX")
 	
+	# Prevents audio from popping when returning to the menu from gameplay.
+	await get_tree().create_timer(0.25).timeout
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), false)
+
 ## Quando o botão "Iniciar" for pressionado
 func _on_start_pressed() -> void:
 	MusicManager.play_music(gameplay_theme, -6, true, 2)

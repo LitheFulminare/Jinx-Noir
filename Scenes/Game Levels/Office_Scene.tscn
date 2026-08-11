@@ -194,4 +194,3 @@ bus = &"SFX"
 [node name="PauseScreen" parent="." unique_id=1931167145 instance=ExtResource("4_q8kq6")]
 process_priority = 1
 process_physics_priority = 1
-layer = 128

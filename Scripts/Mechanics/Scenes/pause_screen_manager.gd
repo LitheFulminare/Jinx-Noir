@@ -51,9 +51,19 @@ func _on_exit_pressed() -> void:
 	confirm_exit_buttons.show()
 
 func _on_confirm_button_pressed() -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), true)
+	MusicManager.stop()
+	if Dialogic.current_timeline:
+		Dialogic.paused = true
+	
 	get_tree().paused = false
 	SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
 
 func _on_return_button_pressed() -> void:
 	pause_buttons.show()
 	confirm_exit_buttons.hide()
+
+func _on_tree_exiting() -> void:
+	if Dialogic.current_timeline:
+		Dialogic.paused = false
+		Dialogic.end_timeline(true)

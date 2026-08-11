@@ -29,6 +29,7 @@ script = ExtResource("1_rwci3")
 stream = ExtResource("4_nbpvd")
 volume_db = -10.0
 autoplay = true
+bus = &"SFX"
 
 [node name="Beco_BG" type="Control" parent="Scene_Elements" unique_id=1767691408]
 z_index = -10
@@ -238,4 +239,3 @@ b_scene = NodePath("../../../..")
 metadata/_edit_use_anchors_ = true
 
 [node name="Pause_Screen" parent="." unique_id=602457543 instance=ExtResource("7_xo8tj")]
-layer = 1261

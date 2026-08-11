@@ -72,6 +72,7 @@ _data = {
 
 [node name="Pause_Screen" type="CanvasLayer" unique_id=602457543 node_paths=PackedStringArray("pause_buttons", "confirm_exit_buttons")]
 process_mode = 3
+layer = 100
 script = ExtResource("1_dunkq")
 pause_buttons = NodePath("Pause_BG/Pause_Container/Control/Paper Background/PauseButtons")
 confirm_exit_buttons = NodePath("Pause_BG/Pause_Container/Control/Paper Background/ConfirmExitButtons")
@@ -296,6 +297,7 @@ libraries/ = SubResource("AnimationLibrary_dunkq")
 visible = false
 volume_default = 0.7
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Resume_Button" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Exit_Button" to="." method="_on_exit_pressed"]

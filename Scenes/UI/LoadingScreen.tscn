@@ -42,7 +42,7 @@ _data = {
 }
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=1750721455]
-layer = 10
+layer = 200
 script = ExtResource("1_xofxx")
 
 [node name="Panel" type="Panel" parent="." unique_id=2115697074]
