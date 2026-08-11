@@ -59,7 +59,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_t4e6g"]
-length = 8.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,6 +83,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scene_Elements/GoToMenuButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scene_Elements/GoToMenuButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_ev63s"]
@@ -241,6 +265,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scene_Elements/GoToMenuButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Scene_Elements/GoToMenuButton:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bb25a"]
 _data = {
@@ -253,8 +301,9 @@ _data = {
 &"RESET": SubResource("Animation_egwkw")
 }
 
-[node name="RitualRoom_Scene" type="Node2D" unique_id=1884547424]
+[node name="RitualRoom_Scene" type="Node2D" unique_id=1884547424 node_paths=PackedStringArray("go_to_menu_button")]
 script = ExtResource("1_mcrfp")
+go_to_menu_button = NodePath("Scene_Elements/GoToMenuButton")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=1190844019]
 
@@ -331,5 +380,23 @@ Igor de Jesus - Programador Chefe"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GoToMenuButton" type="Button" parent="Scene_Elements" unique_id=529639447]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 139.255
+offset_right = 115.0
+offset_bottom = 171.25507
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bb25a")
+text = "Voltar para o menu"
+
 [node name="BG_Music" type="AudioStreamPlayer2D" parent="." unique_id=1316121338]
 stream = ExtResource("3_bb25a")
+
+[connection signal="pressed" from="Scene_Elements/GoToMenuButton" to="." method="_on_go_to_menu_button_pressed"]

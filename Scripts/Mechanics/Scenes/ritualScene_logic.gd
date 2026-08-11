@@ -2,6 +2,7 @@ extends Node
 ## Controla como a sala do ritual irá progredir
 
 @onready var anim_player = $Scene_Elements/AnimationPlayer
+@export var go_to_menu_button: Button
 
 var cur_timeline: DialogicTimeline
 var timeline_playing = false
@@ -9,6 +10,8 @@ var timeline_playing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	go_to_menu_button.visible = false
+	
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
 
@@ -37,9 +40,9 @@ func _on_timeline_ended() -> void:
 		anim_player.play("Continua_Out")
 		await anim_player.animation_finished
 		anim_player.play("Creditos_In")
-		await anim_player.animation_finished
-		anim_player.play("Creditos_Out")
-		await anim_player.animation_finished
-		SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
 		
 	cur_timeline = null
+
+
+func _on_go_to_menu_button_pressed() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
