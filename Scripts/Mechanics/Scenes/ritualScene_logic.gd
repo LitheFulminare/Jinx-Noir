@@ -1,23 +1,22 @@
 extends Node
 ## Controla como a sala do ritual irá progredir
 
-@onready var anim_player = $Scene_Elements/AnimationPlayer
-@export var go_to_menu_button: Button
-
 var cur_timeline: DialogicTimeline
 var timeline_playing = false
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	go_to_menu_button.visible = false
-	
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
-
-	anim_player.play("Fade_In")
-	await anim_player.animation_finished
+	Dialogic.text_signal.connect(_handle_dialogic_signals)
+	
 	Dialogic.start("ritualRoom_start")
+
+func _handle_dialogic_signals(method_name: String) -> void:
+	if has_method(method_name):
+		call(method_name)
+		return
+	printerr("Tried to call an inexistent method.")
 
 ## Quando uma timeline começar
 func _on_timeline_started() -> void:
@@ -29,20 +28,7 @@ func _on_timeline_started() -> void:
 func _on_timeline_ended() -> void:
 	timeline_playing = false # Diz que a timeline não está ativa
 	
-	if cur_timeline == null:
-		return
-		
-	if cur_timeline.get_identifier() == "ritualRoom_start":
-		anim_player.play("Fade_Out")
-		await anim_player.animation_finished
-		anim_player.play("Continua_In")
-		await anim_player.animation_finished
-		anim_player.play("Continua_Out")
-		await anim_player.animation_finished
-		anim_player.play("Creditos_In")
-		
 	cur_timeline = null
 
-
-func _on_go_to_menu_button_pressed() -> void:
-	SceneLoader.load_scene(Constants.SCENE_PATHS.main_menu)
+func go_to_credits_scene() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.continue)

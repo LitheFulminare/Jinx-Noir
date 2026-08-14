@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://dwyp4jdf31vxg"]
 
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="1_4u21t"]
+[ext_resource type="Script" uid="uid://c3cb6odcp4ybq" path="res://Scripts/Mechanics/Scenes/credits_scene.gd" id="1_5uk0o"]
 
-[node name="CreditsScene" type="Control" unique_id=2034291665]
+[node name="CreditsScene" type="Control" unique_id=2034291665 node_paths=PackedStringArray("continue_button", "credits", "continue_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5uk0o")
+continue_button = NodePath("ContinueButton")
+credits = NodePath("MarginContainer/Credits")
+continue_label = NodePath("")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1888262998]
 layout_mode = 1
@@ -26,99 +31,110 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -215.5
-offset_top = -110.25
-offset_right = 215.5
-offset_bottom = 110.25
+offset_left = -262.5
+offset_top = -125.615005
+offset_right = 262.5
+offset_bottom = 94.885345
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=973751695]
+[node name="Credits" type="VBoxContainer" parent="MarginContainer" unique_id=973751695]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1834292743]
+[node name="TitleLabel" type="Label" parent="MarginContainer/Credits" unique_id=1834292743]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Créditos"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1501875668]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/h_separation = 231
-theme_override_constants/v_separation = 45
-columns = 2
-
-[node name="Dev1" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=454199891]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Credits" unique_id=1397852052]
 layout_mode = 2
 
-[node name="Role" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev1" unique_id=1634969938]
+[node name="Dev1" type="HBoxContainer" parent="MarginContainer/Credits/VBoxContainer" unique_id=1571045887]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev1" unique_id=400909839]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Cargo"
-horizontal_alignment = 1
+text = "Carolina \"Thai\" de Deus"
 
-[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev1" unique_id=2133522712]
+[node name="Label2" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev1" unique_id=756182964]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Nome"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "Producer & Artista "
 
-[node name="Dev2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=285386985]
+[node name="Dev2" type="HBoxContainer" parent="MarginContainer/Credits/VBoxContainer" unique_id=854257431]
 layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="Role" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev2" unique_id=663029322]
-layout_mode = 2
-theme = ExtResource("1_4u21t")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Cargo"
-horizontal_alignment = 1
-
-[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev2" unique_id=400309245]
+[node name="Label" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev2" unique_id=1809150376]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Nome"
-horizontal_alignment = 1
+text = "Guilherme Lenz"
 
-[node name="Dev3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=86622781]
-layout_mode = 2
-
-[node name="Role" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev3" unique_id=117489760]
+[node name="Label2" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev2" unique_id=203969011]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Cargo"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "Game Designer & Escritor"
 
-[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev3" unique_id=439969637]
+[node name="Dev3" type="HBoxContainer" parent="MarginContainer/Credits/VBoxContainer" unique_id=40035209]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev3" unique_id=1172688100]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Nome"
-horizontal_alignment = 1
+text = "Igor de Jesus"
 
-[node name="Dev4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1674713366]
-layout_mode = 2
-
-[node name="Role" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev4" unique_id=875251969]
+[node name="Label2" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev3" unique_id=1136815133]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Cargo"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "Programador inicial"
 
-[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/Dev4" unique_id=979574397]
+[node name="Dev4" type="HBoxContainer" parent="MarginContainer/Credits/VBoxContainer" unique_id=462153793]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev4" unique_id=1185331664]
 layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Nome"
-horizontal_alignment = 1
+text = "João Vitor Rossafa"
+
+[node name="Label2" type="Label" parent="MarginContainer/Credits/VBoxContainer/Dev4" unique_id=961685056]
+layout_mode = 2
+theme = ExtResource("1_4u21t")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Programador, Sound Designer &Compositor"
+
+[node name="ContinueButton" type="Button" parent="." unique_id=961580888]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = 123.484985
+offset_right = 60.0
+offset_bottom = 155.48502
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4u21t")
+text = "Continuar"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
