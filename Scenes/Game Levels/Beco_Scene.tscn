@@ -27,7 +27,7 @@ script = ExtResource("1_rwci3")
 
 [node name="Beco_Audio" type="AudioStreamPlayer2D" parent="Scene_Elements" unique_id=1146770481]
 stream = ExtResource("4_nbpvd")
-volume_db = -10.0
+volume_db = -6.0
 autoplay = true
 bus = &"SFX"
 

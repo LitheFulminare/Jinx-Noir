@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cibpot8a13j2i"
+path="res://.godot/imported/Trying to open cardboard box.wav-5db24817bb74e6361812a6408cb15ff3.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Objects/Trying to open cardboard box.wav"
+dest_files=["res://.godot/imported/Trying to open cardboard box.wav-5db24817bb74e6361812a6408cb15ff3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
