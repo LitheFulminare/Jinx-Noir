@@ -40,7 +40,4 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 func _on_credits_button_pressed() -> void:
-	credits_scene.modulate = Color.TRANSPARENT
-	credits_scene.show()
-	var tween := get_tree().create_tween()
-	tween.tween_property(credits_scene, "modulate", Color.WHITE, 0.5)
+	credits_scene.show_with_fade()
