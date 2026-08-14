@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bj31cioo8lpqu" path="res://Assets/Sprites/UI/menu.png" id="3_2dlhk"]
 [ext_resource type="PackedScene" uid="uid://d1fliddd0r1x8" path="res://Scenes/UI/Settings_Screen.tscn" id="3_ruads"]
 [ext_resource type="AudioStream" uid="uid://d24pga3qm4j7k" path="res://Assets/Audio/Music/Menu.ogg" id="5_2dlhk"]
+[ext_resource type="PackedScene" uid="uid://dwyp4jdf31vxg" path="res://Scenes/UI/credits_scene.tscn" id="5_hbowr"]
 [ext_resource type="Texture2D" uid="uid://dkgtecuuibclg" path="res://Assets/Sprites/UI/guaxo.png" id="7_ko0lm"]
 
 [sub_resource type="Animation" id="Animation_7p8kg"]
@@ -193,7 +194,7 @@ _data = {
 &"RESET": SubResource("Animation_rjge0")
 }
 
-[node name="Menu_Screen" type="Control" unique_id=1630642795]
+[node name="Menu_Screen" type="Control" unique_id=1630642795 node_paths=PackedStringArray("credits_scene")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -201,6 +202,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cdisa")
+credits_scene = NodePath("CreditsScene")
 
 [node name="Menu_BG" type="TextureRect" parent="." unique_id=394341370]
 modulate = Color(1, 1, 1, 0)
@@ -231,7 +233,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_2bnp2")
-theme_override_constants/separation = 17
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="Start_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=2046742699]
@@ -246,6 +248,13 @@ layout_mode = 2
 theme = ExtResource("3_2bnp2")
 theme_override_font_sizes/font_size = 14
 text = "Configurações"
+text_direction = 1
+
+[node name="CreditsButton" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=489913679]
+layout_mode = 2
+theme = ExtResource("3_2bnp2")
+theme_override_font_sizes/font_size = 14
+text = "Créditos"
 text_direction = 1
 
 [node name="Exit_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=673625825]
@@ -270,6 +279,10 @@ color = Color(0, 0, 0, 1)
 visible = false
 layout_mode = 1
 volume_default = 0.7
+
+[node name="CreditsScene" parent="." unique_id=2034291665 instance=ExtResource("5_hbowr")]
+visible = false
+layout_mode = 1
 
 [node name="Transition_FX" type="AnimationPlayer" parent="." unique_id=625350323]
 root_node = NodePath("../Menu_BG/Button_Container")
@@ -330,4 +343,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Exit_BT" to="." method="_on_exit_pressed"]

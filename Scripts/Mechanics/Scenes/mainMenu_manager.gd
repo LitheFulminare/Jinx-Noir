@@ -6,11 +6,14 @@ extends Control
 @onready var options_animationPlayer = null
 @onready var animation_player = $Transition_FX
 @onready var background = $Menu_BG
+@export var credits_scene: CreditsScene
 
 var menu_theme := preload("res://Assets/Audio/Music/Menu Theme.ogg")
 var gameplay_theme := preload("res://Assets/Audio/Music/Escritório.ogg")
 
 func _ready() -> void:
+	credits_scene.is_in_menu = true
+	
 	MusicManager.play_music(menu_theme)
 	options_animationPlayer = options_menu_ref.get_node("Transition_FX")
 	
@@ -35,3 +38,9 @@ func _on_exit_pressed() -> void:
 	animation_player.play("Fade-Out")
 	await animation_player.animation_finished
 	get_tree().quit()
+
+func _on_credits_button_pressed() -> void:
+	credits_scene.modulate = Color.TRANSPARENT
+	credits_scene.show()
+	var tween := get_tree().create_tween()
+	tween.tween_property(credits_scene, "modulate", Color.WHITE, 0.5)
