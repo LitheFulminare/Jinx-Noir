@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d227nfdm7ex6p"
+path="res://.godot/imported/Drop of blood 2.wav-20a8c427028425f3a0ccb6a439e97bad.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Objects/Drop of blood 2.wav"
+dest_files=["res://.godot/imported/Drop of blood 2.wav-20a8c427028425f3a0ccb6a439e97bad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
