@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://b74qeo20hlxwy"
+uid="uid://xglqccmip2lw"
 path="res://.godot/imported/Jinx Noir.ogg-ffed4a6dbc59e4aa2797d5c165a14008.oggvorbisstr"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Jinx Noir.ogg-ffed4a6dbc59e4aa2797d5c165a1400
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=34.838
+bpm=0.0
 beat_count=0
 bar_beats=4
