@@ -13,10 +13,11 @@ var timeline_playing:= false
 @onready var phone_audio_player: AudioStreamPlayer2D = %PhoneAudioPlayer
 
 var phone_picked:= false
-var new_music := preload("res://Assets/Audio/Music/Beco 2.ogg")
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
+	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa)
+	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
@@ -61,8 +62,5 @@ func _on_timeline_ended() -> void:
 	cur_timeline = null
 
 func go_to_alley() -> void:
-	#animation_player.play("Fade_Out")
-	#await animation_player.animation_finished
-	#get_tree().change_scene_to_packed(next_scene)
 	SceneLoader.load_scene(Constants.SCENE_PATHS.alley)
-	MusicManager.play_music(new_music, -6, true, 2)
+	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -6, true, 2)

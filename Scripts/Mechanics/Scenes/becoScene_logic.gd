@@ -16,6 +16,8 @@ var metal_door_timeline := "uid://dhamrvbgaelw6"
 var notebook_no_lines_timeline := "uid://bmehg03r48ibq"
 
 func _ready() -> void:
+	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento)
+	
 	SaveManager.game_loaded.connect(on_game_loaded)
 	#SaveManager.load_save() # temporary, other script will call the game to load
 	

@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="1_4u21t"]
 [ext_resource type="Script" uid="uid://c3cb6odcp4ybq" path="res://Scripts/Mechanics/Scenes/credits_scene.gd" id="1_5uk0o"]
 
-[node name="CreditsScene" type="Control" unique_id=2034291665 node_paths=PackedStringArray("continue_button", "credits", "continue_label")]
+[node name="CreditsScene" type="Control" unique_id=2034291665 node_paths=PackedStringArray("continue_button", "credits")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_5uk0o")
 continue_button = NodePath("ContinueButton")
 credits = NodePath("MarginContainer/Credits")
-continue_label = NodePath("")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1888262998]
 layout_mode = 1

@@ -8,13 +8,10 @@ extends Control
 @onready var background = $Menu_BG
 @export var credits_scene: CreditsScene
 
-var menu_theme := preload("res://Assets/Audio/Music/Menu Theme.ogg")
-var gameplay_theme := preload("res://Assets/Audio/Music/Escritório.ogg")
-
 func _ready() -> void:
 	credits_scene.is_in_menu = true
 	
-	MusicManager.play_music(menu_theme)
+	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir)
 	options_animationPlayer = options_menu_ref.get_node("Transition_FX")
 	
 	# Prevents audio from popping when returning to the menu from gameplay.
@@ -23,14 +20,11 @@ func _ready() -> void:
 
 ## Quando o botão "Iniciar" for pressionado
 func _on_start_pressed() -> void:
-	MusicManager.play_music(gameplay_theme, -6, true, 2)
+	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
 	SceneLoader.load_scene(Constants.SCENE_PATHS.office)
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
-	#animation_player.play("Fade-Out")
-	#await animation_player.animation_finished
-	#background = false
 	options_menu_ref.show_menu()
 
 ## Quando o botão "Sair" for pressionado

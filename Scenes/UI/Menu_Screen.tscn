@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_2bnp2"]
 [ext_resource type="Texture2D" uid="uid://bj31cioo8lpqu" path="res://Assets/Sprites/UI/menu.png" id="3_2dlhk"]
 [ext_resource type="PackedScene" uid="uid://d1fliddd0r1x8" path="res://Scenes/UI/Settings_Screen.tscn" id="3_ruads"]
-[ext_resource type="AudioStream" uid="uid://d24pga3qm4j7k" path="res://Assets/Audio/Music/Menu.ogg" id="5_2dlhk"]
 [ext_resource type="PackedScene" uid="uid://dwyp4jdf31vxg" path="res://Scenes/UI/credits_scene.tscn" id="5_hbowr"]
 [ext_resource type="Texture2D" uid="uid://dkgtecuuibclg" path="res://Assets/Sprites/UI/guaxo.png" id="7_ko0lm"]
 
@@ -288,11 +287,6 @@ layout_mode = 1
 root_node = NodePath("../Menu_BG/Button_Container")
 libraries/ = SubResource("AnimationLibrary_rjge0")
 autoplay = &"Fade-In"
-
-[node name="Audio_Player" type="AudioStreamPlayer2D" parent="." unique_id=1190858699]
-stream = ExtResource("5_2dlhk")
-volume_db = -10.0
-bus = &"Muffled Rain"
 
 [node name="Team_BG" type="ColorRect" parent="." unique_id=1464656128]
 layout_mode = 1

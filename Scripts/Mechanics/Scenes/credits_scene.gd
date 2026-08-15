@@ -3,11 +3,10 @@ extends Control
 
 @export var continue_button: Button
 @export var credits: VBoxContainer
-@export var continue_label: Label
 
 @export var fade_duration: float = 0.3
 
-## The continue buttons behaves a bit different if the credits scene
+## The continue button behaves a bit different if the credits scene
 ## was accessed through the main menu.
 var is_in_menu := false
 

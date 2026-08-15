@@ -121,22 +121,4 @@ func _on_screen_options_selected(index: int) -> void:
 		2: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_done_pressed() -> void:
-	print("Done pressed, fading out")
 	hide_menu()
-	
-	return
-	match current_parent.name:
-		"Menu_Screen": 
-			for i in current_parent.get_children():
-				if i is AnimationPlayer:
-					i.play_backwards("Fade-Out")
-					animation_player.play_backwards("Fade-In")
-					await i.animation_finished
-					visible = false
-		"Pause_Screen":
-			for i in current_parent.get_children():
-				if i is ColorRect:
-					animation_player.play_backwards("Fade-In")
-					await animation_player.animation_finished
-					i.visible = true
-					background.visible = false
