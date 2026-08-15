@@ -8,7 +8,17 @@ extends Control
 @onready var background = $Menu_BG
 @export var credits_scene: CreditsScene
 
+@export var phone_call_timeline: DialogicTimeline
+## Dialogic style used on the timelines so it can be prepared beforehand.
+@export var dialogic_style: DialogicStyle
+
 func _ready() -> void:
+	# Decrease lag on the first interaction
+	dialogic_style.prepare()
+	
+	# The preloaded timeline has to be stored, so this is probably useless
+	#Dialogic.preload_timeline(phone_call_timeline)
+	
 	credits_scene.is_in_menu = true
 	
 	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir)
