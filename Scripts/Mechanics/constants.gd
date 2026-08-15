@@ -11,6 +11,7 @@ const SONG_PATHS: Dictionary[String, String] = {
 const SCENE_PATHS: Dictionary[String, String] = {
 	"main_menu": "uid://n0lx6rvo7ub7",
 	"credits": "uid://dwyp4jdf31vxg",
+	"chapter_1_intro": "uid://tdovpqa1vmlo",
 	"continue": "uid://c7l652ow2t2xl",
 	"office": "uid://dd3ja6w7yaep0",
 	"alley": "uid://cnw2ei7sdvg4l",

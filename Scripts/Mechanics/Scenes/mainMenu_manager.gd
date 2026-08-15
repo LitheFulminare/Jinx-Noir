@@ -21,7 +21,7 @@ func _ready() -> void:
 ## Quando o botão "Iniciar" for pressionado
 func _on_start_pressed() -> void:
 	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
-	SceneLoader.load_scene(Constants.SCENE_PATHS.office)
+	SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
