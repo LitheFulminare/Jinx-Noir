@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b2myv0kgipi4d"]
 
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_2wh7p"]
-[ext_resource type="Texture2D" uid="uid://cax7hmow0avo" path="res://Assets/Sprites/assets beco/vassoura.png" id="1_synos"]
-[ext_resource type="BitMap" uid="uid://b2ykc4sih7rc0" path="res://Assets/Sprites/assets beco/click masks/vassoura_click_mask.png" id="2_on72y"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_2wh7p"]
+[ext_resource type="Texture2D" uid="uid://cax7hmow0avo" path="res://Assets/Sprites/Alley/Items/vassoura.png" id="1_synos"]
+[ext_resource type="BitMap" uid="uid://b2ykc4sih7rc0" path="res://Assets/Sprites/Alley/Items/click masks/vassoura_click_mask.png" id="2_on72y"]
 
 [node name="Placeholder_Broom" type="TextureButton" unique_id=960761507]
 z_index = 2

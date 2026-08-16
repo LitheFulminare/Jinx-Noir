@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://exq5msll1gdw"
+path="res://.godot/imported/cadernopuzzle_click_mask.png-01b5c30a5e2d26f83eaaab60f912bf7c.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Alley/Items/click masks/cadernopuzzle_click_mask.png"
+dest_files=["res://.godot/imported/cadernopuzzle_click_mask.png-01b5c30a5e2d26f83eaaab60f912bf7c.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

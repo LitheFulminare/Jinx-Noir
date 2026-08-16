@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://brjenqjeyo8ht"
+path="res://.godot/imported/telefone_click_mask.png-198bc07c835ba48fff94b3e0e4182510.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Office/Items/click masks/telefone_click_mask.png"
+dest_files=["res://.godot/imported/telefone_click_mask.png-198bc07c835ba48fff94b3e0e4182510.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

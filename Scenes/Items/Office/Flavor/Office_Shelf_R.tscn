@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://chw3lqqkb5qb5"]
 
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_4a70d"]
-[ext_resource type="Texture2D" uid="uid://bbbpl1fmwq57d" path="res://Assets/Sprites/assets escritorio/armario1.png" id="1_c55df"]
-[ext_resource type="BitMap" uid="uid://dcuxy75fflym1" path="res://Assets/Sprites/assets escritorio/click masks/armario1_click_mask.png" id="2_3063v"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_4a70d"]
+[ext_resource type="Texture2D" uid="uid://bbbpl1fmwq57d" path="res://Assets/Sprites/Office/Items/armario1.png" id="1_c55df"]
+[ext_resource type="BitMap" uid="uid://dcuxy75fflym1" path="res://Assets/Sprites/Office/Items/click masks/armario1_click_mask.png" id="2_3063v"]
 
 [node name="OfficeShelf_R" type="TextureButton" unique_id=1108905223]
 z_index = 2

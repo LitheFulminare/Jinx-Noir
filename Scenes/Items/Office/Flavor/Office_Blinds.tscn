@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bpaphhi6ha6ko"]
 
-[ext_resource type="Texture2D" uid="uid://qeflx8kvbrt0" path="res://Assets/Sprites/assets escritorio/janela.png" id="1_cmr6a"]
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_ol5fi"]
-[ext_resource type="BitMap" uid="uid://bel31m7q0m75c" path="res://Assets/Sprites/assets escritorio/click masks/janela_click_mask.png" id="2_6afmt"]
+[ext_resource type="Texture2D" uid="uid://qeflx8kvbrt0" path="res://Assets/Sprites/Office/Items/janela.png" id="1_cmr6a"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_ol5fi"]
+[ext_resource type="BitMap" uid="uid://bel31m7q0m75c" path="res://Assets/Sprites/Office/Items/click masks/janela_click_mask.png" id="2_6afmt"]
 
 [node name="Office_Blinds" type="TextureButton" unique_id=660719719]
 z_index = 2

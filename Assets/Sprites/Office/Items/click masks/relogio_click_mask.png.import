@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c36kwd05kro8h"
+path="res://.godot/imported/relogio_click_mask.png-74d08ef9f8a50c5390f51e6b95261ccc.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Office/Items/click masks/relogio_click_mask.png"
+dest_files=["res://.godot/imported/relogio_click_mask.png-74d08ef9f8a50c5390f51e6b95261ccc.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

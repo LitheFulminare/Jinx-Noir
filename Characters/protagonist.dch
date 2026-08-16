@@ -19,7 +19,7 @@
 &"portraits": {
 "curious": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxcurious.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxcurious.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "default": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxidle.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxidle.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -37,7 +37,7 @@
 },
 "disgust": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxdisgust.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxdisgust.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -46,7 +46,7 @@
 },
 "fear": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxfear.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxfear.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -55,7 +55,7 @@
 },
 "ritual": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxritual.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxritual.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -64,7 +64,7 @@
 },
 "sad": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxsad.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxsad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -73,7 +73,7 @@
 },
 "scare": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxscare.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxscare.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -82,7 +82,7 @@
 },
 "worried": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/Jinx_Emotions/jynxworry.png\""
+"image": "\"res://Assets/Sprites/Characters/Jynx/jynxworry.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7l652ow2t2xl"]
 
-[ext_resource type="Script" uid="uid://bigwwt0g1l0b6" path="res://Scripts/Mechanics/Scenes/continue_scene.gd" id="1_nwdjt"]
+[ext_resource type="Script" uid="uid://bigwwt0g1l0b6" path="res://Scripts/UI/continue_scene.gd" id="1_nwdjt"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="2_j763f"]
 
 [node name="ContinueScene" type="Control" unique_id=713361265 node_paths=PackedStringArray("continue_label")]

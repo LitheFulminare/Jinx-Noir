@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1fliddd0r1x8"]
 
-[ext_resource type="Script" uid="uid://baq80rb3dvrbk" path="res://Scripts/Mechanics/Scenes/settingsMenu_manager.gd" id="1_bftun"]
+[ext_resource type="Script" uid="uid://baq80rb3dvrbk" path="res://Scripts/UI/settingsMenu_manager.gd" id="1_bftun"]
 [ext_resource type="LabelSettings" uid="uid://ve11v46rvj85" path="res://Assets/Themes/settings_label.tres" id="2_cwmog"]
 [ext_resource type="Texture2D" uid="uid://cusnvnk6a8y4f" path="res://Assets/Sprites/UI/Menus/menuconfigfundo.png" id="2_g15v8"]
 [ext_resource type="FontFile" uid="uid://c3u4wiaionf7x" path="res://Assets/Fonts/Raleway (texto menu)/static/Raleway-Medium.ttf" id="3_cwmog"]

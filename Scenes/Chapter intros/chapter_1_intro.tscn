@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tdovpqa1vmlo"]
 
-[ext_resource type="Script" uid="uid://cxa31u404xc7d" path="res://Scripts/Mechanics/Scenes/Chapter intros/chapter_1_intro.gd" id="1_7i1wh"]
+[ext_resource type="Script" uid="uid://cxa31u404xc7d" path="res://Scripts/Chapter intros/chapter_1_intro.gd" id="1_7i1wh"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="1_ufq1n"]
 
 [sub_resource type="Animation" id="Animation_7i1wh"]

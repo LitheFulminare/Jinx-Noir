@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bdydo40citrvj"
+path="res://.godot/imported/cabide_click_mask.png-570086368d17bc7e3bee31b2b92bb04b.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Office/Items/click masks/cabide_click_mask.png"
+dest_files=["res://.godot/imported/cabide_click_mask.png-570086368d17bc7e3bee31b2b92bb04b.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

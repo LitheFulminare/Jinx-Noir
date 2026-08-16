@@ -1,0 +1,120 @@
+class_name Notebook
+extends Control
+
+signal closed()
+
+@onready var visibility_player: AnimationPlayer = $Visibility_Player
+@onready var notebook_audio: AudioStreamPlayer2D = $Notebook_Audio
+@onready var areas_ref: Array[PuzzleText] = [$Panel/Margins/Grid/Area_1, $Panel/Margins/Grid/Starter_1, $Panel/Margins/Grid/Area_2, $Panel/Margins/Grid/Starter_2, $Panel/Margins/Grid/Area_3, $Panel/Margins/Grid/Starter_3, $Panel/Margins/Grid/Area_4, $Panel/Margins/Grid/Starter_4, $Panel/Margins/Grid/Area_5, $Panel/Margins/Grid/Starter_5]
+var areas_data: Array[TextData] = [
+	preload("uid://cbywdqmmsabgw"), # text 1
+	preload("uid://b2jx5obkkrolr"), # text 2
+	preload("uid://d0u5tjgupjc82"), # text 3
+	preload("uid://c1330fxn7arl4"), # text 4
+	preload("uid://tf4x5uiuq3o4"), # text 5
+	] 
+
+@export_group("Timelines")
+@export var notebook_just_solved_timeline: DialogicTimeline
+@export var notebook_line_unlock_tl: DialogicTimeline
+@export var notebook_multiple_lines_tl: DialogicTimeline
+
+#var save_path = "user://save"
+#var save_name = "puzzleSave.tres"
+
+@export_group("Nodes")
+@export var b_scene: AlleyManager
+
+var first_time_open:= true
+var correct_lines: Array[int] = []
+
+const TEXT_REQUIREMENTS := {
+	1: ["trash", "broom"],
+	2: ["broom", "lamp", "sign"],
+	3: ["trash", "sign"],
+	4: ["box", "book"]
+}
+
+func _ready() -> void:
+	#_verify_save_path(save_path)
+	initialize_texts()
+	
+func initialize_texts() -> void:
+	for text: PuzzleText in areas_ref:
+		if text.text_data:
+			text.text_data._set_current_sprite(1)
+		text.notebook = self
+	
+#func _verify_save_path(path: String):
+	#DirAccess.make_dir_absolute(save_path)
+
+func has_all_correct_lines() -> bool:
+	return (correct_lines.has(1) &&
+			correct_lines.has(2) &&
+			correct_lines.has(3) &&
+			correct_lines.has(4) &&
+			correct_lines.has(5))
+
+## Checks if all lines are in place.
+func check_lines() -> void:
+	if !has_all_correct_lines():
+		return
+	if TimelineManager.timelines_finished.has("notebook just solved"):
+		return
+	Dialogic.start(notebook_just_solved_timeline)
+
+func _open_notebook():
+	visibility_player.play("open_notebook")
+
+	if first_time_open:
+		first_time_open = false
+
+## Cleans the texts according to the numbers on the given array. Then, 
+## starts the notebook timeline corresponding to the amount of texts cleaned.
+func _areas_to_clean(texts: Array[int]):#text_num: int):
+	print("areas_to_clean() called with arg " + str(texts))
+	
+	var texts_cleaned: Array[int] = []
+	for text_num: int in texts:
+		if areas_data[text_num - 1].is_censored:
+			texts_cleaned.append(text_num)
+			# Used to know which line Jynx will read when opening the notebook
+			Dialogic.VAR.Alley.Notebook.last_line_cleaned = float(text_num)
+			areas_data[text_num - 1]._set_current_sprite(2)
+		else:
+			print(str(text_num) + " is already clean")
+		
+	if texts_cleaned.size() == 0:
+		return
+	
+	# I'll have to do more things here
+	if texts_cleaned.size() == 1:
+		Dialogic.start(notebook_line_unlock_tl)
+	else:
+		Dialogic.start(notebook_multiple_lines_tl)
+	
+	#ResourceSaver.save(areas_data[text_num - 1], areas_data[text_num - 1].resource_path)
+	#areas_data[text_num - 1] = ResourceLoader.load(areas_data[text_num - 1].resource_path)
+	
+## Called when 3 lines are correct.
+func clean_line_5() -> void:
+	_areas_to_clean([5])
+
+func save_progression() -> void:
+	var notebook_state: Array[int]
+	notebook_state.clear() # talvez seja desnecessário
+	
+	# Guarda o número do texto de cada slot do caderno
+	for area: PuzzleText in areas_ref:
+		if area.text_data == null:
+			notebook_state.append(0)
+			continue
+		notebook_state.append(area.text_data.text_num)
+		
+	GameState.puzzles_states.set(PuzzleID.BECO_PUZZLE, notebook_state)
+	SaveManager.save()
+
+func _on_close_pressed() -> void:
+	closed.emit()
+	save_progression()
+	visible = false

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6dm6tvn0abm4"]
 
-[ext_resource type="Script" uid="uid://b55saolj2the2" path="res://Scripts/Mechanics/Scenes/ritualScene_logic.gd" id="1_mcrfp"]
+[ext_resource type="Script" uid="uid://b55saolj2the2" path="res://Scripts/Scenes/ritualScene_logic.gd" id="1_mcrfp"]
 [ext_resource type="Resource" uid="uid://dyutxvc53av6a" path="res://Timelines/Ritual Room/ritual_room.dtl" id="2_bb25a"]
 [ext_resource type="AudioStream" uid="uid://l68a8wu7c2c4" path="res://Assets/Audio/SFX/Rain loop.ogg" id="3_bb25a"]
 

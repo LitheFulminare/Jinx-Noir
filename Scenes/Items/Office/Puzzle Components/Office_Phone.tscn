@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://jpcg38jxvprg"]
 
-[ext_resource type="Texture2D" uid="uid://mdvw3cqvgbsa" path="res://Assets/Sprites/assets escritorio/telefone.png" id="1_3h6ei"]
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_k4sy6"]
+[ext_resource type="Texture2D" uid="uid://mdvw3cqvgbsa" path="res://Assets/Sprites/Office/Items/telefone.png" id="1_3h6ei"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_k4sy6"]
 [ext_resource type="AudioStream" uid="uid://4s4r02dcud3b" path="res://Assets/Audio/SFX/Objects/Phone_Ringing.wav" id="2_1y1qc"]
-[ext_resource type="BitMap" uid="uid://brjenqjeyo8ht" path="res://Assets/Sprites/assets escritorio/click masks/telefone_click_mask.png" id="2_jad5f"]
+[ext_resource type="BitMap" uid="uid://brjenqjeyo8ht" path="res://Assets/Sprites/Office/Items/click masks/telefone_click_mask.png" id="2_jad5f"]
 
 [node name="Placeholder_Phone" type="TextureButton" unique_id=1824336128]
 z_index = 5

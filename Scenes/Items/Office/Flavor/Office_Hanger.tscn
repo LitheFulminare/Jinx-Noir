@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://csp8igfyrw8js"]
 
-[ext_resource type="Texture2D" uid="uid://d4hhhikpvmro" path="res://Assets/Sprites/assets escritorio/cabide.png" id="1_euybr"]
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_rt4hr"]
-[ext_resource type="BitMap" uid="uid://bdydo40citrvj" path="res://Assets/Sprites/assets escritorio/click masks/cabide_click_mask.png" id="2_k0mmj"]
+[ext_resource type="Texture2D" uid="uid://d4hhhikpvmro" path="res://Assets/Sprites/Office/Items/cabide.png" id="1_euybr"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_rt4hr"]
+[ext_resource type="BitMap" uid="uid://bdydo40citrvj" path="res://Assets/Sprites/Office/Items/click masks/cabide_click_mask.png" id="2_k0mmj"]
 
 [node name="Office_Coat_Hanger" type="TextureButton" unique_id=1941379312]
 z_index = 2

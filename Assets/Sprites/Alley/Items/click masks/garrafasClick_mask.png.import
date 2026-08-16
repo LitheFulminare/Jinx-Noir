@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cqt8eh2730xif"
+path="res://.godot/imported/garrafasClick_mask.png-b89cfd5016e9d4e7620843b95fb73e44.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Alley/Items/click masks/garrafasClick_mask.png"
+dest_files=["res://.godot/imported/garrafasClick_mask.png-b89cfd5016e9d4e7620843b95fb73e44.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

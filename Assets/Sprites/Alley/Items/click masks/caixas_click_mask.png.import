@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c51wvhoen6tiq"
+path="res://.godot/imported/caixas_click_mask.png-186011254c475d3d165f6dae1b96e62c.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Alley/Items/click masks/caixas_click_mask.png"
+dest_files=["res://.godot/imported/caixas_click_mask.png-186011254c475d3d165f6dae1b96e62c.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

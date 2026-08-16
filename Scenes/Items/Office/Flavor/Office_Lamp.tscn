@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bbdolkaqxed24"]
 
-[ext_resource type="Texture2D" uid="uid://4hsak0ii411i" path="res://Assets/Sprites/assets escritorio/abajur.png" id="1_feeyw"]
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_rlofg"]
-[ext_resource type="BitMap" uid="uid://bjpkvprujw2rd" path="res://Assets/Sprites/assets escritorio/click masks/abajur_click_mask.png" id="2_6tv2e"]
+[ext_resource type="Texture2D" uid="uid://4hsak0ii411i" path="res://Assets/Sprites/Office/Items/abajur.png" id="1_feeyw"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_rlofg"]
+[ext_resource type="BitMap" uid="uid://bjpkvprujw2rd" path="res://Assets/Sprites/Office/Items/click masks/abajur_click_mask.png" id="2_6tv2e"]
 
 [node name="Office_Lamp" type="TextureButton" unique_id=1053112212]
 z_index = 2

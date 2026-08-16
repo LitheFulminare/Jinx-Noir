@@ -19,7 +19,7 @@
 &"portraits": {
 "mystery": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/mystery_man/anonimo.png\""
+"image": "\"res://Assets/Sprites/Characters/mystery_man/anonimo.png\""
 },
 "mirror": true,
 "offset": Vector2(0, 0),
@@ -29,7 +29,7 @@
 },
 "red eye": {
 "export_overrides": {
-"image": "\"res://Assets/Sprites/mystery_man/anonimo2.png\""
+"image": "\"res://Assets/Sprites/Characters/mystery_man/anonimo2.png\""
 },
 "mirror": true,
 "offset": Vector2(0, 0),

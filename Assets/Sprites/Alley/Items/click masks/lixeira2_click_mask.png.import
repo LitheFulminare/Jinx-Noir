@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dfhef3tc0jjhl"
+path="res://.godot/imported/lixeira2_click_mask.png-2515a0c6aedaec3f539bfcb9154ea9cb.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Alley/Items/click masks/lixeira2_click_mask.png"
+dest_files=["res://.godot/imported/lixeira2_click_mask.png-2515a0c6aedaec3f539bfcb9154ea9cb.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

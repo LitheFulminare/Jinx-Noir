@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cxpq40re8o26j"]
 
-[ext_resource type="Texture2D" uid="uid://dbnkkjgtnvvdi" path="res://Assets/Sprites/assets beco/caixas.png" id="1_1oar6"]
-[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Mechanics/Objects/item_behavior.gd" id="1_qme0i"]
-[ext_resource type="BitMap" uid="uid://c51wvhoen6tiq" path="res://Assets/Sprites/assets beco/click masks/caixas_click_mask.png" id="2_1kqa6"]
+[ext_resource type="Texture2D" uid="uid://dbnkkjgtnvvdi" path="res://Assets/Sprites/Alley/Items/caixas.png" id="1_1oar6"]
+[ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_qme0i"]
+[ext_resource type="BitMap" uid="uid://c51wvhoen6tiq" path="res://Assets/Sprites/Alley/Items/click masks/caixas_click_mask.png" id="2_1kqa6"]
 
 [node name="Placeholder_W_Box" type="TextureButton" unique_id=403619364]
 z_index = 2

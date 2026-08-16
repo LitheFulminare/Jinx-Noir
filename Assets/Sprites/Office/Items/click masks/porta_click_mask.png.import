@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cn1jbta5and88"
+path="res://.godot/imported/porta_click_mask.png-ecd02f956eb4ddfced2fbac67cb41734.res"
+
+[deps]
+
+source_file="res://Assets/Sprites/Office/Items/click masks/porta_click_mask.png"
+dest_files=["res://.godot/imported/porta_click_mask.png-ecd02f956eb4ddfced2fbac67cb41734.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
