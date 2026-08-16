@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpd2lbqm0mn4h"
-path="res://.godot/imported/dialog-box_proceed-icon.png-f9cbeb62a9e7a871f77a084c706cbe75.ctex"
+uid="uid://bpvo640vi054l"
+path="res://.godot/imported/click.png-f07cb01c27e217841921a5d5beda5583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/Textbox/dialog-box_proceed-icon.png"
-dest_files=["res://.godot/imported/dialog-box_proceed-icon.png-f9cbeb62a9e7a871f77a084c706cbe75.ctex"]
+source_file="res://Assets/Sprites/UI/Cursors/LowResolution/click.png"
+dest_files=["res://.godot/imported/click.png-f07cb01c27e217841921a5d5beda5583.ctex"]
 
 [params]
 

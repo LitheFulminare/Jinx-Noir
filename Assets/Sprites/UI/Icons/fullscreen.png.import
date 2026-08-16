@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl6ilmdnp7gho"
-path="res://.godot/imported/default.png-c38cdf37cdb953bc43d885c38ff303d8.ctex"
+uid="uid://bccy06sc0otfq"
+path="res://.godot/imported/fullscreen.png-de6f598afc876e08bd5cd7f33857d53d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/Cursors/default.png"
-dest_files=["res://.godot/imported/default.png-c38cdf37cdb953bc43d885c38ff303d8.ctex"]
+source_file="res://Assets/Sprites/UI/Icons/fullscreen.png"
+dest_files=["res://.godot/imported/fullscreen.png-de6f598afc876e08bd5cd7f33857d53d.ctex"]
 
 [params]
 

@@ -21,24 +21,28 @@ func _ready() -> void:
 	mouse_entered.connect(_change_cursor)
 	mouse_exited.connect(_reset_cursor)
 	
+	button_down.connect(_on_button_down)
 	pressed.connect(_on_pressed)
 	button_up.connect(_on_button_up)
+
+func _on_button_down() -> void:
+	Input.set_custom_mouse_cursor(CursorManager.PATACLICK)
 
 ## Função para mudar o cursor com o sinal do sprite de quando o mouse entra
 func _change_cursor() -> void:
 	if disabled:
 		return
 	
-	Input.set_custom_mouse_cursor(CursorManager.hover_icon)
+	Input.set_custom_mouse_cursor(CursorManager.PATAHOVER)
 	
 ## Função para resetar o cursor com o sinal do sprite de quando o mouse sai
 func _reset_cursor() -> void:
-	Input.set_custom_mouse_cursor(CursorManager.default_icon)
+	Input.set_custom_mouse_cursor(CursorManager.PATA)
 	
 func _on_pressed() -> void:
 	if scene_ref:
 		scene_ref._on_item_interacted(self)
-		Input.set_custom_mouse_cursor(CursorManager.grab_icon)
+		#Input.set_custom_mouse_cursor(CursorManager.PATACLICK)
 		object_held = true
 	
 func _on_button_up() -> void:

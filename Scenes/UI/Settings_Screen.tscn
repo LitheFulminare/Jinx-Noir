@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cusnvnk6a8y4f" path="res://Assets/Sprites/UI/Menus/menuconfigfundo.png" id="2_g15v8"]
 [ext_resource type="FontFile" uid="uid://c3u4wiaionf7x" path="res://Assets/Fonts/Raleway (texto menu)/static/Raleway-Medium.ttf" id="3_cwmog"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_g15v8"]
-[ext_resource type="Texture2D" uid="uid://bccy06sc0otfq" path="res://Assets/Placeholder/Icons/fullscreen.png" id="4_bv61s"]
-[ext_resource type="Texture2D" uid="uid://cj8r4he0v62ye" path="res://Assets/Placeholder/Icons/miniplayer.png" id="5_fmlh3"]
-[ext_resource type="Texture2D" uid="uid://7u14uxwpq8ie" path="res://Assets/Placeholder/Icons/windowed fullscreen.png" id="6_2x228"]
+[ext_resource type="Texture2D" uid="uid://bccy06sc0otfq" path="res://Assets/Sprites/UI/Icons/fullscreen.png" id="4_bv61s"]
+[ext_resource type="Texture2D" uid="uid://cj8r4he0v62ye" path="res://Assets/Sprites/UI/Icons/miniplayer.png" id="5_fmlh3"]
+[ext_resource type="Texture2D" uid="uid://7u14uxwpq8ie" path="res://Assets/Sprites/UI/Icons/windowed fullscreen.png" id="6_2x228"]
 
 [sub_resource type="Animation" id="Animation_7wyei"]
 resource_name = "Blur"

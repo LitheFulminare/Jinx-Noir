@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xwbmln37irhe"
-path="res://.godot/imported/fechar.png-75336a8d0698b36420f71543e7a705b6.ctex"
+uid="uid://7u14uxwpq8ie"
+path="res://.godot/imported/windowed fullscreen.png-9763e91d349f108016ab482194466edd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/Icons/fechar.png"
-dest_files=["res://.godot/imported/fechar.png-75336a8d0698b36420f71543e7a705b6.ctex"]
+source_file="res://Assets/Sprites/UI/Icons/windowed fullscreen.png"
+dest_files=["res://.godot/imported/windowed fullscreen.png-9763e91d349f108016ab482194466edd.ctex"]
 
 [params]
 
