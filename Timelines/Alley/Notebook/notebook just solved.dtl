@@ -1,4 +1,4 @@
-audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav" [volume="-6.0"]
+audio sfx "res://Assets/Audio/SFX/Sangue sendo apagado 2.wav"
 [wait time="1.0"]
 protagonist (default): O mesmo barulho que tava vindo do caderno… agora parece ter saído da porta!
 protagonist (default): Espero que isso seja um bom sinal…

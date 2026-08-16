@@ -22,7 +22,7 @@ func hide_button() -> void:
 
 func show_with_fade(node: Control = self, duration: float = fade_duration) -> void:
 	# the first time it appears it's not transparent, so it need this
-	modulate = Color.TRANSPARENT
+	node.modulate = Color.TRANSPARENT
 	node.show()
 	var tween := get_tree().create_tween()
 	tween.tween_property(node, "modulate", Color.WHITE, duration)

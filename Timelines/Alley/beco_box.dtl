@@ -4,7 +4,7 @@ protagonist: É de hoje, pelo visto. Treze de abril.
 DE\: ------ PARA\: Jinx; “Aproveite seu presente, -----! ---- certeza -- --- --- ajudará a ----- - maldição. ---, é - --- - quatro ----!”
 protagonist (worried): Jinx… é quase o meu nome… que coisa estranha. Vou tentar abrir.
 [wait time="0.25"]
-audio "res://Assets/Audio/SFX/Objects/Trying to open cardboard box.wav" [volume="-6.0"]
+audio sfx "res://Assets/Audio/SFX/Objects/Trying to open cardboard box.wav" [volume="-3.0"]
 [wait time="4.0" hide_text="false"]
 protagonist (sad): Não dá, que tipo de fita é essa? A prova de garras?
 protagonist: Ah, esquece. Depois eu tento abrir isso.

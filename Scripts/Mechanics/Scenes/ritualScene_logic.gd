@@ -24,8 +24,10 @@ func _on_timeline_started() -> void:
 	timeline_playing = true # Diz que tem uma timeline ativa
 	print("'", cur_timeline.get_identifier(), "'", " começou: ", timeline_playing) # Debug pra indicar qual timeline está tocando e se realmente está tocando
 	
-## Quando uma timeline terminar 
+## Quando uma timeline terminar
 func _on_timeline_ended() -> void:
+	return
+	
 	timeline_playing = false # Diz que a timeline não está ativa
 	
 	cur_timeline = null

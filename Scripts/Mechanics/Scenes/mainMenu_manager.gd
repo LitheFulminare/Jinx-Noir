@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	credits_scene.is_in_menu = true
 	
-	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir)
+	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir, -6)
 	options_animationPlayer = options_menu_ref.get_node("Transition_FX")
 	
 	# Prevents audio from popping when returning to the menu from gameplay.

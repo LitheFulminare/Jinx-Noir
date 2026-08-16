@@ -25,20 +25,22 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause_game"):
 		settings_scene.hide()
 		if get_tree().paused: # unpause
-			get_tree().paused = false
-			settings_scene.hide_menu()
-			animation_player.play_backwards("Blur")
-			await animation_player.animation_finished
-			visible = false
+			unpause_game()
 		else: # pause
 			_on_return_button_pressed()
+			Dialogic.paused = true
 			get_tree().paused = true
 			visible = true
 			animation_player.play("Blur")
 			await animation_player.animation_finished
 
 func _on_resume_pressed() -> void:
+	unpause_game()
+
+func unpause_game() -> void:
 	get_tree().paused = false
+	Dialogic.paused = false
+	settings_scene.hide_menu()
 	animation_player.play_backwards("Blur")
 	await animation_player.animation_finished
 	visible = false

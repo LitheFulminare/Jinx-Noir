@@ -16,7 +16,7 @@ var phone_picked:= false
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
-	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa)
+	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6)
 	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
