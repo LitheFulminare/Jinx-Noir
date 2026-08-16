@@ -117,7 +117,7 @@ layout_mode = 2
 theme = ExtResource("1_4u21t")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
-text = "Programador, Sound Designer &Compositor"
+text = "Programador, Sound Designer & Compositor"
 
 [node name="ContinueButton" type="Button" parent="." unique_id=961580888]
 modulate = Color(1, 1, 1, 0)
