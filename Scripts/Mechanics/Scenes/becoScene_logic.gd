@@ -39,7 +39,7 @@ func _handle_dialogic_signals(method_name: String) -> void:
 	if has_method(method_name):
 		call(method_name)
 		return
-	printerr("Tried to call an inexistent method.")
+	printerr("Tried to call an inexistent method: ", method_name)
 
 ## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.
 func _check_interactions() -> void:
@@ -82,6 +82,5 @@ func notebook_closed() -> void:
 		is_introduction_sequence = false
 	
 func go_to_ritual_room() -> void:
-	# Change scene here
-	SceneLoader.load_scene(Constants.SCENE_PATHS.ritual_room)
 	TimelineManager.alley_manager = null
+	SceneLoader.load_scene(Constants.SCENE_PATHS.ritual_room)

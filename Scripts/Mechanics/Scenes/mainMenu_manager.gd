@@ -13,6 +13,8 @@ extends Control
 @export var dialogic_style: DialogicStyle
 
 func _ready() -> void:
+	Dialogic.VAR.reset()
+	
 	# Decrease lag on the first interaction
 	dialogic_style.prepare()
 	

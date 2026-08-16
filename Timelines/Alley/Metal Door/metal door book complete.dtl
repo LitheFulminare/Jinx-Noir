@@ -18,5 +18,6 @@ audio sfx "res://Assets/Audio/SFX/Objects/door_opening.wav" [volume="-5.0"]
 [wait time="1.2"]
 protagonist (default): Absurdamente específico, ainda acho que estou sonhando. Mas pelo menos deu certo. Hora de continuar a investigação.
 leave protagonist [animation="Slide To Left"]
+leave mystery_caller [animation="Slide To Left"]
 [wait time="1.5"]
 [signal arg="go_to_ritual_room"]

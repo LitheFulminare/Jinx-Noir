@@ -81,7 +81,7 @@ directories/dtl_directory={
 "office_phone_call": "res://Timelines/Office/Important/office_phone_call.dtl",
 "office_shelf_l": "res://Timelines/Office/Flavor/office_shelf_l.dtl",
 "office_shelf_r": "res://Timelines/Office/Flavor/office_shelf_r.dtl",
-"ritualRoom_start": "res://Timelines/Ritual Room/ritualRoom_start.dtl"
+"ritual_room": "res://Timelines/Ritual Room/ritual_room.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Layout_Styles/placeholder_vn_style.tres",
