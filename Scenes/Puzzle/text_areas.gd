@@ -8,6 +8,8 @@ class_name PuzzleText
 
 var notebook: Notebook
 
+var notebook_timeline := "uid://dx061ukmmugty"
+
 ## Faz com que o sprite inicial da área seja sempre sua versão censurada
 func _ready() -> void:
 	#if text_data:
@@ -111,7 +113,7 @@ func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
 	if notebook.correct_lines.size() == 3:
 		if !TimelineManager.timelines_finished.has("notebook_line_5"):
 			notebook._areas_to_clean([5])
-			Dialogic.start("uid://dx061ukmmugty") # "notebook" timeline
+			Dialogic.start(notebook_timeline)
 	notebook.check_lines()
 
 ## Remove o texto do array caso esteja nele.

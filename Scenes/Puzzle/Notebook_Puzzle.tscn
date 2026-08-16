@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b0kymjqxulia3" path="res://Scripts/Mechanics/Objects/notebook_puzzle.gd" id="1_0v856"]
 [ext_resource type="Texture2D" uid="uid://caakoavof2pmr" path="res://Assets/Sprites/UI/cadernoaberto.png" id="2_2oifp"]
+[ext_resource type="Resource" uid="uid://86s08msnla8r" path="res://Timelines/Alley/Notebook/notebook just solved.dtl" id="3_ralg1"]
+[ext_resource type="Resource" uid="uid://b7cbwfakv6m8c" path="res://Timelines/Alley/Notebook/notebook_line_unlock.dtl" id="4_na2qr"]
 [ext_resource type="Script" uid="uid://cg2onmd3v31p7" path="res://Scenes/Puzzle/text_areas.gd" id="5_3w2e8"]
+[ext_resource type="Resource" uid="uid://b5ubuaynhbgq" path="res://Timelines/Alley/Notebook/notebook_multiple_lines.dtl" id="5_b0lqa"]
 [ext_resource type="Script" uid="uid://b0chad6sovis5" path="res://Scenes/Puzzle/area_configs.gd" id="5_isv3y"]
 [ext_resource type="StyleBox" uid="uid://cboqtg0pqtoiu" path="res://Assets/Styles/puzzle_box_areas.tres" id="6_n811j"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="8_isv3y"]
@@ -165,6 +168,9 @@ mouse_filter = 2
 texture = ExtResource("2_2oifp")
 stretch_mode = 5
 script = ExtResource("1_0v856")
+notebook_just_solved_timeline = ExtResource("3_ralg1")
+notebook_line_unlock_tl = ExtResource("4_na2qr")
+notebook_multiple_lines_tl = ExtResource("5_b0lqa")
 
 [node name="Visibility_Player" type="AnimationPlayer" parent="." unique_id=470359343]
 reset_on_save = false

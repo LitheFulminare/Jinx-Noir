@@ -8,9 +8,15 @@ signal closed()
 @onready var areas_data: Array[TextData] = [load("res://Scenes/Puzzle/Resources/text_1.tres"), load("res://Scenes/Puzzle/Resources/text_2.tres"), load("res://Scenes/Puzzle/Resources/text_3.tres"), load("res://Scenes/Puzzle/Resources/text_4.tres"), load("res://Scenes/Puzzle/Resources/text_5.tres")]
 @onready var areas_ref: Array[PuzzleText] = [$Panel/Margins/Grid/Area_1, $Panel/Margins/Grid/Starter_1, $Panel/Margins/Grid/Area_2, $Panel/Margins/Grid/Starter_2, $Panel/Margins/Grid/Area_3, $Panel/Margins/Grid/Starter_3, $Panel/Margins/Grid/Area_4, $Panel/Margins/Grid/Starter_4, $Panel/Margins/Grid/Area_5, $Panel/Margins/Grid/Starter_5]
 
+@export_group("Timelines")
+@export var notebook_just_solved_timeline: DialogicTimeline
+@export var notebook_line_unlock_tl: DialogicTimeline
+@export var notebook_multiple_lines_tl: DialogicTimeline
+
 #var save_path = "user://save"
 #var save_name = "puzzleSave.tres"
 
+@export_group("Nodes")
 @export var b_scene: AlleyManager
 
 var first_time_open:= true
@@ -49,7 +55,7 @@ func check_lines() -> void:
 		return
 	if TimelineManager.timelines_finished.has("notebook just solved"):
 		return
-	Dialogic.start("uid://86s08msnla8r") # notebook just solved timeline
+	Dialogic.start(notebook_just_solved_timeline)
 
 func _open_notebook():
 	visibility_player.play("open_notebook")
@@ -77,9 +83,9 @@ func _areas_to_clean(texts: Array[int]):#text_num: int):
 	
 	# I'll have to do more things here
 	if texts_cleaned.size() == 1:
-		Dialogic.start("uid://b7cbwfakv6m8c")
+		Dialogic.start(notebook_line_unlock_tl)
 	else:
-		Dialogic.start("uid://b5ubuaynhbgq")
+		Dialogic.start(notebook_multiple_lines_tl)
 	
 	#ResourceSaver.save(areas_data[text_num - 1], areas_data[text_num - 1].resource_path)
 	#areas_data[text_num - 1] = ResourceLoader.load(areas_data[text_num - 1].resource_path)
