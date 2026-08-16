@@ -23,10 +23,7 @@ func _ready() -> void:
 	
 	pressed.connect(_on_pressed)
 	button_up.connect(_on_button_up)
-	
-	if item_type == "notebook":
-		TimelineManager.n_interaction_ref = self
-		
+
 ## Função para mudar o cursor com o sinal do sprite de quando o mouse entra
 func _change_cursor() -> void:
 	if disabled:
@@ -45,17 +42,17 @@ func _on_pressed() -> void:
 		object_held = true
 	
 func _on_button_up() -> void:
-	if !object_held:
-		return
-	
-	object_held = false
-	if open_after_interaction and PuzzleManager.puzzle_started:
-		for i in scene_ref.interactable_items.get_children():
-			if i != notebook:
-				i.visible = false
-			else:
-				var _notebook := i as Notebook
-				_notebook._open_notebook()
+	#if !object_held:
+		#return
+	#
+	#object_held = false
+	#if open_after_interaction and PuzzleManager.puzzle_started:
+		#for i in scene_ref.interactable_items.get_children():
+			#if i != notebook:
+				#i.visible = false
+			#else:
+				#var _notebook := i as Notebook
+				#_notebook._open_notebook()
 	if delete_after_interaction:
 		queue_free()
 	_reset_cursor()

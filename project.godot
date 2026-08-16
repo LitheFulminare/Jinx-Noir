@@ -30,7 +30,6 @@ SaveManager="*uid://bymsxbmaocqhr"
 GameState="*uid://dir56px00sowh"
 SceneLoader="*uid://dnfywhd5d102y"
 Constants="*uid://cb3yayeqk6uqc"
-PuzzleManager="*uid://dq4tkeyg8xe7j"
 
 [dialogic]
 

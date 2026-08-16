@@ -21,8 +21,6 @@ func _ready() -> void:
 	SaveManager.game_loaded.connect(on_game_loaded)
 	#SaveManager.load_save() # temporary, other script will call the game to load
 	
-	TimelineManager.alley_manager = self
-	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_ended.connect(_check_interactions)
 	notebook.closed.connect(notebook_closed)
@@ -82,5 +80,4 @@ func notebook_closed() -> void:
 		is_introduction_sequence = false
 	
 func go_to_ritual_room() -> void:
-	TimelineManager.alley_manager = null
 	SceneLoader.load_scene(Constants.SCENE_PATHS.ritual_room)

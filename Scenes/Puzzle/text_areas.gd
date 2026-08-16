@@ -106,9 +106,9 @@ func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
 		
 	# se o texto estiver no lugar correto ->
 	# adiciona texto no array e chama os diálogos
-	TimelineManager.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
+	notebook.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
 	print("Adding " + str(_text_data.text_num) + " to array")
-	if TimelineManager.correct_lines.size() == 3:
+	if notebook.correct_lines.size() == 3:
 		if !TimelineManager.timelines_finished.has("notebook_line_5"):
 			notebook._areas_to_clean([5])
 			Dialogic.start("uid://dx061ukmmugty") # "notebook" timeline
@@ -116,6 +116,6 @@ func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
 
 ## Remove o texto do array caso esteja nele.
 func remove_line(data_to_remove: TextData) -> void:
-	if TimelineManager.correct_lines.has(data_to_remove.text_num):
-		TimelineManager.correct_lines.erase(data_to_remove.text_num)
+	if notebook.correct_lines.has(data_to_remove.text_num):
+		notebook.correct_lines.erase(data_to_remove.text_num)
 		print("Removing " + str(data_to_remove.text_num) + " from array")

@@ -14,6 +14,7 @@ signal closed()
 @export var b_scene: AlleyManager
 
 var first_time_open:= true
+var correct_lines: Array[int] = []
 
 const TEXT_REQUIREMENTS := {
 	1: ["trash", "broom"],
@@ -23,7 +24,6 @@ const TEXT_REQUIREMENTS := {
 }
 
 func _ready() -> void:
-	TimelineManager.notebook_ref = self
 	#_verify_save_path(save_path)
 	initialize_texts()
 	
@@ -36,9 +36,16 @@ func initialize_texts() -> void:
 #func _verify_save_path(path: String):
 	#DirAccess.make_dir_absolute(save_path)
 
+func has_all_correct_lines() -> bool:
+	return (correct_lines.has(1) &&
+			correct_lines.has(2) &&
+			correct_lines.has(3) &&
+			correct_lines.has(4) &&
+			correct_lines.has(5))
+
 ## Checks if all lines are in place.
 func check_lines() -> void:
-	if !TimelineManager.has_all_correct_lines():
+	if !has_all_correct_lines():
 		return
 	if TimelineManager.timelines_finished.has("notebook just solved"):
 		return
