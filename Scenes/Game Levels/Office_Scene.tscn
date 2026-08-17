@@ -17,9 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://smg8dtvjjf77" path="res://Scenes/Items/Office/Flavor/Office_Clock.tscn" id="13_2rppr"]
 [ext_resource type="AudioStream" uid="uid://4s4r02dcud3b" path="res://Assets/Audio/SFX/Objects/Phone_Ringing.wav" id="16_v53m3"]
 
-[node name="Office_Scene" type="Node2D" unique_id=1242555024]
+[node name="Office_Scene" type="Node2D" unique_id=1242555024 node_paths=PackedStringArray("phone_stream_player")]
 scale = Vector2(0.56081104, 0.5600002)
 script = ExtResource("1_4ri1a")
+phone_stream_player = NodePath("PhoneStreamPlayer")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=311925423]
 
@@ -178,14 +179,15 @@ scene_ref = NodePath("../../../..")
 [node name="Cursor_Manager" type="Node" parent="." unique_id=2042316836]
 script = ExtResource("3_e1qge")
 
-[node name="Audio_Player" type="AudioStreamPlayer2D" parent="." unique_id=1327138087]
+[node name="RainStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1327138087]
+position = Vector2(436.86728, 219.64278)
 stream = ExtResource("6_s3noc")
 volume_db = -10.0
 autoplay = true
 bus = &"Muffled Rain"
 
-[node name="PhoneAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=674924747]
-unique_name_in_owner = true
+[node name="PhoneStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=674924747]
+position = Vector2(385.405, 362.335)
 scale = Vector2(0.99999994, 1)
 stream = ExtResource("16_v53m3")
 volume_db = -9.0

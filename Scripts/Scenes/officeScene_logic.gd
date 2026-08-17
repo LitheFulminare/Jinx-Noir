@@ -7,10 +7,10 @@ var cur_timeline: DialogicTimeline
 ## Para poder sabermos se uma timeline está acontecendo ou não
 var timeline_playing:= false 
 @onready var interactable_items = $Scene_Elements/Placeholder_BG/Interactable_Items
-@onready var audio_player = $Audio_Player
 @onready var door: Item = %Door
 @onready var phone: Item = %Phone
-@onready var phone_audio_player: AudioStreamPlayer2D = %PhoneAudioPlayer
+
+@export var phone_stream_player: AudioStreamPlayer2D
 
 var phone_picked:= false
 
@@ -42,11 +42,11 @@ func _check_interactions(item: Item):
 		Dialogic.VAR.Office.items_interacted += 1
 	if Dialogic.VAR.Office.items_interacted == 4:
 		await get_tree().create_timer(1.5).timeout
-		phone_audio_player.play()
+		phone_stream_player.play()
 		phone.disabled = false
 
 func phone_call_started() -> void:
-	phone_audio_player.stop()
+	phone_stream_player.stop()
 
 func phone_call_over() -> void:
 	door.disabled = false
