@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cfxd8r56x2qvd"]
 
 [ext_resource type="Script" uid="uid://jyfy2ecx31r4" path="res://Scripts/UI/loading_screen.gd" id="1_xofxx"]
-[ext_resource type="AudioStream" uid="uid://l68a8wu7c2c4" path="res://Assets/Audio/SFX/Rain loop.ogg" id="2_1hssg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0i3l"]
 bg_color = Color(0, 0, 0, 1)
@@ -59,9 +58,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_q0i3l")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ay4dq")
 autoplay = &"transition"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=876419796]
-stream = ExtResource("2_1hssg")
-volume_db = -12.0
-autoplay = true
-bus = &"SFX"
