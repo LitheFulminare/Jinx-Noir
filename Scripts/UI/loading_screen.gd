@@ -5,27 +5,34 @@ signal loading_screen_ready
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
+var bypass_fade = false
+var previous_sfx_bus_volume: float
+
 func _ready() -> void:
-	fade_sfx_bus()
-	
-	print("Transition animation started")
+	if !bypass_fade:
+		_fade_sfx_bus(false)
 	
 	await animation_player.animation_finished
 	loading_screen_ready.emit()
 
-func fade_sfx_bus() -> void:
+func _fade_sfx_bus(fade_in: bool) -> void:
 	var sfx_bus_index := AudioServer.get_bus_index("SFX")
-	var sfx_bus_volume := AudioServer.get_bus_volume_linear(sfx_bus_index)
+	var current_sfx_bus_volume := AudioServer.get_bus_volume_linear(sfx_bus_index)
+	
+	var target_volume: float = 0
+	if fade_in:
+		target_volume = previous_sfx_bus_volume
+	else:
+		# Will restore current volume when fading in later on.
+		previous_sfx_bus_volume = current_sfx_bus_volume
 	
 	var fade_duration := animation_player.get_animation("transition").length
-	print("fade_duration: ", fade_duration)
-	print("sfx_bus_volume: ", sfx_bus_volume)
 	
 	var tween := get_tree().create_tween()
 	tween.tween_method(
 		func(vol: float): AudioServer.set_bus_volume_linear(sfx_bus_index, vol), 
-		sfx_bus_volume,
-		0,
+		current_sfx_bus_volume,
+		target_volume,
 		fade_duration)
 
 func on_progress_changed(_new_value: float) -> void:
@@ -33,7 +40,9 @@ func on_progress_changed(_new_value: float) -> void:
 	return
 
 func on_load_finished() -> void:
-	print("Animation finished, now playing backwards")
+	if !bypass_fade:
+		_fade_sfx_bus(true)
+	
 	animation_player.play_backwards("transition")
 	await animation_player.animation_finished
 	queue_free()

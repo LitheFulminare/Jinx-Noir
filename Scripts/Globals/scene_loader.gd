@@ -28,10 +28,13 @@ func _process(_delta: float) -> void:
 			load_finished.emit()
 			set_process(false)
 
-func load_scene(_scene_path: String) -> void:
+## Loads a scene using its path and changes to this scene. Can also bypass
+## the SFX bus fade.
+func load_scene(_scene_path: String, bypass_bus_fade: bool = false) -> void:
 	scene_path = _scene_path
 	
 	var new_load_screen: LoadingScreen = loading_screen.instantiate()
+	new_load_screen.bypass_fade = bypass_bus_fade
 	add_child((new_load_screen))
 	progress_changed.connect(new_load_screen.on_progress_changed)
 	load_finished.connect(new_load_screen.on_load_finished)

@@ -195,7 +195,7 @@ _data = {
 &"RESET": SubResource("Animation_rjge0")
 }
 
-[node name="Menu_Screen" type="Control" unique_id=1630642795 node_paths=PackedStringArray("credits_scene")]
+[node name="Menu_Screen" type="Control" unique_id=1630642795 node_paths=PackedStringArray("credits_scene", "settings_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -204,6 +204,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cdisa")
 credits_scene = NodePath("CreditsScene")
+settings_screen = NodePath("Settings_Screen")
 phone_call_timeline = ExtResource("2_hbowr")
 dialogic_style = ExtResource("3_ko0lm")
 

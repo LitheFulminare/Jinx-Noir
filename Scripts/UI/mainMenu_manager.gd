@@ -2,11 +2,11 @@
 class_name MainMenuManager
 extends Control
 
-@onready var options_menu_ref = $Settings_Screen
 @onready var options_animationPlayer = null
 @onready var animation_player = $Transition_FX
 @onready var background = $Menu_BG
 @export var credits_scene: CreditsScene
+@export var settings_screen: SettingsManager
 
 @export var phone_call_timeline: DialogicTimeline
 ## Dialogic style used on the timelines so it can be prepared beforehand.
@@ -23,8 +23,10 @@ func _ready() -> void:
 	
 	credits_scene.is_in_menu = true
 	
+	settings_screen.load_settings()
+	
 	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir, -6)
-	options_animationPlayer = options_menu_ref.get_node("Transition_FX")
+	options_animationPlayer = settings_screen.get_node("Transition_FX")
 	
 	# Prevents audio from popping when returning to the menu from gameplay.
 	await get_tree().create_timer(0.25).timeout
@@ -49,7 +51,7 @@ func _on_start_pressed() -> void:
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
-	options_menu_ref.show_menu()
+	settings_screen.show_menu()
 
 ## Quando o botão "Sair" for pressionado
 func _on_exit_pressed() -> void:

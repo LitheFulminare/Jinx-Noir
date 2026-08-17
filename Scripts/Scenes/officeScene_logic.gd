@@ -24,6 +24,10 @@ func _ready() -> void:
 
 	GameState.current_scene = SceneID.OFFICE_SCENE
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		go_to_alley()
+
 func _handle_dialogic_signals(method_name: String) -> void:
 	if has_method(method_name):
 		call(method_name)
