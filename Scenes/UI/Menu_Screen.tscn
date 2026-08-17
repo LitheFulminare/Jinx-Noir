@@ -281,7 +281,6 @@ color = Color(0, 0, 0, 1)
 [node name="Settings_Screen" parent="." unique_id=1642139216 instance=ExtResource("3_ruads")]
 visible = false
 layout_mode = 1
-volume_default = 0.7
 
 [node name="CreditsScene" parent="." unique_id=2034291665 instance=ExtResource("5_hbowr")]
 visible = false
@@ -339,7 +338,19 @@ text = "25% Roxo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_mouse_entered_any_button"]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="mouse_exited_any_button"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_mouse_entered_any_button"]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="mouse_exited_any_button"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_on_options_pressed"]
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/CreditsButton" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/CreditsButton" to="." method="_mouse_entered_any_button"]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/CreditsButton" to="." method="mouse_exited_any_button"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/Exit_BT" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/Exit_BT" to="." method="_mouse_entered_any_button"]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/Exit_BT" to="." method="mouse_exited_any_button"]
 [connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Exit_BT" to="." method="_on_exit_pressed"]

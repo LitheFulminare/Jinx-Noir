@@ -24,6 +24,7 @@ var areas_data: Array[TextData] = [
 
 @export_group("Nodes")
 @export var b_scene: AlleyManager
+@export var close_button: Button
 
 var first_time_open:= true
 var correct_lines: Array[int] = []

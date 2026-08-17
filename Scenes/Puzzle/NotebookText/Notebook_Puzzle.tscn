@@ -156,7 +156,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="NotebookPuzzle" type="TextureRect" unique_id=628655249]
+[node name="NotebookPuzzle" type="TextureRect" unique_id=628655249 node_paths=PackedStringArray("close_button")]
 z_index = 4096
 z_as_relative = false
 anchors_preset = 15
@@ -165,12 +165,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+mouse_default_cursor_shape = 2
 texture = ExtResource("2_2oifp")
 stretch_mode = 5
 script = ExtResource("1_0v856")
 notebook_just_solved_timeline = ExtResource("3_ralg1")
 notebook_line_unlock_tl = ExtResource("4_na2qr")
 notebook_multiple_lines_tl = ExtResource("5_b0lqa")
+close_button = NodePath("Close_Button")
 
 [node name="Visibility_Player" type="AnimationPlayer" parent="." unique_id=470359343]
 reset_on_save = false
@@ -189,6 +191,7 @@ offset_right = 17.029907
 offset_bottom = 16.725983
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("8_isv3y")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2oifp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wd4mk")

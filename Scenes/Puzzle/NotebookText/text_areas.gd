@@ -12,6 +12,9 @@ var notebook_timeline := "uid://dx061ukmmugty"
 
 ## Faz com que o sprite inicial da área seja sempre sua versão censurada
 func _ready() -> void:
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	
 	#if text_data:
 		#ResourceSaver.save(text_data, text_data.resource_path)
 		#text_data = ResourceLoader.load(text_data.resource_path)
@@ -20,7 +23,19 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_update_ui()
+
+func _on_mouse_entered() -> void:
+	if !text_data:
+		return
 	
+	if text_data.is_censored:
+		return
+	
+	Input.set_custom_mouse_cursor(CursorManager.PATAHOVER)
+
+func _on_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(CursorManager.PATA)
+
 ## Faz a mudança de texto que está em cada espaço da grid
 func _update_ui() -> void:
 	## Se não tiver algo dentro do espaço, irá ficar com uma textura vazia

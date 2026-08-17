@@ -54,7 +54,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bftun")
-volume_default = null
 master_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Master_Volume_Section/Master_Volume_Slider")
 music_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Music_Volume_Section/Music_Volume_Slider")
 sfx_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/SFX_Volume_Slider")
@@ -115,6 +114,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 max_value = 1.0
 step = 0.001
 value = 0.7
@@ -133,6 +133,7 @@ label_settings = ExtResource("2_cwmog")
 
 [node name="Master_Mute_Option" type="CheckBox" parent="Settings_BG/Settings_Container/Vertical_Layout/Master_Volume_Section/Mute_Section" unique_id=216924007]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_constants/check_v_offset = 1
 
 [node name="Music_Volume_Section" type="HBoxContainer" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=120937255]
@@ -151,6 +152,7 @@ text = "Música"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 max_value = 1.0
 step = 0.001
 value = 0.7
@@ -169,6 +171,7 @@ label_settings = ExtResource("2_cwmog")
 
 [node name="Music_Mute_Option" type="CheckBox" parent="Settings_BG/Settings_Container/Vertical_Layout/Music_Volume_Section/Mute_Section" unique_id=2075151148]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_constants/check_v_offset = 1
 
 [node name="SFX_Volume_Section" type="HBoxContainer" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=595009833]
@@ -189,6 +192,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 max_value = 1.0
 step = 0.001
 value = 0.7
@@ -207,6 +211,7 @@ label_settings = ExtResource("2_cwmog")
 
 [node name="SFX_Mute_Option" type="CheckBox" parent="Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/Mute_Section" unique_id=1251531974]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme_override_constants/check_v_offset = 1
 
 [node name="ScreenOptions_Label" type="Label" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=627117519]
@@ -219,8 +224,9 @@ layout_mode = 2
 
 [node name="Screen_Options" type="OptionButton" parent="Settings_BG/Settings_Container/Vertical_Layout/Screen_Section" unique_id=390162635]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("3_g15v8")
-theme_override_constants/arrow_margin = 14
+theme_override_constants/arrow_margin = 5
 selected = 2
 item_count = 3
 popup/item_0/text = "Tela Cheia"
@@ -243,6 +249,7 @@ alignment = 1
 layout_direction = 2
 layout_mode = 2
 size_flags_vertical = 8
+mouse_default_cursor_shape = 2
 theme = ExtResource("3_g15v8")
 text = "Voltar"
 

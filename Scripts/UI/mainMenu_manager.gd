@@ -30,6 +30,18 @@ func _ready() -> void:
 	await get_tree().create_timer(0.25).timeout
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), false)
 
+func _any_button_down() -> void:
+	return
+	# I decided not to used this because doing I don't want to do it for 
+	# every control node.
+	#Input.set_custom_mouse_cursor(CursorManager.PATACLICK)
+
+func _mouse_entered_any_button() -> void:
+	Input.set_custom_mouse_cursor(CursorManager.PATAHOVER)
+
+func mouse_exited_any_button() -> void:
+	Input.set_custom_mouse_cursor(CursorManager.PATA)
+
 ## Quando o botão "Iniciar" for pressionado
 func _on_start_pressed() -> void:
 	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
