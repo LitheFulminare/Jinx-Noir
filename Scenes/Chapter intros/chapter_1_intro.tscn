@@ -19,7 +19,7 @@ tracks/0/keys = {
 
 CURITIBA, 13 DE ABRIL
 
-13 53"]
+03 53"]
 }
 
 [sub_resource type="Animation" id="Animation_gjqan"]
@@ -39,7 +39,7 @@ tracks/0/keys = {
 
 CURITIBA, 13 DE ABRIL
 
-13 54"]
+03 54"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -101,7 +101,7 @@ text = "CAPÍTULO I
 
 CURITIBA, 13 DE ABRIL
 
-13 53"
+03 53"
 horizontal_alignment = 1
 
 [node name="TwoDotsLabel" type="Label" parent="." unique_id=1648476708]
@@ -111,9 +111,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -2.0
 offset_top = 55.0
-offset_right = 1.0
+offset_right = 3.0
 offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
