@@ -32,4 +32,5 @@ func _on_timeline_ended() -> void:
 	if !timelines_finished.has(cur_timeline.get_identifier()) and cur_timeline.get_identifier() != "beco_start":
 		timelines_finished.append(cur_timeline.get_identifier())
 		GameState.timelines_finished = timelines_finished.duplicate()
+		SaveManager.save_game(1)
 	cur_timeline = null
