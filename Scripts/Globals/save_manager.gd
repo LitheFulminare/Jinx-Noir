@@ -34,6 +34,8 @@ func save_game(slot: int) -> void:
 	
 	file.store_var(data)
 	file.close()
+	
+	game_saved.emit()
 
 func load_game(slot: int) -> bool:
 	var path := _get_path(slot)
@@ -54,6 +56,7 @@ func load_game(slot: int) -> bool:
 		return false
 	
 	GameState.from_dict(data)
+	game_loaded.emit()
 	return true
 
 func get_save_info(slot: int) -> Dictionary:
@@ -74,6 +77,14 @@ func delete_save(slot: int) -> void:
 	var path := _get_path(slot)
 	if FileAccess.file_exists(path):
 		DirAccess.remove_absolute(path)
+
+## Checks whether there is a save on any slot.
+func has_any_saves() -> bool:
+	for i in range(1, 4):
+		if FileAccess.file_exists(_get_path(i)):
+			return true
+	
+	return false
 
 func _has_save(slot: int) -> bool:
 	return FileAccess.file_exists(_get_path(slot))

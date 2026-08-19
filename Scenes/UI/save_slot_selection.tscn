@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://22dy150voiu"]
+
+[ext_resource type="Script" uid="uid://bqprj17ppixwe" path="res://Scripts/UI/save_slot_selection.gd" id="1_1kgno"]
+
+[node name="SaveSlotSelection" type="Control" unique_id=728292127]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1kgno")
+
+[node name="BG" type="ColorRect" parent="." unique_id=970180971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2044148646]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Slot1Button" type="Button" parent="HBoxContainer" unique_id=1812949842]
+layout_mode = 2
+text = "Slot 1"
+
+[node name="Slot2Button" type="Button" parent="HBoxContainer" unique_id=1095079519]
+layout_mode = 2
+text = "Slot 2"
+
+[node name="Slot3Button" type="Button" parent="HBoxContainer" unique_id=1206944493]
+layout_mode = 2
+text = "Slot 3"
+
+[connection signal="pressed" from="HBoxContainer/Slot1Button" to="." method="_on_save_slot_button_pressed" binds= [1]]
+[connection signal="pressed" from="HBoxContainer/Slot2Button" to="." method="_on_save_slot_button_pressed" binds= [2]]
+[connection signal="pressed" from="HBoxContainer/Slot3Button" to="." method="_on_save_slot_button_pressed" binds= [3]]

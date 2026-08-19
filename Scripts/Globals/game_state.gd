@@ -5,12 +5,12 @@ var timelines_finished: Array[String]
 ## Estados de todos os puzzles do jogo. Não guarda se eles foram completos, 
 ## no caso do caderno guarda apenas a posição de cada texto.
 var puzzles_states: Dictionary = {}
-var current_scene: StringName
+var current_scene_uid: String
 
 ## Retorna todas as informações do GameState num dicionário.
 func to_dict() -> Dictionary:
 	return {
-		"current_scene": current_scene,
+		"current_scene_uid": current_scene_uid,
 		"timelines_finished": timelines_finished,
 		"puzzles_states": puzzles_states
 	}
@@ -19,6 +19,6 @@ func to_dict() -> Dictionary:
 func from_dict(data: Dictionary) -> void:
 	timelines_finished.clear()
 	
-	current_scene = data.get("current_scene")
+	current_scene_uid = data.get("current_scene_uid")
 	timelines_finished.assign(data.get("timelines_finished"))
 	puzzles_states = data.get("puzzles_states")

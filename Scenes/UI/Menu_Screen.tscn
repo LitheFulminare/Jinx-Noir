@@ -195,7 +195,7 @@ _data = {
 &"RESET": SubResource("Animation_rjge0")
 }
 
-[node name="Menu_Screen" type="Control" unique_id=1630642795 node_paths=PackedStringArray("credits_scene", "settings_screen")]
+[node name="Menu_Screen" type="Control" unique_id=1630642795 node_paths=PackedStringArray("credits_scene", "settings_screen", "continue_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,6 +205,7 @@ grow_vertical = 2
 script = ExtResource("1_cdisa")
 credits_scene = NodePath("CreditsScene")
 settings_screen = NodePath("Settings_Screen")
+continue_button = NodePath("Menu_BG/Button_Container/Vertical_Layout/ContinueButton")
 phone_call_timeline = ExtResource("2_hbowr")
 dialogic_style = ExtResource("3_ko0lm")
 
@@ -237,14 +238,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("3_2bnp2")
-theme_override_constants/separation = 14
+theme_override_constants/separation = 9
 alignment = 1
 
-[node name="Start_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=2046742699]
+[node name="NewGameButton" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=2046742699]
 layout_mode = 2
 theme = ExtResource("3_2bnp2")
 theme_override_font_sizes/font_size = 14
-text = "Iniciar Jogo"
+text = "Novo Jogo"
+text_direction = 1
+
+[node name="ContinueButton" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=828278073]
+layout_mode = 2
+theme = ExtResource("3_2bnp2")
+theme_override_font_sizes/font_size = 14
+disabled = true
+text = "Continuar"
 text_direction = 1
 
 [node name="Options_BT" type="Button" parent="Menu_BG/Button_Container/Vertical_Layout" unique_id=1791005115]
@@ -339,10 +348,14 @@ text = "25% Roxo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_any_button_down"]
-[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_mouse_entered_any_button"]
-[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="mouse_exited_any_button"]
-[connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/Start_BT" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/NewGameButton" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/NewGameButton" to="." method="_mouse_entered_any_button"]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/NewGameButton" to="." method="mouse_exited_any_button"]
+[connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/NewGameButton" to="." method="_on_start_pressed"]
+[connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/ContinueButton" to="." method="_any_button_down"]
+[connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/ContinueButton" to="." method="_mouse_entered_any_button" binds= [NodePath("Menu_BG/Button_Container/Vertical_Layout/ContinueButton")]]
+[connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/ContinueButton" to="." method="mouse_exited_any_button"]
+[connection signal="pressed" from="Menu_BG/Button_Container/Vertical_Layout/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="button_down" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_any_button_down"]
 [connection signal="mouse_entered" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="_mouse_entered_any_button"]
 [connection signal="mouse_exited" from="Menu_BG/Button_Container/Vertical_Layout/Options_BT" to="." method="mouse_exited_any_button"]

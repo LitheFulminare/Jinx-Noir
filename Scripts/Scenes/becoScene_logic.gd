@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	Dialogic.start("beco_start")
 	
-	GameState.current_scene = SceneID.ALLEY_SCENE
+	GameState.current_scene_uid = Constants.SCENE_PATHS.alley
 
 ## Synchronizes notebook puzzle state.
 func on_game_loaded() -> void:
@@ -38,6 +38,10 @@ func _handle_dialogic_signals(method_name: String) -> void:
 		call(method_name)
 		return
 	printerr("Tried to call an inexistent method: ", method_name)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_key_pressed(KEY_P):
+		SaveManager.save_game(1)
 
 ## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.
 func _check_interactions() -> void:

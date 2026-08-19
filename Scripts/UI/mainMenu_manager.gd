@@ -7,6 +7,7 @@ extends Control
 @onready var background = $Menu_BG
 @export var credits_scene: CreditsScene
 @export var settings_screen: SettingsManager
+@export var continue_button: Button
 
 @export var phone_call_timeline: DialogicTimeline
 ## Dialogic style used on the timelines so it can be prepared beforehand.
@@ -25,6 +26,11 @@ func _ready() -> void:
 	
 	settings_screen.load_settings()
 	
+	if SaveManager.has_any_saves():
+		continue_button.disabled = false
+	else:
+		continue_button.disabled = true
+	
 	MusicManager.play_music(Constants.SONG_PATHS.Jinx_Noir, -6)
 	options_animationPlayer = settings_screen.get_node("Transition_FX")
 	
@@ -38,7 +44,16 @@ func _any_button_down() -> void:
 	# every control node.
 	#Input.set_custom_mouse_cursor(CursorManager.PATACLICK)
 
-func _mouse_entered_any_button() -> void:
+## Changes mouse cursor to hover cursor.
+func _mouse_entered_any_button(node_path: NodePath = "") -> void:
+	## Continue button is the only one that can be disabled, so get_node()
+	## and property checks are useless in most cases.
+	## (and I'd have to connect all nodes).
+	if not node_path.is_empty():
+		var button := get_node(node_path) as Button
+		if button.disabled:
+			return
+	
 	Input.set_custom_mouse_cursor(CursorManager.PATAHOVER)
 
 func mouse_exited_any_button() -> void:
@@ -61,3 +76,6 @@ func _on_exit_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	credits_scene.show_with_fade()
+
+func _on_continue_button_pressed() -> void:
+	pass # Replace with function body.

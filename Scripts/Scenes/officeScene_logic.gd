@@ -22,11 +22,13 @@ func _ready() -> void:
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
 
-	GameState.current_scene = SceneID.OFFICE_SCENE
+	GameState.current_scene_uid = Constants.SCENE_PATHS.office
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		go_to_alley()
+	if Input.is_key_pressed(KEY_P):
+		SaveManager.save_game(1)
 
 func _handle_dialogic_signals(method_name: String) -> void:
 	if has_method(method_name):
