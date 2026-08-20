@@ -24,14 +24,19 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_check_interactions)
 	notebook.closed.connect(notebook_closed)
 	
+	initialize_alley_interactions()
+	
+	GameState.current_scene_uid = Constants.SCENE_PATHS.alley
+
+func initialize_alley_interactions() -> void:
+	notebook.initialize_texts()
+	
 	if !TimelineManager.timelines_finished.has(metal_door_incomplete.get_identifier()):
 		Dialogic.start(alley_start_timeline)
 	else:
 		is_introduction_sequence = false
 		interaction_blocker.visible = false
 		restore_puzzle_state()
-	
-	GameState.current_scene_uid = Constants.SCENE_PATHS.alley
 
 ## Synchronizes notebook puzzle state.
 func on_game_loaded() -> void:

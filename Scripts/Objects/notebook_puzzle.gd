@@ -38,7 +38,8 @@ const TEXT_REQUIREMENTS := {
 
 func _ready() -> void:
 	#_verify_save_path(save_path)
-	initialize_texts()
+	#initialize_texts()
+	pass
 	
 func initialize_texts() -> void:
 	for text: PuzzleText in areas_ref:
@@ -119,10 +120,13 @@ func save_progression() -> void:
 	#SaveManager.save_game(1)
 
 func load_progression(puzzle_state: Array) -> void:
-	for i in puzzle_state:
+	print("puzzle_state.size(): ", puzzle_state.size())
+	for i in puzzle_state.size():
+		print("index ", i, " is ", puzzle_state[i])
 		if puzzle_state[i] != 0:
 			areas_ref[i].text_data = areas_data[puzzle_state[i] - 1]
 		else:
+			print("Setting area ", i + 1, " to null")
 			areas_ref[i].text_data = null
 
 func _on_close_pressed() -> void:

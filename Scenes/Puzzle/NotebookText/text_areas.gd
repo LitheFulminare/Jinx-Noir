@@ -79,8 +79,6 @@ func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 
 ## Após soltar o item, irá adiciona-lô ao espaço que estava sendo arrastado para cima
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
-	notebook.save_progression()
-	
 	# data é de onde o jogador está arrastando
 	
 	if text_data != null:
@@ -110,6 +108,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	data.text.show() # }
 	_update_ui() # } 
 	data._update_ui() # }
+	
+	notebook.save_progression()
 
 ## Testa se o texto está no lugar correto e adiciona no array. Também gerencia os diálogos.
 func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
