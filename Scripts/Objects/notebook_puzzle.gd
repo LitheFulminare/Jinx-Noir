@@ -72,7 +72,7 @@ func _open_notebook():
 
 ## Cleans the texts according to the numbers on the given array. Then, 
 ## starts the notebook timeline corresponding to the amount of texts cleaned.
-func _areas_to_clean(texts: Array[int]):#text_num: int):
+func _areas_to_clean(texts: Array[int], skip_dialogue: bool = false):
 	print("areas_to_clean() called with arg " + str(texts))
 	
 	var texts_cleaned: Array[int] = []
@@ -84,7 +84,10 @@ func _areas_to_clean(texts: Array[int]):#text_num: int):
 			areas_data[text_num - 1]._set_current_sprite(2)
 		else:
 			print(str(text_num) + " is already clean")
-		
+	
+	if skip_dialogue:
+		return
+	
 	if texts_cleaned.size() == 0:
 		return
 	
@@ -113,7 +116,7 @@ func save_progression() -> void:
 		notebook_state.append(area.text_data.text_num)
 		
 	GameState.puzzles_states.set(PuzzleID.BECO_PUZZLE, notebook_state)
-	SaveManager.save()
+	SaveManager.save_game(1)
 
 func _on_close_pressed() -> void:
 	closed.emit()

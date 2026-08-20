@@ -10,6 +10,7 @@ func _ready() -> void:
 func _on_save_slot_button_pressed(slot: int) -> void:
 	if SaveManager._has_save(slot):
 		print("Loading game on slot ", slot)
+		SaveManager.current_save_slot = slot
 		SaveManager.load_game(slot)
 	else:
 		print("Doesn't have save on slot ", slot)

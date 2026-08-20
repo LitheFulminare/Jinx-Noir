@@ -192,6 +192,10 @@ func folders() -> Array:
 			result.append(VariableFolder.new(var_storage[i], i, self))
 	return result
 
+## Returns the variables in a dictionary.
+func get_variables() -> Dictionary:
+	return var_storage.duplicate(true)
+
 
 func variables(_absolute:=false) -> Array:
 	var result := []

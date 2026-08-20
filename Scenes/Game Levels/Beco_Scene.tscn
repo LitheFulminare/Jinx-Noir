@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cnw2ei7sdvg4l"]
 
 [ext_resource type="Script" uid="uid://w4kxkpanccg1" path="res://Scripts/Scenes/becoScene_logic.gd" id="1_rwci3"]
+[ext_resource type="Resource" uid="uid://bksohnls3nwf5" path="res://Timelines/Alley/beco_start.dtl" id="2_kuu5w"]
+[ext_resource type="Resource" uid="uid://dhamrvbgaelw6" path="res://Timelines/Alley/Metal Door/metal door book incomplete.dtl" id="3_l515w"]
 [ext_resource type="PackedScene" uid="uid://1k0u5t53vji6" path="res://Scenes/Items/Beco/Puzzle Components/BecoScene_Notebook.tscn" id="3_wgc12"]
 [ext_resource type="PackedScene" uid="uid://bpfnqi71pwocb" path="res://Scenes/Items/Beco/Puzzle Components/BecoScene_Door_1.tscn" id="4_6xvgo"]
 [ext_resource type="Texture2D" uid="uid://cn3wb3j71dnuu" path="res://Assets/Sprites/Alley/Beco.png" id="4_h26ys"]
@@ -22,6 +24,8 @@
 [node name="BecoScene" type="Node2D" unique_id=1615627716]
 scale = Vector2(0.56, 0.56)
 script = ExtResource("1_rwci3")
+alley_start_timeline = ExtResource("2_kuu5w")
+metal_door_incomplete = ExtResource("3_l515w")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=1264917687]
 

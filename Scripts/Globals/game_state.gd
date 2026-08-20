@@ -6,19 +6,24 @@ var timelines_finished: Array[String]
 ## no caso do caderno guarda apenas a posição de cada texto.
 var puzzles_states: Dictionary = {}
 var current_scene_uid: String
+#var dialogic_variables: Dictionary
 
 ## Retorna todas as informações do GameState num dicionário.
 func to_dict() -> Dictionary:
 	return {
 		"current_scene_uid": current_scene_uid,
 		"timelines_finished": timelines_finished,
-		"puzzles_states": puzzles_states
+		"puzzles_states": puzzles_states,
+		"dialogic_variables": Dialogic.VAR.get_variables()
 	}
 
 ## Restaura todos os valores a partir do save que foi carregado.
 func from_dict(data: Dictionary) -> void:
 	timelines_finished.clear()
+	#dialogic_variables.clear()
 	
 	current_scene_uid = data.get("current_scene_uid")
 	timelines_finished.assign(data.get("timelines_finished"))
 	puzzles_states = data.get("puzzles_states")
+	#dialogic_variables.assign(data.get("dialogic_variables"))
+	Dialogic.VAR.var_storage.assign(data.get("dialogic_variables"))

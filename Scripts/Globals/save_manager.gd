@@ -17,6 +17,8 @@ const MAX_SLOTS: int = 3
 
 var save_template: String
 
+var current_save_slot: int
+
 func _ready() -> void:
 	clean_save_folder()
 
