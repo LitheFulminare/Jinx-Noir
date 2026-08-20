@@ -125,6 +125,7 @@ func load_progression(puzzle_state: Array) -> void:
 		print("index ", i, " is ", puzzle_state[i])
 		if puzzle_state[i] != 0:
 			areas_ref[i].text_data = areas_data[puzzle_state[i] - 1]
+			areas_ref[i].add_line(areas_ref[i].text_data, areas_ref[i], true)
 		else:
 			print("Setting area ", i + 1, " to null")
 			areas_ref[i].text_data = null

@@ -112,7 +112,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	notebook.save_progression()
 
 ## Testa se o texto está no lugar correto e adiciona no array. Também gerencia os diálogos.
-func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
+func add_line(_text_data: TextData, new_place: PuzzleText, skip_dialogue := false) -> void:
 	if !new_place.name.begins_with("A"):
 		return
 		
@@ -128,8 +128,9 @@ func add_line(_text_data: TextData, new_place: PuzzleText) -> void:
 	notebook.correct_lines.append(int(new_place.name.substr(new_place.name.length() - 1)))
 	print("Adding " + str(_text_data.text_num) + " to array")
 	if notebook.correct_lines.size() == 3:
-		if !TimelineManager.timelines_finished.has("notebook_line_5"):
-			notebook._areas_to_clean([5])
+		notebook._areas_to_clean([5], skip_dialogue)
+		if (not TimelineManager.timelines_finished.has("notebook_line_5") 
+			and not skip_dialogue):
 			Dialogic.start(notebook_timeline)
 	notebook.check_lines()
 
