@@ -79,6 +79,8 @@ func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 
 ## Após soltar o item, irá adiciona-lô ao espaço que estava sendo arrastado para cima
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	notebook.save_progression()
+	
 	# data é de onde o jogador está arrastando
 	
 	if text_data != null:

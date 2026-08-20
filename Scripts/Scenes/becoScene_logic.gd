@@ -52,6 +52,7 @@ func restore_puzzle_state() -> void:
 	_check_interactions(true)
 	
 	var puzzle_state: Array = GameState.puzzles_states.get(PuzzleID.BECO_PUZZLE)
+	notebook.load_progression(puzzle_state)
 	print(puzzle_state)
 
 ## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.

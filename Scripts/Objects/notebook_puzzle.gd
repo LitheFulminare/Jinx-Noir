@@ -116,7 +116,14 @@ func save_progression() -> void:
 		notebook_state.append(area.text_data.text_num)
 		
 	GameState.puzzles_states.set(PuzzleID.BECO_PUZZLE, notebook_state)
-	SaveManager.save_game(1)
+	#SaveManager.save_game(1)
+
+func load_progression(puzzle_state: Array) -> void:
+	for i in puzzle_state:
+		if puzzle_state[i] != 0:
+			areas_ref[i].text_data = areas_data[puzzle_state[i] - 1]
+		else:
+			areas_ref[i].text_data = null
 
 func _on_close_pressed() -> void:
 	closed.emit()
