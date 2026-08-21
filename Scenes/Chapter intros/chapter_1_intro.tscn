@@ -19,7 +19,7 @@ tracks/0/keys = {
 
 CURITIBA, 13 DE ABRIL
 
-03 53"]
+03 44"]
 }
 
 [sub_resource type="Animation" id="Animation_gjqan"]
@@ -39,7 +39,7 @@ tracks/0/keys = {
 
 CURITIBA, 13 DE ABRIL
 
-03 54"]
+03 45"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -101,7 +101,7 @@ text = "CAPÍTULO I
 
 CURITIBA, 13 DE ABRIL
 
-03 53"
+03 44"
 horizontal_alignment = 1
 
 [node name="TwoDotsLabel" type="Label" parent="." unique_id=1648476708]
