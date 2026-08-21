@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dd3ja6w7yaep0"]
 
 [ext_resource type="Script" uid="uid://calefmhq714iv" path="res://Scripts/Scenes/officeScene_logic.gd" id="1_4ri1a"]
+[ext_resource type="Resource" uid="uid://dy1hfwdofxhbp" path="res://Timelines/Office/Important/office_phone_call.dtl" id="2_v53m3"]
 [ext_resource type="Script" uid="uid://b3h3ytrkd0ee5" path="res://Scripts/Globals/cursor_manager.gd" id="3_e1qge"]
 [ext_resource type="PackedScene" uid="uid://jpcg38jxvprg" path="res://Scenes/Items/Office/Puzzle Components/Office_Phone.tscn" id="3_s3noc"]
 [ext_resource type="Texture2D" uid="uid://5c2cayvyc6xb" path="res://Assets/Sprites/Office/escritorio.png" id="3_xyajt"]
@@ -21,6 +22,7 @@
 scale = Vector2(0.56081104, 0.5600002)
 script = ExtResource("1_4ri1a")
 phone_stream_player = NodePath("PhoneStreamPlayer")
+phone_call_tl = ExtResource("2_v53m3")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=311925423]
 

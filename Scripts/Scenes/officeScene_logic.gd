@@ -11,6 +11,7 @@ var timeline_playing:= false
 @onready var phone: Item = %Phone
 
 @export var phone_stream_player: AudioStreamPlayer2D
+@export var phone_call_tl: DialogicTimeline
 
 var phone_picked:= false
 
@@ -21,20 +22,31 @@ func _ready() -> void:
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
 	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
-
+	
 	GameState.current_scene_uid = Constants.SCENE_PATHS.office
+	
+	load_progression()
+	_check_phone_call(true)
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		print("DEBUG: going to alley.")
 		go_to_alley()
 	if Input.is_key_pressed(KEY_P):
 		SaveManager.save_game(1)
+		print("DEBUG: Game saved.")
 
 func _handle_dialogic_signals(method_name: String) -> void:
 	if has_method(method_name):
 		call(method_name)
 		return
 	printerr("Tried to call an inexistent method.")
+
+func load_progression() -> void:
+	if TimelineManager.timelines_finished.has(phone_call_tl.get_identifier()):
+		door.disabled = false
+	else:
+		_check_phone_call(true)
 
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
@@ -46,8 +58,13 @@ func _check_interactions(item: Item):
 	if !item.interacted_once:
 		item.interacted_once = true
 		Dialogic.VAR.Office.items_interacted += 1
+	
+	_check_phone_call()
+	
+func _check_phone_call(skip_wait_time := false) -> void:
 	if Dialogic.VAR.Office.items_interacted == 4:
-		await get_tree().create_timer(1.5).timeout
+		if not skip_wait_time:
+			await get_tree().create_timer(1.5).timeout
 		phone_stream_player.play()
 		phone.disabled = false
 
