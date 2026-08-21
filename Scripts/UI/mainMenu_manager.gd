@@ -7,6 +7,7 @@ extends Control
 @onready var background = $Menu_BG
 @export var credits_scene: CreditsScene
 @export var settings_screen: SettingsManager
+@export var save_slot_selection: SaveSlotSelection
 @export var continue_button: Button
 
 @export var phone_call_timeline: DialogicTimeline
@@ -78,4 +79,4 @@ func _on_credits_button_pressed() -> void:
 	credits_scene.show_with_fade()
 
 func _on_continue_button_pressed() -> void:
-	pass # Replace with function body.
+	save_slot_selection.show_menu()

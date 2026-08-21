@@ -61,6 +61,7 @@ func load_game(slot: int) -> bool:
 	game_loaded.emit()
 	return true
 
+## Get save metadata. Contains "current_scene_uid", "chapter" and "last_played".
 func get_save_info(slot: int) -> Dictionary:
 	var path := _get_path(slot)
 	if FileAccess.file_exists(path):
@@ -69,8 +70,9 @@ func get_save_info(slot: int) -> Dictionary:
 			var data: Variant = file.get_var()
 			if data is Dictionary:
 				return {
+					"current_scene_uid": data.get("current_scene_uid", ""),
 					"chapter": data.get("chapter", ""),
-					"timestamp": data.get("timestamp", ""),
+					"last_played": data.get("last_played", ""),
 				}
 	
 	return {}

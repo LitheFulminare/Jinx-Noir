@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://22dy150voiu"]
 
 [ext_resource type="Script" uid="uid://bqprj17ppixwe" path="res://Scripts/UI/save_slot_selection.gd" id="1_1kgno"]
+[ext_resource type="Texture2D" uid="uid://cusnvnk6a8y4f" path="res://Assets/Sprites/UI/Menus/menuconfigfundo.png" id="2_ij7gv"]
+[ext_resource type="PackedScene" uid="uid://ot46x75etd0m" path="res://Scenes/UI/save_slot.tscn" id="3_pjepv"]
+[ext_resource type="Texture2D" uid="uid://cxjc260vhwk1f" path="res://Assets/Sprites/UI/Menus/Botões/menusquare.png" id="4_ocbog"]
+[ext_resource type="Texture2D" uid="uid://7uwjicuu5ww0" path="res://Assets/Sprites/UI/Menus/Botões/squareclick.png" id="5_jbrs1"]
+[ext_resource type="Texture2D" uid="uid://chgl0r2n2j1c2" path="res://Assets/Sprites/UI/Menus/Botões/squarehover.png" id="6_mhbug"]
+[ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="7_18g1r"]
 
-[node name="SaveSlotSelection" type="Control" unique_id=728292127]
+[node name="SaveSlotSelection" type="Control" unique_id=728292127 node_paths=PackedStringArray("slot_1", "slot_2", "slot_3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,43 +16,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1kgno")
+slot_1 = NodePath("")
+slot_2 = NodePath("")
+slot_3 = NodePath("")
 
-[node name="BG" type="ColorRect" parent="." unique_id=970180971]
+[node name="BG" type="TextureRect" parent="." unique_id=654148822]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.5019608)
+texture = ExtResource("2_ij7gv")
+expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2044148646]
+[node name="SaveSlots" type="HBoxContainer" parent="." unique_id=434075914]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -74.5
+offset_top = -111.5
+offset_right = 74.5
+offset_bottom = 111.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.71, 0.71)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 alignment = 1
 
-[node name="Slot1Button" type="Button" parent="HBoxContainer" unique_id=1812949842]
+[node name="SaveSlot" parent="SaveSlots" unique_id=990078637 instance=ExtResource("3_pjepv")]
 layout_mode = 2
-text = "Slot 1"
 
-[node name="Slot2Button" type="Button" parent="HBoxContainer" unique_id=1095079519]
+[node name="SaveSlot2" parent="SaveSlots" unique_id=68869423 instance=ExtResource("3_pjepv")]
 layout_mode = 2
-text = "Slot 2"
+slot = 2
 
-[node name="Slot3Button" type="Button" parent="HBoxContainer" unique_id=1206944493]
+[node name="SaveSlot3" parent="SaveSlots" unique_id=107223738 instance=ExtResource("3_pjepv")]
 layout_mode = 2
-text = "Slot 3"
+slot = 3
 
-[connection signal="pressed" from="HBoxContainer/Slot1Button" to="." method="_on_save_slot_button_pressed" binds= [1]]
-[connection signal="pressed" from="HBoxContainer/Slot2Button" to="." method="_on_save_slot_button_pressed" binds= [2]]
-[connection signal="pressed" from="HBoxContainer/Slot3Button" to="." method="_on_save_slot_button_pressed" binds= [3]]
+[node name="LeaveButton" type="TextureButton" parent="." unique_id=398779784]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -201.0
+offset_top = -130.05
+offset_right = 201.0
+offset_bottom = 51.950073
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.24, 0.24)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_ocbog")
+texture_pressed = ExtResource("5_jbrs1")
+texture_hover = ExtResource("6_mhbug")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LeaveButton" unique_id=953471130]
+layout_mode = 0
+offset_left = 29.166674
+offset_top = 37.500046
+offset_right = 107.838
+offset_bottom = 66.63759
+scale = Vector2(4.29, 4.29)
+theme = ExtResource("7_18g1r")
+theme_override_font_sizes/font_size = 18
+text = "Voltar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="LeaveButton" to="." method="_on_leave_button_pressed"]

@@ -295,7 +295,6 @@ libraries/ = SubResource("AnimationLibrary_dunkq")
 
 [node name="Settings_Screen" parent="." unique_id=1642139216 instance=ExtResource("3_j33te")]
 visible = false
-volume_default = 0.7
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Pause_BG/Pause_Container/Control/Paper Background/PauseButtons/Resume_Button" to="." method="_on_resume_pressed"]

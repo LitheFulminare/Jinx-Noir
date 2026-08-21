@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://ot46x75etd0m"]
+
+[ext_resource type="Texture2D" uid="uid://b177ns2hw3bk2" path="res://Assets/Sprites/UI/Menus/menubox.png" id="1_ygstj"]
+[ext_resource type="Script" uid="uid://b5ih7l5jshm6a" path="res://Scripts/UI/save_slot.gd" id="2_82a4b"]
+[ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="3_82a4b"]
+[ext_resource type="Texture2D" uid="uid://cxjc260vhwk1f" path="res://Assets/Sprites/UI/Menus/Botões/menusquare.png" id="4_ki43o"]
+[ext_resource type="Texture2D" uid="uid://7uwjicuu5ww0" path="res://Assets/Sprites/UI/Menus/Botões/squareclick.png" id="5_1pftc"]
+[ext_resource type="Texture2D" uid="uid://chgl0r2n2j1c2" path="res://Assets/Sprites/UI/Menus/Botões/squarehover.png" id="6_8rn1o"]
+
+[node name="SaveSlot" type="TextureRect" unique_id=990078637 node_paths=PackedStringArray("chapter_label", "current_scene_label", "last_played_label", "save_info", "no_save_message")]
+custom_minimum_size = Vector2(149.024, 223)
+offset_right = 145.6827
+offset_bottom = 223.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_ygstj")
+expand_mode = 3
+stretch_mode = 6
+script = ExtResource("2_82a4b")
+chapter_label = NodePath("SaveInfo/VBoxContainer/ChapterLabel")
+current_scene_label = NodePath("SaveInfo/VBoxContainer/CurrentSceneLabel")
+last_played_label = NodePath("SaveInfo/VBoxContainer/LastPlayedLabel")
+save_info = NodePath("SaveInfo")
+no_save_message = NodePath("NoSaveMessage")
+
+[node name="SaveInfo" type="Control" parent="." unique_id=1810415184]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveInfo" unique_id=1998681953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 48.385002
+offset_right = 114.0
+offset_bottom = 146.38504
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ChapterLabel" type="Label" parent="SaveInfo/VBoxContainer" unique_id=431949463]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_82a4b")
+theme_override_font_sizes/font_size = 16
+text = "Capítulo 1"
+horizontal_alignment = 1
+
+[node name="CurrentSceneLabel" type="Label" parent="SaveInfo/VBoxContainer" unique_id=1286559909]
+layout_mode = 2
+theme = ExtResource("3_82a4b")
+theme_override_font_sizes/font_size = 16
+text = "Última cena"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LastPlayedLabel" type="Label" parent="SaveInfo/VBoxContainer" unique_id=1040238487]
+layout_mode = 2
+theme = ExtResource("3_82a4b")
+theme_override_font_sizes/font_size = 16
+text = "31/09/74  25:75"
+horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="SaveInfo" unique_id=1878311204]
+layout_mode = 0
+offset_left = 24.999998
+offset_top = 159.99998
+offset_right = 427.0
+offset_bottom = 342.0
+scale = Vector2(0.24, 0.24)
+texture_normal = ExtResource("4_ki43o")
+texture_pressed = ExtResource("5_1pftc")
+texture_hover = ExtResource("6_8rn1o")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="SaveInfo/Button" unique_id=1135974544]
+layout_mode = 0
+offset_left = 29.166674
+offset_top = 37.500046
+offset_right = 107.838
+offset_bottom = 66.63759
+scale = Vector2(4.29, 4.29)
+theme = ExtResource("3_82a4b")
+theme_override_font_sizes/font_size = 18
+text = "Iniciar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoSaveMessage" type="Control" parent="." unique_id=1349933408]
+visible = false
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 27.0
+offset_right = 138.0
+offset_bottom = 216.0
+
+[node name="ChapterLabel" type="Label" parent="NoSaveMessage" unique_id=925281988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -10.0
+offset_right = 35.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_82a4b")
+theme_override_font_sizes/font_size = 16
+text = "Nenhum
+ dado salvo"
+horizontal_alignment = 1

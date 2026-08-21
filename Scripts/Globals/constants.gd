@@ -17,3 +17,15 @@ const SCENE_PATHS: Dictionary[String, String] = {
 	"alley": "uid://cnw2ei7sdvg4l",
 	"ritual_room": "uid://6dm6tvn0abm4",
 }
+
+const SCENE_DISPLAY_NAMES: Dictionary[String, String] = {
+	"office": "Escritório",
+	"alley": "Beco",
+	"ritual_room": "Sala de ritual",
+	}
+
+const CHAPTER: Dictionary[String, int] = {
+	"office": 1,
+	"alley": 1,
+	"ritual_room": 1,
+} 
