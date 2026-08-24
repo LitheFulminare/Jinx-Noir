@@ -60,10 +60,21 @@ func _mouse_entered_any_button(node_path: NodePath = "") -> void:
 func mouse_exited_any_button() -> void:
 	Input.set_custom_mouse_cursor(CursorManager.PATA)
 
-## Quando o botão "Iniciar" for pressionado
+## Quando o botão "Novo Jogo" for pressionado
 func _on_start_pressed() -> void:
-	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
-	SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
+	save_slot_selection.set_selection_mode(
+		save_slot_selection.selection_mode.NEW_GAME
+		)
+	save_slot_selection.show_menu()
+	
+	#MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
+	#SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
+
+func _on_continue_button_pressed() -> void:
+	save_slot_selection.set_selection_mode(
+		save_slot_selection.selection_mode.CONTINUE
+		)
+	save_slot_selection.show_menu()
 
 ## Quando o botão "Opções" for pressionado
 func _on_options_pressed() -> void:
@@ -77,6 +88,3 @@ func _on_exit_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	credits_scene.show_with_fade()
-
-func _on_continue_button_pressed() -> void:
-	save_slot_selection.show_menu()

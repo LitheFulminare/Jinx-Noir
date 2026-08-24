@@ -1,6 +1,8 @@
 class_name SaveSlot
 extends TextureRect
 
+signal save_selected(slot: int)
+
 @export_group("Parameters")
 @export var slot: int = 1
 
@@ -10,6 +12,8 @@ extends TextureRect
 @export var last_played_label: Label
 @export var save_info: Control
 @export var no_save_message: Control
+@export var continue_button: TextureButton
+@export var new_game_button: TextureButton
 
 var display_name: String
 var last_played_parsed: String
@@ -18,6 +22,8 @@ var last_played: Dictionary
 var data: Dictionary
 
 func _ready() -> void:
+	continue_button.pressed.connect(save_selected.emit.bind(slot))
+	
 	data = SaveManager.get_save_info(slot)
 	if data == {}:
 		show_no_save()
@@ -27,6 +33,14 @@ func _ready() -> void:
 func show_no_save():
 	save_info.hide()
 	no_save_message.show()
+
+func show_continue_option() -> void:
+	continue_button.show()
+	new_game_button.hide()
+
+func show_new_game_option() -> void:
+	continue_button.hide()
+	new_game_button.show()
 
 func set_info() -> void:
 	var current_scene_uid: String = data.get("current_scene_uid")

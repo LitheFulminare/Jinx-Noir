@@ -1,9 +1,9 @@
 class_name SaveSlotSelection
 extends Control
 
-@export var slot_1: Control
-@export var slot_2: Control
-@export var slot_3: Control
+@export var save_slot: SaveSlot
+@export var save_slot_2: SaveSlot
+@export var save_slot_3: SaveSlot
 
 var fade_duration: float = 0.3
 
@@ -15,9 +15,16 @@ enum selection_mode {
 var current_selection_mode := selection_mode.CONTINUE
 
 func _ready() -> void:
-	SaveManager.connect("game_loaded", on_game_loaded)
+	connect_signals()
 	
 	show_continue_save_slots()
+
+func connect_signals() -> void:
+	SaveManager.game_loaded.connect(on_game_loaded)
+	
+	save_slot.save_selected.connect(_on_save_slot_button_pressed)
+	save_slot_2.save_selected.connect(_on_save_slot_button_pressed)
+	save_slot_3.save_selected.connect(_on_save_slot_button_pressed)
 
 func show_menu() -> void:
 	# the first time it appears it's not transparent, so it need this
@@ -47,13 +54,19 @@ func set_selection_mode(mode: selection_mode) -> void:
 	
 	match current_selection_mode:
 		selection_mode.NEW_GAME:
-			return
+			show_new_game_save_slots()
 		selection_mode.CONTINUE:
 			show_continue_save_slots()
 
 func show_continue_save_slots() -> void:
-	# something like save_slots.show()
-	return
+	save_slot.show_continue_option()
+	save_slot_2.show_continue_option()
+	save_slot_3.show_continue_option()
+
+func show_new_game_save_slots() -> void:
+	save_slot.show_new_game_option()
+	save_slot_2.show_new_game_option()
+	save_slot_3.show_new_game_option()
 
 func _on_leave_button_pressed() -> void:
 	hide_menu()

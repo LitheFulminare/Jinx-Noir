@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chgl0r2n2j1c2" path="res://Assets/Sprites/UI/Menus/Botões/squarehover.png" id="6_mhbug"]
 [ext_resource type="Theme" uid="uid://i5qt2ugkwip0" path="res://Assets/Themes/button_theme.tres" id="7_18g1r"]
 
-[node name="SaveSlotSelection" type="Control" unique_id=728292127 node_paths=PackedStringArray("slot_1", "slot_2", "slot_3")]
+[node name="SaveSlotSelection" type="Control" unique_id=728292127 node_paths=PackedStringArray("save_slot", "save_slot_2", "save_slot_3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,9 +16,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1kgno")
-slot_1 = NodePath("")
-slot_2 = NodePath("")
-slot_3 = NodePath("")
+save_slot = NodePath("SaveSlots/SaveSlot")
+save_slot_2 = NodePath("SaveSlots/SaveSlot2")
+save_slot_3 = NodePath("SaveSlots/SaveSlot3")
 
 [node name="BG" type="TextureRect" parent="." unique_id=654148822]
 layout_mode = 1
