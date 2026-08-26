@@ -5,6 +5,8 @@ extends Control
 @export var save_slot_2: SaveSlot
 @export var save_slot_3: SaveSlot
 
+@export var overwrite_save_screen: TextureRect
+
 var fade_duration: float = 0.3
 
 enum selection_mode {
@@ -25,6 +27,10 @@ func connect_signals() -> void:
 	save_slot.save_selected.connect(_on_save_slot_button_pressed)
 	save_slot_2.save_selected.connect(_on_save_slot_button_pressed)
 	save_slot_3.save_selected.connect(_on_save_slot_button_pressed)
+	
+	save_slot.new_game_button_pressed.connect(_new_game_button_pressed)
+	save_slot_2.new_game_button_pressed.connect(_new_game_button_pressed)
+	save_slot_3.new_game_button_pressed.connect(_new_game_button_pressed)
 
 func show_menu() -> void:
 	# the first time it appears it's not transparent, so it need this
@@ -45,6 +51,23 @@ func _on_save_slot_button_pressed(slot: int) -> void:
 		SaveManager.load_game(slot)
 	else:
 		print("Doesn't have save on slot ", slot)
+
+func _new_game_button_pressed(slot: int) -> void:
+	SaveManager.current_save_slot = slot
+	
+	if SaveManager._has_save(slot):
+		overwrite_save_screen.show()
+	else:
+		start_game()
+
+func start_game() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
+	MusicManager.play_music(
+		Constants.SONG_PATHS.Uma_chamada_misteriosa, # Song name
+		-6, # Volume
+		true, # Fade out
+		2 # Fade out duration
+		)
 
 func on_game_loaded() -> void:
 	SceneLoader.load_scene(GameState.current_scene_uid)
@@ -70,3 +93,9 @@ func show_new_game_save_slots() -> void:
 
 func _on_leave_button_pressed() -> void:
 	hide_menu()
+
+func _on_confirm_button_pressed() -> void:
+	start_game()
+
+func _on_return_button_pressed() -> void:
+	overwrite_save_screen.hide()

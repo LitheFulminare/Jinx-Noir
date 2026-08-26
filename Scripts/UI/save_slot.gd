@@ -1,7 +1,10 @@
 class_name SaveSlot
 extends TextureRect
 
+## Emitted when the player continues an existing save.
 signal save_selected(slot: int)
+## Emitted when the player creates a new save (or overwrites one).
+signal new_game_button_pressed(slot: int)
 
 @export_group("Parameters")
 @export var slot: int = 1
@@ -23,6 +26,7 @@ var data: Dictionary
 
 func _ready() -> void:
 	continue_button.pressed.connect(save_selected.emit.bind(slot))
+	new_game_button.pressed.connect(new_game_button_pressed.emit.bind(slot))
 	
 	data = SaveManager.get_save_info(slot)
 	if data == {}:

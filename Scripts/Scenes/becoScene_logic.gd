@@ -50,8 +50,7 @@ func _handle_dialogic_signals(method_name: String) -> void:
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_P):
-		SaveManager.save_game(1)
-		print(self, ": game saved")
+		SaveManager.save_game(SaveManager.current_save_slot)
 
 func restore_puzzle_state() -> void:
 	_check_interactions(true)

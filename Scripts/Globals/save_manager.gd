@@ -17,14 +17,10 @@ const MAX_SLOTS: int = 3
 
 var save_template: String
 
-var current_save_slot: int
+var current_save_slot: int = 1
 
 func _ready() -> void:
 	clean_save_folder()
-
-func _input(event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_P):
-		load_game(1)
 
 func save_game(slot: int) -> void:
 	var data := GameState.to_dict()
@@ -38,6 +34,7 @@ func save_game(slot: int) -> void:
 	file.close()
 	
 	game_saved.emit()
+	print("Saved game on slot ", slot)
 
 func load_game(slot: int) -> bool:
 	var path := _get_path(slot)
@@ -59,6 +56,7 @@ func load_game(slot: int) -> bool:
 	
 	GameState.from_dict(data)
 	game_loaded.emit()
+	print("Loaded game on slot ", slot)
 	return true
 
 ## Get save metadata. Contains "current_scene_uid", "chapter" and "last_played".

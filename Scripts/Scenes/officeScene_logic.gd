@@ -33,7 +33,7 @@ func _input(_event: InputEvent) -> void:
 		print("DEBUG: going to alley.")
 		go_to_alley()
 	if Input.is_key_pressed(KEY_P):
-		SaveManager.save_game(1)
+		SaveManager.save_game(SaveManager.current_save_slot)
 		print("DEBUG: Game saved. Current time: ", Time.get_datetime_dict_from_system())
 
 func _handle_dialogic_signals(method_name: String) -> void:

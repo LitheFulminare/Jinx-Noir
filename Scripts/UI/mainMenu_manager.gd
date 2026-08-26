@@ -66,9 +66,6 @@ func _on_start_pressed() -> void:
 		save_slot_selection.selection_mode.NEW_GAME
 		)
 	save_slot_selection.show_menu()
-	
-	#MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6, true, 2)
-	#SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
 
 func _on_continue_button_pressed() -> void:
 	save_slot_selection.set_selection_mode(
