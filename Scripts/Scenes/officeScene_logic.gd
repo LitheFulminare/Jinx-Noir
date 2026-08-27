@@ -17,6 +17,7 @@ var phone_picked:= false
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
+	GameState.chapter = 1
 	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6)
 	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)

@@ -5,6 +5,8 @@ extends Node
 @export var ritual_room_timeline: DialogicTimeline
 
 func _ready() -> void:
+	GameState.chapter = 1
+	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	
 	Dialogic.start(ritual_room_timeline)

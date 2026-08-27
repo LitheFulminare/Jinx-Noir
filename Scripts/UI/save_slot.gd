@@ -51,7 +51,7 @@ func set_info() -> void:
 	var current_scene: String = Constants.SCENE_PATHS.find_key(current_scene_uid)
 	display_name = Constants.SCENE_DISPLAY_NAMES.get(current_scene)
 	
-	chapter_label.text = "Capítulo " + data.get("Chapter", "0")
+	chapter_label.text = "Capítulo " + str(data.get("chapter", "0"))
 	current_scene_label.text = display_name
 	last_played_label.text = parse_last_played()
 

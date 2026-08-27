@@ -4,6 +4,9 @@ extends Control
 @export var two_dots_label: Label
 @export var timer: Timer
 
+func _ready() -> void:
+	GameState.chapter = 1
+
 func _on_timer_timeout() -> void:
 	two_dots_label.visible = !two_dots_label.visible
 
