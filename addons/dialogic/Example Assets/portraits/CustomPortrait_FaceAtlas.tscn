@@ -10,57 +10,57 @@
 [ext_resource type="Texture2D" uid="uid://c5aku2g01k6c6" path="res://addons/dialogic/Example Assets/portraits/Princess/shock.png" id="7_5xil3"]
 [ext_resource type="Texture2D" uid="uid://dsid4ye0q74nl" path="res://addons/dialogic/Example Assets/portraits/Princess/smile.png" id="8_7s6tq"]
 
-[node name="CustomPortraitFaceAtlas" type="Node2D"]
+[node name="CustomPortraitFaceAtlas" type="Node2D" unique_id=209534248]
 position = Vector2(301, 598)
 script = ExtResource("1_fc12l")
 
-[node name="Body" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="." unique_id=1427071049]
 position = Vector2(-182, -465)
 scale = Vector2(0.287561, 0.287561)
 texture = ExtResource("2_igcyp")
 centered = false
 
-[node name="Alien" type="Sprite2D" parent="."]
+[node name="Alien" type="Sprite2D" parent="." unique_id=1513682324]
 visible = false
 position = Vector2(-58, -378)
 rotation = -0.523598
 scale = Vector2(0.84236, 0.875348)
 texture = ExtResource("3_6xy1t")
 
-[node name="Faces" type="Node2D" parent="."]
+[node name="Faces" type="Node2D" parent="." unique_id=1203637314]
 position = Vector2(2, -397)
 
-[node name="Anger" type="Sprite2D" parent="Faces"]
+[node name="Anger" type="Sprite2D" parent="Faces" unique_id=1666244292]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("3_wdpjk")
 centered = false
 
-[node name="Frown" type="Sprite2D" parent="Faces"]
+[node name="Frown" type="Sprite2D" parent="Faces" unique_id=2005367336]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("4_pimb3")
 centered = false
 
-[node name="Joy" type="Sprite2D" parent="Faces"]
+[node name="Joy" type="Sprite2D" parent="Faces" unique_id=242511087]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("5_2ekfy")
 centered = false
 
-[node name="Neutral" type="Sprite2D" parent="Faces"]
+[node name="Neutral" type="Sprite2D" parent="Faces" unique_id=482651040]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("6_5hpoa")
 centered = false
 
-[node name="Shock" type="Sprite2D" parent="Faces"]
+[node name="Shock" type="Sprite2D" parent="Faces" unique_id=1449800565]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("7_5xil3")
 centered = false
 
-[node name="Smile" type="Sprite2D" parent="Faces"]
+[node name="Smile" type="Sprite2D" parent="Faces" unique_id=1675294779]
 position = Vector2(-38, -41)
 scale = Vector2(0.290393, 0.288066)
 texture = ExtResource("8_7s6tq")

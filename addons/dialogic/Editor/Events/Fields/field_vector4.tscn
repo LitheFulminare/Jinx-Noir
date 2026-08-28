@@ -4,22 +4,20 @@
 [ext_resource type="Script" uid="uid://chr6fkvkjugep" path="res://addons/dialogic/Editor/Events/Fields/field_vector4.gd" id="2_yksrc"]
 [ext_resource type="PackedScene" uid="uid://kdpp3mibml33" path="res://addons/dialogic/Editor/Events/Fields/field_number.tscn" id="3_1jogk"]
 
-[node name="Field_Vector4" instance=ExtResource("1_20tvl")]
+[node name="Field_Vector4" unique_id=1174141587 instance=ExtResource("1_20tvl")]
 offset_right = -908.0
 script = ExtResource("2_yksrc")
 
-[node name="X" parent="." index="0"]
+[node name="X" parent="." index="0" unique_id=306694623]
 size_flags_horizontal = 1
 prefix = ""
 
-[node name="Y" parent="." index="1"]
+[node name="Y" parent="." index="1" unique_id=1252476682]
 size_flags_horizontal = 1
 prefix = ""
 
-[node name="W" parent="." index="3" instance=ExtResource("3_1jogk")]
+[node name="W" parent="." index="3" unique_id=948589078 instance=ExtResource("3_1jogk")]
 layout_mode = 2
 size_flags_horizontal = 3
 enforce_step = false
-min = -9999.0
-max = 9999.0
 prefix = "w"

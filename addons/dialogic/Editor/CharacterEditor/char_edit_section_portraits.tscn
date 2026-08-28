@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtimnsj014cu" path="res://addons/dialogic/Editor/Events/Fields/field_vector2.tscn" id="3_vcvin"]
 [ext_resource type="PackedScene" uid="uid://kdpp3mibml33" path="res://addons/dialogic/Editor/Events/Fields/field_number.tscn" id="4_w4pvv"]
 
-[node name="Portraits" type="GridContainer"]
+[node name="Portraits" type="GridContainer" unique_id=1103138395]
 offset_right = 453.0
 offset_bottom = 141.0
 theme_override_constants/h_separation = 1
@@ -13,24 +13,24 @@ theme_override_constants/v_separation = 6
 columns = 2
 script = ExtResource("1_6sxsl")
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label5" type="Label" parent="." unique_id=525226238]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Default"
 
-[node name="DefaultPortraitPicker" parent="." instance=ExtResource("2_birla")]
+[node name="DefaultPortraitPicker" parent="." unique_id=1433100457 instance=ExtResource("2_birla")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Select Default Portrait"
 fit_text_length = false
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1683039207]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Main Scale"
 
-[node name="MainScaleOld" type="SpinBox" parent="."]
+[node name="MainScaleOld" type="SpinBox" parent="." unique_id=368843625]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -40,7 +40,7 @@ allow_greater = true
 alignment = 1
 suffix = "%"
 
-[node name="MainScale" parent="." instance=ExtResource("4_w4pvv")]
+[node name="MainScale" parent="." unique_id=783318244 instance=ExtResource("4_w4pvv")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -50,22 +50,22 @@ min_value = 0.0
 max_value = 999.0
 suffix = "%"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=2028022564]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Main Offset"
 
-[node name="MainOffset" parent="." instance=ExtResource("3_vcvin")]
+[node name="MainOffset" parent="." unique_id=58949283 instance=ExtResource("3_vcvin")]
 unique_name_in_owner = true
 layout_mode = 2
 alignment = 2
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="." unique_id=888964290]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Main Mirror"
 
-[node name="MainMirror" type="CheckBox" parent="."]
+[node name="MainMirror" type="CheckBox" parent="." unique_id=1517754471]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8

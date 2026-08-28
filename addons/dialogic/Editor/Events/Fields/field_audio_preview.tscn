@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://lnr24bngydn2" path="res://addons/dialogic/Editor/Events/Fields/field_audio_preview.gd" id="1_7wm54"]
 
-[node name="Field_Audio_Preview" type="Button"]
+[node name="Field_Audio_Preview" type="Button" unique_id=1541550872]
 offset_right = 8.0
 offset_bottom = 8.0
 flat = true
 script = ExtResource("1_7wm54")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1093308730]
 unique_name_in_owner = true

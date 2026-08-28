@@ -25,6 +25,8 @@ func _ready() -> void:
 func save_game(slot: int) -> void:
 	var data := GameState.to_dict()
 	
+	DirAccess.make_dir_recursive_absolute(SAVE_DIR)
+	
 	var file := FileAccess.open(_get_path(slot), FileAccess.WRITE)
 	if file == null:
 		push_error("SaveManager: failed to open save file for writing: " + error_string(FileAccess.get_open_error()))

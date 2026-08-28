@@ -12,6 +12,7 @@ script = ExtResource("1_tf3p1")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+split_offsets = PackedInt32Array(-200)
 split_offset = -200
 
 [node name="Settings" type="VBoxContainer" parent="Entries" unique_id=158192512]

@@ -7,10 +7,6 @@ script = ExtResource("1_qsljv")
 display_name = "Preview"
 nicknames = [""]
 color = Color(1, 1, 1, 1)
-description = ""
-scale = 1.0
-offset = Vector2(0, 0)
-mirror = false
 default_portrait = "character"
 portraits = {
 "character": {

@@ -11,4 +11,3 @@ texture_hover = ExtResource("1_4mc3o")
 texture_click_mask = ExtResource("2_3k5yk")
 script = ExtResource("1_1n5pn")
 item_type = "door"
-hovered_texture = ExtResource("1_4mc3o")

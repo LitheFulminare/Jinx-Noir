@@ -6,7 +6,7 @@
 [sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_2q5dk"]
 script = ExtResource("2_ww6ga")
 
-[node name="Field_Text_Multiline" type="CodeEdit"]
+[node name="Field_Text_Multiline" type="CodeEdit" unique_id=479790978]
 offset_right = 413.0
 offset_bottom = 15.0
 size_flags_horizontal = 3
