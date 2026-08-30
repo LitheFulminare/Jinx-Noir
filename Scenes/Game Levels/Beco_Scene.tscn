@@ -31,7 +31,7 @@ metal_door_incomplete = ExtResource("3_l515w")
 
 [node name="Beco_Audio" type="AudioStreamPlayer2D" parent="Scene_Elements" unique_id=1146770481]
 stream = ExtResource("4_nbpvd")
-volume_db = -6.0
+volume_db = -4.0
 autoplay = true
 bus = &"SFX"
 

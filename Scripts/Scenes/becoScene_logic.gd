@@ -19,7 +19,7 @@ var notebook_no_lines_timeline := "uid://bmehg03r48ibq"
 
 func _ready() -> void:
 	GameState.chapter = 1
-	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -6)
+	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -9)
 	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_ended.connect(_check_interactions)

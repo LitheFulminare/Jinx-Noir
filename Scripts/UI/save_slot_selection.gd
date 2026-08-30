@@ -63,7 +63,7 @@ func _new_game_button_pressed(slot: int) -> void:
 func start_game() -> void:
 	SceneLoader.load_scene(Constants.SCENE_PATHS.chapter_1_intro)
 	MusicManager.play_music(
-		Constants.SONG_PATHS.Uma_chamada_misteriosa, # Song name
+		Constants.SONG_PATHS.Uma_chamada_misteriosa, # Song name/path
 		-6, # Volume
 		true, # Fade out
 		2 # Fade out duration

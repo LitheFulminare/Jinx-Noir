@@ -192,7 +192,7 @@ bus = &"Muffled Rain"
 position = Vector2(385.405, 362.335)
 scale = Vector2(0.99999994, 1)
 stream = ExtResource("16_v53m3")
-volume_db = -9.0
+volume_db = -1.5
 bus = &"SFX"
 
 [node name="PauseScreen" parent="." unique_id=1931167145 instance=ExtResource("4_q8kq6")]

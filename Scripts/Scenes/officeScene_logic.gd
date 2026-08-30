@@ -87,4 +87,4 @@ func _on_timeline_ended() -> void:
 
 func go_to_alley() -> void:
 	SceneLoader.load_scene(Constants.SCENE_PATHS.alley)
-	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -6, true, 2)
+	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -9, true, 2)
