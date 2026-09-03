@@ -17,12 +17,32 @@
 [ext_resource type="PackedScene" uid="uid://c2i3jody8lnp3" path="res://Scenes/Items/Office/Flavor/Office_Chair.tscn" id="11_0hx8r"]
 [ext_resource type="PackedScene" uid="uid://smg8dtvjjf77" path="res://Scenes/Items/Office/Flavor/Office_Clock.tscn" id="13_2rppr"]
 [ext_resource type="AudioStream" uid="uid://4s4r02dcud3b" path="res://Assets/Audio/SFX/Objects/Phone_Ringing.wav" id="16_v53m3"]
+[ext_resource type="AudioStream" uid="uid://bpprjbthisqsh" path="res://Assets/Audio/Music/Uma chamada misteriosa/Uma Chamada Misteriosa (Main loop).ogg" id="18_70ifn"]
+[ext_resource type="AudioStream" uid="uid://c0yfkd20qshvi" path="res://Assets/Audio/Music/Uma chamada misteriosa/Uma Chamada Misteriosa (Hanging).ogg" id="19_70ifn"]
 
-[node name="Office_Scene" type="Node2D" unique_id=1242555024 node_paths=PackedStringArray("phone_stream_player")]
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_70ifn"]
+clip_count = 2
+clip_0/name = &"Main Loop"
+clip_0/stream = ExtResource("18_70ifn")
+clip_0/auto_advance = 0
+clip_1/name = &"Hanging"
+clip_1/stream = ExtResource("19_70ifn")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 1): {
+"fade_beats": 0.1,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 1
+}
+}
+
+[node name="Office_Scene" type="Node2D" unique_id=1242555024 node_paths=PackedStringArray("phone_stream_player", "music_stream_player")]
 scale = Vector2(0.56081104, 0.5600002)
 script = ExtResource("1_4ri1a")
 phone_stream_player = NodePath("PhoneStreamPlayer")
 phone_call_tl = ExtResource("2_v53m3")
+music_stream_player = NodePath("MusicStreamPlayer")
 
 [node name="Scene_Elements" type="Node" parent="." unique_id=311925423]
 
@@ -198,3 +218,8 @@ bus = &"SFX"
 [node name="PauseScreen" parent="." unique_id=1931167145 instance=ExtResource("4_q8kq6")]
 process_priority = 1
 process_physics_priority = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=472141727]
+stream = SubResource("AudioStreamInteractive_70ifn")
+volume_db = -6.0
+bus = &"Music"

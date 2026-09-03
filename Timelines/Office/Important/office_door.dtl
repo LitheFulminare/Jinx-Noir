@@ -1,4 +1,5 @@
 join protagonist (curious) rightmost [animation="Slide From Left" length="0.6" wait="true" z_index="1" mirrored="true"]
+[signal arg="final_timeline_started"]
 protagonist: Beco da Rua XV… é perto daqui. Umas três quadras de distância.
 protagonist (default): É melhor eu ir logo.
 leave protagonist [animation="Slide To Left"]

@@ -12,17 +12,24 @@ var timeline_playing:= false
 
 @export var phone_stream_player: AudioStreamPlayer2D
 @export var phone_call_tl: DialogicTimeline
+@export var music_stream_player: AudioStreamPlayer
+
+var music_stream_interactive: AudioStreamPlaybackInteractive
 
 var phone_picked:= false
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
 	GameState.chapter = 1
+	# The autoplay option makes it play before the sound settings are loaded.
+	# Note: The adaptive music system won't be used yet, this is just for testing
+	#music_stream_player.play()
+	#music_stream_interactive = music_stream_player.get_stream_playback()
 	MusicManager.play_music(Constants.SONG_PATHS.Uma_chamada_misteriosa, -6)
 	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
-	Dialogic.timeline_started.connect(_on_timeline_started) # Fazer com que o sinal de quando a 'timeline' inicia seja conectada com a função deste script
-	Dialogic.timeline_ended.connect(_on_timeline_ended) # Fazer com que o sinal de quando a 'timeline' termina seja conectada com a função deste script
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	
 	GameState.current_scene_uid = Constants.SCENE_PATHS.office
 	
@@ -74,6 +81,11 @@ func phone_call_started() -> void:
 
 func phone_call_over() -> void:
 	door.disabled = false
+
+func final_timeline_started() -> void:
+	# Note: Won't be used yet, it's just for testing
+	#music_stream_interactive.switch_to_clip_by_name(&"Hanging")
+	return
 
 ## Quando uma timeline começar
 func _on_timeline_started() -> void:
