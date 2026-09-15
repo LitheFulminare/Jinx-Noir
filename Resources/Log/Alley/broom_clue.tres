@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LogClue" format=3 uid="uid://csrmby3axxo45"]
+
+[ext_resource type="Script" uid="uid://dxhmeg0tqh2k" path="res://Scripts/UI/Gameplay/log_clue.gd" id="1_oh0xr"]
+
+[resource]
+script = ExtResource("1_oh0xr")
+text = "Bilhete embaixo da vassoura"
+metadata/_custom_type_script = "uid://dxhmeg0tqh2k"

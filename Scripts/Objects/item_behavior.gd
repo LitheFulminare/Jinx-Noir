@@ -12,6 +12,7 @@ extends TextureButton
 @export var open_after_interaction:= false
 @export var notebook: Notebook
 @export var timeline_uid: String
+@export var clue: LogClue
 #@export var hovered_texture: Texture2D # será removido
 
 var object_held:= false

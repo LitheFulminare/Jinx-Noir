@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LogClue" format=3 uid="uid://bqfa6g2i2861g"]
+
+[ext_resource type="Script" uid="uid://dxhmeg0tqh2k" path="res://Scripts/UI/Gameplay/log_clue.gd" id="1_y7n8s"]
+
+[resource]
+script = ExtResource("1_y7n8s")
+text = "Caixa na cadeira"
+metadata/_custom_type_script = "uid://dxhmeg0tqh2k"

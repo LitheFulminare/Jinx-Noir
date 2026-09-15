@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://du5vo25e2ae5w" path="res://Assets/Sprites/Alley/Items/lixeira2.png" id="1_vdr0f"]
 [ext_resource type="BitMap" uid="uid://dfhef3tc0jjhl" path="res://Assets/Sprites/Alley/Items/click masks/lixeira2_click_mask.png" id="2_ira1e"]
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="3_6aswu"]
+[ext_resource type="Resource" uid="uid://di4cmtbclw2q" path="res://Resources/Log/Alley/sign_clue.tres" id="4_qcx8d"]
 
 [node name="BecoSceneSign" type="TextureButton" unique_id=1425186902]
 texture_hover = ExtResource("1_vdr0f")
@@ -11,3 +12,4 @@ script = ExtResource("3_6aswu")
 item_type = "sign"
 delete_after_interaction = false
 timeline_uid = "uid://dbiight8vkg2m"
+clue = ExtResource("4_qcx8d")

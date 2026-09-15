@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dvjp84xbnye84" path="res://Assets/Sprites/Alley/Items/cadeira.png" id="1_13slv"]
 [ext_resource type="Script" uid="uid://dhgc1f54l02db" path="res://Scripts/Objects/item_behavior.gd" id="1_u8ycp"]
 [ext_resource type="BitMap" uid="uid://bory24nydgsuu" path="res://Assets/Sprites/Alley/Items/click masks/cadeira_click_mask.png" id="2_y2oy2"]
+[ext_resource type="Resource" uid="uid://bqfa6g2i2861g" path="res://Resources/Log/Alley/box_clue.tres" id="4_h8sj3"]
 
 [node name="Placeholder_Box" type="TextureButton" unique_id=265130541]
 z_index = 2
@@ -13,6 +14,7 @@ script = ExtResource("1_u8ycp")
 item_type = "chair"
 delete_after_interaction = false
 timeline_uid = "uid://bcuv7xkty1q3v"
+clue = ExtResource("4_h8sj3")
 
 [node name="Door_Audio" type="AudioStreamPlayer2D" parent="." unique_id=44139505]
 volume_db = -9.0

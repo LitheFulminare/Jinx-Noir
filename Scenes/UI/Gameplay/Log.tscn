@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dh4wlur7bsyqf"]
+
+[ext_resource type="Script" uid="uid://bw7mwanumkx35" path="res://Scripts/UI/Gameplay/log.gd" id="1_jlhr6"]
+[ext_resource type="Texture2D" uid="uid://cna40sjgsa7ky" path="res://Assets/Sprites/UI/Menus/Log (placeholder).png" id="2_i137s"]
+[ext_resource type="FontFile" uid="uid://bxghl1ids2i73" path="res://Assets/Fonts/Scratches.otf" id="3_i137s"]
+
+[node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("clues", "clues_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jlhr6")
+clues = [NodePath("ColorRect/MarginContainer/CluesContainer/Clue1")]
+clues_container = NodePath("ColorRect/MarginContainer/CluesContainer")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=405957542]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.625
+offset_top = -166.4411
+offset_right = 158.625
+offset_bottom = 166.4411
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i137s")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=713475396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.25
+offset_top = 38.4411
+offset_right = -9.25
+offset_bottom = -15.441101
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CluesContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=17080410]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Clue1" type="Label" parent="ColorRect/MarginContainer/CluesContainer" unique_id=1100337311]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i137s")
+text = "Texto vazio"

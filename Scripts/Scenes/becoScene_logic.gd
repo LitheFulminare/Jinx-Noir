@@ -81,6 +81,9 @@ func _check_interactions(skip_dialogue: bool = false) -> void:
 	
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
+	if item.clue:
+		print("Clue: ", item.clue.text)
+	
 	if item.item_type != "notebook":
 		Dialogic.start(item.timeline_uid)
 		return
