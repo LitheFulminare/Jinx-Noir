@@ -1,7 +1,8 @@
 class_name Log
 extends Control
 
-@export var clues: Array[Label]
+# TODO: Maybe an array of VBoxContainer would be good to manage the pages
+
 @export var clues_container: VBoxContainer
 
 var base_page_height: float
@@ -27,14 +28,18 @@ func add_clue_text(clue: LogClue) -> void:
 	if current_clue_index != 0:
 		add_clue_node()
 	
-	clues[current_clue_index].text = clue.text
-	clues[current_clue_index].show()
+	var clue_label: Label = clues_container.get_child(current_clue_index)
+	
+	clue_label.text = clue.text
+	clue_label.show()
+	
+	#clues[current_clue_index].text = clue.text
+	#clues[current_clue_index].show()
 	
 	current_clue_index += 1
 
 func add_clue_node() -> void:
-	var new_clue_node: Label = clues[0].duplicate()
-	clues.append(new_clue_node)
+	var new_clue_node: Label = clues_container.get_child(0).duplicate()
 	# Need to check if there's enough space here.
 	clues_container.add_child(new_clue_node)
 	

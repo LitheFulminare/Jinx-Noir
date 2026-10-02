@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cna40sjgsa7ky" path="res://Assets/Sprites/UI/Menus/Log (placeholder).png" id="2_i137s"]
 [ext_resource type="FontFile" uid="uid://bxghl1ids2i73" path="res://Assets/Fonts/Scratches.otf" id="3_i137s"]
 
-[node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("clues_container")]
+[node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("clues", "clues_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jlhr6")
+clues = [NodePath("ColorRect/MarginContainer/CluesContainer/Clue1")]
 clues_container = NodePath("ColorRect/MarginContainer/CluesContainer")
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=405957542]
