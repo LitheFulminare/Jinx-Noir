@@ -1,25 +1,28 @@
 class_name Log
 extends Control
 
-# TODO: Maybe an array of VBoxContainer would be good to manage the pages
-
-## Contains VBoxContainer nodes (pages) as children
+@export_group("Nodes")
+## Contains all the VBoxContainer nodes (pages) as children
 @export var margin_container: MarginContainer
-@export var clues_container: VBoxContainer
+## Contains the references of the VBoxContainer nodes. It's basically a
+## organized way of getting the children of margin_container.
+@export var pages: Array[VBoxContainer]
+@export var previous_button: Button
+@export var next_button: Button
 
 var base_page_height: float
-var current_clue_index: int = 0
+## Controls the assignment of new Label nodes (clues) and the creation of new pages
 var current_page_index: int = 0
-
-var pages: Array[VBoxContainer]
+## Handles UI logic
+var visible_page_index: int = 0
 
 const LOG_THEME: Theme = preload("uid://dkna5lalayt3c")
 
 func _ready() -> void:
 	await get_tree().process_frame
-	base_page_height = clues_container.size.y
+	base_page_height = pages[0].size.y
 	
-	pages.append(clues_container)
+	update_button_visibility()
 
 # For debugging porpuses
 var cooldown := false
@@ -37,22 +40,19 @@ func add_clue_text(clue: LogClue) -> void:
 	var clue_label: Label = await add_clue_node()
 	
 	clue_label.text = clue.text
-	clue_label.show()
-	
-	current_clue_index += 1
 
 func add_clue_node() -> Label:
 	var new_clue_node := Label.new()
 	pages[current_page_index].add_child(new_clue_node)
 	new_clue_node.theme = LOG_THEME
 	
+	# The size of the Controls node are updated at the end of the process_frame
 	await get_tree().process_frame
 	
 	if !can_fit_clue_in_page():
 		pages.append(create_new_page())
-		current_page_index += 1
+		update_page_visibility(current_page_index)
 		
-		# Remove label node from the overflowing container and put in new one.
 		pages[current_page_index-1].remove_child(new_clue_node)
 		pages[current_page_index].add_child(new_clue_node)
 	
@@ -73,16 +73,56 @@ func create_new_page() -> VBoxContainer:
 	var new_page := VBoxContainer.new()
 	margin_container.add_child(new_page)
 	
-	# Set properties
+	# Set properties using the first VBoxContainer as template. Is this bad?
 	# Note: Maybe I should get these properties on the start as store them in a 
-	# variable. Or a contant even? Is there such thing as a @onready const ??
+	# variable. Or a constant even? Is there such thing as a @onready const ??
 	new_page.position = pages[0].position
 	new_page.size = pages[0].size
 	new_page.theme = LOG_THEME
 	
-	current_clue_index = 0
+	current_page_index += 1
 	
 	return new_page
+
+## Shows the page passed as argument and shows & hide both previous and following
+## pages (if they exist). This function could be better if it knew the current page
+## before changing to the new one, but it doesn't.
+func update_page_visibility(_visible_page_index: int) -> void:
+	visible_page_index = _visible_page_index
+	
+	if visible_page_index > 0:
+		pages[visible_page_index - 1].hide()
+	
+	if pages.size() - 1 > visible_page_index:
+		pages[visible_page_index + 1].hide()
+	
+	pages[visible_page_index].show()
+	
+	update_button_visibility()
+
+## Shows or hides the Next and Previous buttons depending on the current page.
+func update_button_visibility() -> void:
+	# If it's the last page
+	if visible_page_index == pages.size() - 1:
+		next_button.modulate.a = 0
+		next_button.disabled = true
+		if pages.size() > 0:
+			previous_button.modulate.a = 1
+			previous_button.disabled = false
+		
+	# If it's the first page
+	if visible_page_index == 0:
+		previous_button.modulate.a = 0
+		previous_button.disabled = true
+		if pages.size() > 1:
+			next_button.modulate.a = 1
+			next_button.disabled = false
+
+func _on_previous_button_pressed() -> void:
+	update_page_visibility(visible_page_index - 1)
+
+func _on_next_button_pressed() -> void:
+	update_page_visibility(visible_page_index + 1)
 
 ## DEPRECATED.
 ## Instead of calculating the size of the of the container to see if it

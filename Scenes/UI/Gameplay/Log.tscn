@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cna40sjgsa7ky" path="res://Assets/Sprites/UI/Menus/Log (placeholder).png" id="2_i137s"]
 [ext_resource type="Theme" uid="uid://dkna5lalayt3c" path="res://Assets/Themes/log_theme.tres" id="3_8e7gi"]
 
-[node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("margin_container", "clues_container")]
+[node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("margin_container", "pages", "previous_button", "next_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jlhr6")
 margin_container = NodePath("ColorRect/MarginContainer")
-clues_container = NodePath("ColorRect/MarginContainer/CluesContainer")
+pages = [NodePath("ColorRect/MarginContainer/CluesContainer")]
+previous_button = NodePath("ColorRect/ButtonContainer/PreviousButton")
+next_button = NodePath("ColorRect/ButtonContainer/NextButton")
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=405957542]
 layout_mode = 1
@@ -31,6 +33,27 @@ grow_vertical = 2
 texture = ExtResource("2_i137s")
 expand_mode = 1
 
+[node name="ButtonContainer" type="GridContainer" parent="ColorRect" unique_id=1421254160]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 18.18
+offset_right = 223.0
+offset_bottom = 58.180016
+grow_horizontal = 2
+theme = ExtResource("3_8e7gi")
+columns = 2
+
+[node name="PreviousButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=881740714]
+layout_mode = 2
+text = "Anterior"
+
+[node name="NextButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=1670976927]
+layout_mode = 2
+text = "Próximo"
+
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=713475396]
 layout_mode = 1
 anchors_preset = 15
@@ -47,3 +70,6 @@ theme = ExtResource("3_8e7gi")
 [node name="CluesContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=17080410]
 layout_mode = 2
 theme_override_constants/separation = 3
+
+[connection signal="pressed" from="ColorRect/ButtonContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonContainer/NextButton" to="." method="_on_next_button_pressed"]
