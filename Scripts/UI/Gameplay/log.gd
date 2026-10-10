@@ -34,19 +34,17 @@ func _input(_event: InputEvent) -> void:
 		cooldown = false
 
 func add_clue_text(clue: LogClue) -> void:
-	if current_clue_index != 0:
-		add_clue_node()
-	
-	var clue_label: Label = clues_container.get_child(current_clue_index)
+	var clue_label: Label = await add_clue_node()
 	
 	clue_label.text = clue.text
 	clue_label.show()
 	
 	current_clue_index += 1
 
-func add_clue_node() -> void:
-	var new_clue_node: Label = clues_container.get_child(0).duplicate()
-	clues_container.add_child(new_clue_node)
+func add_clue_node() -> Label:
+	var new_clue_node := Label.new()
+	pages[current_page_index].add_child(new_clue_node)
+	new_clue_node.theme = LOG_THEME
 	
 	await get_tree().process_frame
 	
@@ -55,14 +53,16 @@ func add_clue_node() -> void:
 		current_page_index += 1
 		
 		# Remove label node from the overflowing container and put in new one.
-		clues_container.remove_child(new_clue_node)
+		pages[current_page_index-1].remove_child(new_clue_node)
 		pages[current_page_index].add_child(new_clue_node)
+	
+	return new_clue_node
 
 func can_fit_clue_in_page() -> bool:
-	print("clues_container.size.y: ", clues_container.get_minimum_size().y)
+	print("clues_container.size.y: ", pages[current_page_index].get_minimum_size().y)
 	print("base_page_height: ", base_page_height)
 	
-	if clues_container.get_minimum_size().y > base_page_height:
+	if pages[current_page_index].get_minimum_size().y > base_page_height:
 		return false
 	else:
 		print("Can fit new content")
@@ -79,6 +79,8 @@ func create_new_page() -> VBoxContainer:
 	new_page.position = pages[0].position
 	new_page.size = pages[0].size
 	new_page.theme = LOG_THEME
+	
+	current_clue_index = 0
 	
 	return new_page
 

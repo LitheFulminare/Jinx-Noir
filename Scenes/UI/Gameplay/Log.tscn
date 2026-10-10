@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bw7mwanumkx35" path="res://Scripts/UI/Gameplay/log.gd" id="1_jlhr6"]
 [ext_resource type="Texture2D" uid="uid://cna40sjgsa7ky" path="res://Assets/Sprites/UI/Menus/Log (placeholder).png" id="2_i137s"]
 [ext_resource type="Theme" uid="uid://dkna5lalayt3c" path="res://Assets/Themes/log_theme.tres" id="3_8e7gi"]
-[ext_resource type="FontFile" uid="uid://bxghl1ids2i73" path="res://Assets/Fonts/Scratches.otf" id="3_i137s"]
 
 [node name="Log" type="Control" unique_id=622376181 node_paths=PackedStringArray("margin_container", "clues_container")]
 layout_mode = 3
@@ -48,10 +47,3 @@ theme = ExtResource("3_8e7gi")
 [node name="CluesContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=17080410]
 layout_mode = 2
 theme_override_constants/separation = 3
-
-[node name="Clue1" type="Label" parent="ColorRect/MarginContainer/CluesContainer" unique_id=1100337311]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_i137s")
-text = "Texto vazio"
