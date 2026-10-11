@@ -2,7 +2,7 @@ class_name Log
 extends Control
 
 @export_group("Nodes")
-## Contains all the VBoxContainer nodes (pages) as children
+## Contains all the VBoxContainer nodes (pages) as children.
 @export var margin_container: MarginContainer
 ## Contains the references of the VBoxContainer nodes. It's basically a
 ## organized way of getting the children of margin_container.
@@ -10,21 +10,25 @@ extends Control
 @export var previous_button: Button
 @export var next_button: Button
 
-var base_page_height: float
-## Controls the assignment of new Label nodes (clues) and the creation of new pages
+## Size of the VBoxContainer that contains the clues.
+var page_container_size: Vector2
+## Position of the VBoxContainer that contains the clues.
+var page_container_position: Vector2
+## Controls the assignment of new Label nodes (clues) and the creation of new pages.
 var current_page_index: int = 0
-## Handles UI logic
+## Handles UI logic.
 var visible_page_index: int = 0
 
 const LOG_THEME: Theme = preload("uid://dkna5lalayt3c")
 
 func _ready() -> void:
 	await get_tree().process_frame
-	base_page_height = pages[0].size.y
+	page_container_size = pages[0].size
+	page_container_position = pages[0].position
 	
 	update_button_visibility()
 
-# For debugging porpuses
+## For debugging porpuses. Adds a new clue when pressing "0".
 var cooldown := false
 var broom_clue: LogClue = preload("res://Resources/Log/Alley/broom_clue.tres")
 func _input(_event: InputEvent) -> void:
@@ -49,7 +53,7 @@ func add_clue_node() -> Label:
 	# The size of the Controls node are updated at the end of the process_frame
 	await get_tree().process_frame
 	
-	if !can_fit_clue_in_page():
+	if is_page_overflowing():
 		pages.append(create_new_page())
 		update_page_visibility(current_page_index)
 		
@@ -58,33 +62,26 @@ func add_clue_node() -> Label:
 	
 	return new_clue_node
 
-func can_fit_clue_in_page() -> bool:
-	print("clues_container.size.y: ", pages[current_page_index].get_minimum_size().y)
-	print("base_page_height: ", base_page_height)
+func is_page_overflowing() -> bool:
+	print("current Page height: ", pages[current_page_index].get_minimum_size().y)
+	print("page_container_size.y: ", page_container_size.y)
 	
-	if pages[current_page_index].get_minimum_size().y > base_page_height:
-		return false
-	else:
-		print("Can fit new content")
-		return true
+	return pages[current_page_index].get_minimum_size().y > page_container_size.y
 
 ## Creates a new VBoxContainer node and adds it to the margin container.
 func create_new_page() -> VBoxContainer:
 	var new_page := VBoxContainer.new()
 	margin_container.add_child(new_page)
 	
-	# Set properties using the first VBoxContainer as template. Is this bad?
-	# Note: Maybe I should get these properties on the start as store them in a 
-	# variable. Or a constant even? Is there such thing as a @onready const ??
-	new_page.position = pages[0].position
-	new_page.size = pages[0].size
+	new_page.position = page_container_position
+	new_page.size = page_container_size
 	new_page.theme = LOG_THEME
 	
 	current_page_index += 1
 	
 	return new_page
 
-## Shows the page passed as argument and shows & hide both previous and following
+## Shows the page passed as argument and shows/hides both previous and following
 ## pages (if they exist). This function could be better if it knew the current page
 ## before changing to the new one, but it doesn't.
 func update_page_visibility(_visible_page_index: int) -> void:
@@ -106,7 +103,7 @@ func update_button_visibility() -> void:
 	if visible_page_index == pages.size() - 1:
 		next_button.modulate.a = 0
 		next_button.disabled = true
-		if pages.size() > 0:
+		if pages.size() > 0: # Size is always bigger than 0?????
 			previous_button.modulate.a = 1
 			previous_button.disabled = false
 		

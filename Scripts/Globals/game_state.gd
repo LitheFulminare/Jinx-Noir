@@ -1,14 +1,17 @@
-## Salva informações que devem ser salvas e carregadas dos diferentes nós num só lugar.
+## Stores the data that needs to be saved and loaded. This is NOT used in any 
+## game logic at all.
 extends Node
 
+# Game data
 var timelines_finished: Array[String]
 ## Estados de todos os puzzles do jogo. Não guarda se eles foram completos, 
 ## no caso do caderno guarda apenas a posição de cada texto.
 var puzzles_states: Dictionary = {}
 var current_scene_uid: String
+
+# Metadata
 var last_played: Dictionary = {}
 var chapter: int
-#var dialogic_variables: Dictionary
 
 ## Retorna todas as informações do GameState num dicionário.
 func to_dict() -> Dictionary:

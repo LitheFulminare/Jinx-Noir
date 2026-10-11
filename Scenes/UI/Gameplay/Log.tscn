@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jlhr6")
 margin_container = NodePath("ColorRect/MarginContainer")
-pages = [NodePath("ColorRect/MarginContainer/CluesContainer")]
+pages = [NodePath("ColorRect/MarginContainer/Page")]
 previous_button = NodePath("ColorRect/ButtonContainer/PreviousButton")
 next_button = NodePath("ColorRect/ButtonContainer/NextButton")
 
@@ -33,7 +33,7 @@ grow_vertical = 2
 texture = ExtResource("2_i137s")
 expand_mode = 1
 
-[node name="ButtonContainer" type="GridContainer" parent="ColorRect" unique_id=1421254160]
+[node name="ButtonContainer" type="HBoxContainer" parent="ColorRect" unique_id=876708695]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -44,7 +44,6 @@ offset_right = 223.0
 offset_bottom = 58.180016
 grow_horizontal = 2
 theme = ExtResource("3_8e7gi")
-columns = 2
 
 [node name="PreviousButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=881740714]
 layout_mode = 2
@@ -67,7 +66,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_8e7gi")
 
-[node name="CluesContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=17080410]
+[node name="Page" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=17080410]
 layout_mode = 2
 theme_override_constants/separation = 3
 

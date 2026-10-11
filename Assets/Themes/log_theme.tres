@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bxghl1ids2i73" path="res://Assets/Fonts/Scratches.otf" id="1_lep35"]
 
 [resource]
-GridContainer/constants/h_separation = 300
+HBoxContainer/constants/separation = 300
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/fonts/font = ExtResource("1_lep35")
 MarginContainer/constants/margin_bottom = 15
