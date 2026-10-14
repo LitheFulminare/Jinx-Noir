@@ -106,6 +106,9 @@ func update_button_visibility() -> void:
 		if pages.size() > 0: # Size is always bigger than 0?????
 			previous_button.modulate.a = 1
 			previous_button.disabled = false
+	else:
+		next_button.modulate.a = 1
+		next_button.disabled = false
 		
 	# If it's the first page
 	if visible_page_index == 0:
@@ -114,6 +117,9 @@ func update_button_visibility() -> void:
 		if pages.size() > 1:
 			next_button.modulate.a = 1
 			next_button.disabled = false
+	else:
+		previous_button.modulate.a = 1
+		previous_button.disabled = false
 
 func _on_previous_button_pressed() -> void:
 	update_page_visibility(visible_page_index - 1)
