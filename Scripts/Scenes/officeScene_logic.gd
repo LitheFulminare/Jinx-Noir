@@ -20,6 +20,8 @@ var phone_picked:= false
 
 # Chamado quando o jogo inicia
 func _ready() -> void:
+	Dialogic.paused = false
+	
 	GameState.chapter = 1
 	# The autoplay option makes it play before the sound settings are loaded.
 	# Note: The adaptive music system won't be used yet, this is just for testing
