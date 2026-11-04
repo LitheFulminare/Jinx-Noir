@@ -30,7 +30,7 @@ func to_dict() -> Dictionary:
 ## Restaura todos os valores a partir do save que foi carregado.
 func from_dict(data: Dictionary) -> void:
 	timelines_finished.clear()
-	#dialogic_variables.clear()
+	Dialogic.VAR.reset()
 	
 	# Game data
 	current_scene_uid = data.get("current_scene_uid")
@@ -42,3 +42,9 @@ func from_dict(data: Dictionary) -> void:
 	# Metadata
 	last_played = data.get("last_played")
 	chapter = data.get("chapter")
+
+func reset_game_state() -> void:
+	timelines_finished.clear()
+	current_scene_uid = ""
+	puzzles_states.clear()
+	Dialogic.VAR.reset()

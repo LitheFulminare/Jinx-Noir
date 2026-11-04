@@ -60,17 +60,18 @@ func load_progression() -> void:
 
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
-	_check_interactions(item)
-	Dialogic.start(item.timeline_uid)
+	var item_timeline := load(item.timeline_uid)
+	_check_interactions(item_timeline)
+	Dialogic.start(item_timeline)
 
 ## Check everytime an interaction ends to see if the phone should ring
-func _check_interactions(item: Item):
-	if !item.interacted_once:
-		item.interacted_once = true
+func _check_interactions(item_timeline: DialogicTimeline):
+	# If it's first interaction with item
+	if !TimelineManager.timelines_finished.has(item_timeline.get_identifier()):
 		Dialogic.VAR.Office.items_interacted += 1
-	
+		
 	_check_phone_call()
-	
+
 func _check_phone_call(skip_wait_time := false) -> void:
 	if Dialogic.VAR.Office.items_interacted == 4:
 		if not skip_wait_time:

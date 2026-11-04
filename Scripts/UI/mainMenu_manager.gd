@@ -23,6 +23,8 @@ func _ready() -> void:
 	# The preloaded timeline has to be stored, so this is probably useless
 	#Dialogic.preload_timeline(phone_call_timeline)
 	
+	GameState.reset_game_state()
+	
 	credits_scene.is_in_menu = true
 	
 	settings_screen.load_settings()
