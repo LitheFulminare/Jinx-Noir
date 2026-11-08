@@ -26,6 +26,8 @@ var current_parent: Node
 var music_bus_index: int
 var sfx_bus_index: int
 
+var is_web: bool
+
 var buttons: Array[Control]
 
 func _ready() -> void:
@@ -48,6 +50,7 @@ func _ready() -> void:
 
 func check_if_on_web() -> void:
 	if OS.has_feature("web"):
+		is_web = true
 		screen_option_container.hide()
 
 func show_menu() -> void:
@@ -79,8 +82,9 @@ func load_settings() -> void:
 	music_mute_button.button_pressed = config.get_value("audio", "music_muted", false)
 	sfx_mute_button.button_pressed = config.get_value("audio", "sfx_muted", false)
 	
-	screen_mode_button.selected = config.get_value("video", "screen_mode", 2) #      2 = 
-	_on_screen_options_selected(config.get_value("video", "screen_mode", 2)) # borderless window
+	if not is_web:
+		screen_mode_button.selected = config.get_value("video", "screen_mode", 2) #      2 = 
+		_on_screen_options_selected(config.get_value("video", "screen_mode", 2)) # borderless window
 
 ## Pega os valores nos nós de Control e salva no arquivo config.ini
 func save_settings() -> void:
