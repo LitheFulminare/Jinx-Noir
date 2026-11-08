@@ -117,9 +117,10 @@ func save_progression() -> void:
 		notebook_state.append(area.text_data.text_num)
 		
 	GameState.puzzles_states.set(PuzzleID.BECO_PUZZLE, notebook_state)
-	#SaveManager.save_game(1)
+	SaveManager.save_game(SaveManager.current_save_slot)
 
 func load_progression(puzzle_state: Array) -> void:
+	print("Loading notebook state")
 	print("puzzle_state.size(): ", puzzle_state.size())
 	for i in puzzle_state.size():
 		print("index ", i, " is ", puzzle_state[i])
@@ -129,6 +130,10 @@ func load_progression(puzzle_state: Array) -> void:
 		else:
 			print("Setting area ", i + 1, " to null")
 			areas_ref[i].text_data = null
+
+func restore_text_sprites(texts: Array[int]) -> void:
+	for text_num: int in texts:
+		areas_data[text_num - 1]._set_current_sprite(2)
 
 func _on_close_pressed() -> void:
 	closed.emit()

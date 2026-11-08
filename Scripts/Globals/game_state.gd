@@ -45,6 +45,6 @@ func from_dict(data: Dictionary) -> void:
 
 func reset_game_state() -> void:
 	timelines_finished.clear()
-	current_scene_uid = ""
+	#current_scene_uid = ""
 	puzzles_states.clear()
 	Dialogic.VAR.reset()

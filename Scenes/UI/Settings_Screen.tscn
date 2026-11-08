@@ -46,7 +46,7 @@ _data = {
 &"RESET": SubResource("Animation_jay2q")
 }
 
-[node name="Settings_Screen" type="Control" unique_id=1642139216 node_paths=PackedStringArray("master_volume_slider", "music_volume_slider", "sfx_volume_slider", "master_mute_button", "music_mute_button", "sfx_mute_button", "screen_mode_button")]
+[node name="Settings_Screen" type="Control" unique_id=1642139216 node_paths=PackedStringArray("master_volume_slider", "music_volume_slider", "sfx_volume_slider", "master_mute_button", "music_mute_button", "sfx_mute_button", "screen_mode_button", "screen_option_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,7 +60,8 @@ sfx_volume_slider = NodePath("Settings_BG/Settings_Container/Vertical_Layout/SFX
 master_mute_button = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Master_Volume_Section/Mute_Section/Master_Mute_Option")
 music_mute_button = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Music_Volume_Section/Mute_Section/Music_Mute_Option")
 sfx_mute_button = NodePath("Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/Mute_Section/SFX_Mute_Option")
-screen_mode_button = NodePath("Settings_BG/Settings_Container/Vertical_Layout/Screen_Section/Screen_Options")
+screen_mode_button = NodePath("Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer/Screen_Section/Screen_Options")
+screen_option_container = NodePath("Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer")
 
 [node name="Settings_BG" type="TextureRect" parent="." unique_id=1458550918]
 modulate = Color(1, 1, 1, 0)
@@ -214,15 +215,18 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_constants/check_v_offset = 1
 
-[node name="ScreenOptions_Label" type="Label" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=627117519]
+[node name="ScreenOptionContainer" type="VBoxContainer" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=185101748]
+layout_mode = 2
+
+[node name="ScreenOptions_Label" type="Label" parent="Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer" unique_id=627117519]
 layout_mode = 2
 text = "Opções de Tela"
 label_settings = ExtResource("2_cwmog")
 
-[node name="Screen_Section" type="HBoxContainer" parent="Settings_BG/Settings_Container/Vertical_Layout" unique_id=2132350024]
+[node name="Screen_Section" type="HBoxContainer" parent="Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer" unique_id=2132350024]
 layout_mode = 2
 
-[node name="Screen_Options" type="OptionButton" parent="Settings_BG/Settings_Container/Vertical_Layout/Screen_Section" unique_id=390162635]
+[node name="Screen_Options" type="OptionButton" parent="Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer/Screen_Section" unique_id=390162635]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_g15v8")
@@ -263,5 +267,5 @@ autoplay = &"Fade-In"
 [connection signal="toggled" from="Settings_BG/Settings_Container/Vertical_Layout/Music_Volume_Section/Mute_Section/Music_Mute_Option" to="." method="_on_music_mute_toggled"]
 [connection signal="value_changed" from="Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/SFX_Volume_Slider" to="." method="_on_sfx_volume_changed"]
 [connection signal="toggled" from="Settings_BG/Settings_Container/Vertical_Layout/SFX_Volume_Section/Mute_Section/SFX_Mute_Option" to="." method="_on_sfx_mute_toggled"]
-[connection signal="item_selected" from="Settings_BG/Settings_Container/Vertical_Layout/Screen_Section/Screen_Options" to="." method="_on_screen_options_selected"]
+[connection signal="item_selected" from="Settings_BG/Settings_Container/Vertical_Layout/ScreenOptionContainer/Screen_Section/Screen_Options" to="." method="_on_screen_options_selected"]
 [connection signal="pressed" from="Settings_BG/Settings_Container/Vertical_Layout/Done_Section/Done_Button" to="." method="_on_done_pressed"]

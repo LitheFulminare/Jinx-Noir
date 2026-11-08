@@ -6,7 +6,7 @@ extends Node
 
 func _ready() -> void:
 	GameState.chapter = 1
-	
+	Dialogic.paused = false
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	
 	Dialogic.start(ritual_room_timeline)

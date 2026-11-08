@@ -15,6 +15,7 @@ extends Control
 @export var sfx_mute_button: CheckBox
 @export_group("Video")
 @export var screen_mode_button: OptionButton
+@export var screen_option_container: VBoxContainer
 
 var current_parent: Node
 ## Variáveis dos nodes na cena do menu de opções
@@ -38,11 +39,17 @@ func _ready() -> void:
 		screen_mode_button
 		])
 	
+	check_if_on_web()
+	
 	current_parent = get_parent()
 	music_bus_index = AudioServer.get_bus_index("Music")
 	sfx_bus_index = AudioServer.get_bus_index("SFX")
 	load_settings()
-	
+
+func check_if_on_web() -> void:
+	if OS.has_feature("web"):
+		screen_option_container.hide()
+
 func show_menu() -> void:
 	visible = true
 	animation_player.play("Fade-In")

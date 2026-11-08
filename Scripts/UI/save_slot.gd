@@ -48,6 +48,7 @@ func show_new_game_option() -> void:
 
 func set_info() -> void:
 	var current_scene_uid: String = data.get("current_scene_uid")
+	print(data)
 	var current_scene: String = Constants.SCENE_PATHS.find_key(current_scene_uid)
 	display_name = Constants.SCENE_DISPLAY_NAMES.get(current_scene)
 	

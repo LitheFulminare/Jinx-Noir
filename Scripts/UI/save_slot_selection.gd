@@ -49,8 +49,6 @@ func _on_save_slot_button_pressed(slot: int) -> void:
 		print("Loading game on slot ", slot)
 		SaveManager.current_save_slot = slot
 		SaveManager.load_game(slot)
-	else:
-		print("Doesn't have save on slot ", slot)
 
 func _new_game_button_pressed(slot: int) -> void:
 	SaveManager.current_save_slot = slot

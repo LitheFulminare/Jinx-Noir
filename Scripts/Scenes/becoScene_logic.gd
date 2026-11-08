@@ -20,6 +20,7 @@ var notebook_no_lines_timeline := "uid://bmehg03r48ibq"
 func _ready() -> void:
 	GameState.chapter = 1
 	MusicManager.play_music(Constants.SONG_PATHS.Jazz_sangrento, -9)
+	Dialogic.paused = false
 	
 	Dialogic.text_signal.connect(_handle_dialogic_signals)
 	Dialogic.timeline_ended.connect(_check_interactions)
@@ -39,7 +40,6 @@ func initialize_alley_interactions() -> void:
 		interaction_blocker.visible = false
 		restore_puzzle_state()
 
-## Synchronizes notebook puzzle state.
 func on_game_loaded() -> void:
 	return
 
@@ -58,7 +58,6 @@ func restore_puzzle_state() -> void:
 	
 	var puzzle_state: Array = GameState.puzzles_states.get(PuzzleID.BECO_PUZZLE)
 	notebook.load_progression(puzzle_state)
-	print(puzzle_state)
 
 ## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.
 func _check_interactions(skip_dialogue: bool = false) -> void:
@@ -77,8 +76,8 @@ func _check_interactions(skip_dialogue: bool = false) -> void:
 			clean_texts.append(text)
 	
 	if clean_texts.size() > 0:
-		notebook._areas_to_clean(clean_texts, skip_dialogue)
-	
+		notebook.restore_text_sprites(clean_texts)
+
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
 	if item.clue:
