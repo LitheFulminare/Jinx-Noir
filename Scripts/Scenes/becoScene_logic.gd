@@ -60,12 +60,15 @@ func restore_puzzle_state() -> void:
 	notebook.load_progression(puzzle_state)
 
 ## Called everytime a timeline ends. Checks if a line on the notebook should be cleared.
-func _check_interactions(skip_dialogue: bool = false) -> void:
+func _check_interactions(is_restoring_from_save: bool = false) -> void:
 	if !Dialogic.VAR.Alley.interacted_with_door:
 		return
 	
 	var clean_texts: Array[int] = []
 	
+	# Looks if the player interacted with necessary items to clean a text line.
+	# It cleans if all items are on the array inside TEXT_REQUIREMENTS dict using Dialogic
+	# variables as reference.
 	for text: int in notebook.TEXT_REQUIREMENTS:
 		var complete := true
 		for interaction: String in notebook.TEXT_REQUIREMENTS.get(text):
@@ -75,8 +78,13 @@ func _check_interactions(skip_dialogue: bool = false) -> void:
 		if complete:
 			clean_texts.append(text)
 	
-	if clean_texts.size() > 0:
+	if clean_texts.size() <= 0:
+		return
+		
+	if is_restoring_from_save:
 		notebook.restore_text_sprites(clean_texts)
+	else:
+		notebook._areas_to_clean(clean_texts)
 
 ## Função quando o sinal de 'item_collected' dos itens ser ativado
 func _on_item_interacted(item: Item) -> void:
