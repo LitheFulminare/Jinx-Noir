@@ -54,6 +54,7 @@ func _handle_dialogic_signals(method_name: String) -> void:
 
 func load_progression() -> void:
 	if TimelineManager.timelines_finished.has(phone_call_tl.get_identifier()):
+		print("timelines_finished has: ", phone_call_tl.get_identifier())
 		door.disabled = false
 	else:
 		_check_phone_call(true)

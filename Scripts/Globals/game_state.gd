@@ -15,6 +15,8 @@ var chapter: int
 
 ## Retorna todas as informações do GameState num dicionário.
 func to_dict() -> Dictionary:
+	print("puzzles_states: ", puzzles_states)
+	
 	return {
 		# Game data
 		"current_scene_uid": current_scene_uid,
@@ -44,6 +46,8 @@ func from_dict(data: Dictionary) -> void:
 	chapter = data.get("chapter")
 
 func reset_game_state() -> void:
+	TimelineManager.timelines_finished.clear()
+	# Might be unnecessary
 	timelines_finished.clear()
 	#current_scene_uid = ""
 	puzzles_states.clear()

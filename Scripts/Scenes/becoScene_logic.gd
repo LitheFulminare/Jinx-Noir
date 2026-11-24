@@ -56,6 +56,8 @@ func _input(_event: InputEvent) -> void:
 func restore_puzzle_state() -> void:
 	_check_interactions(true)
 	
+	print("GameState.puzzles_states.get(PuzzleID.BECO_PUZZLE): ", 
+	GameState.puzzles_states.get(PuzzleID.BECO_PUZZLE))
 	var puzzle_state: Array = GameState.puzzles_states.get(PuzzleID.BECO_PUZZLE)
 	notebook.load_progression(puzzle_state)
 
@@ -96,8 +98,10 @@ func _on_item_interacted(item: Item) -> void:
 		return
 	
 	if !Dialogic.VAR.Alley.Notebook.has_cleaned_a_line:
+		print("Player has not cleaned a line")
 		Dialogic.start(notebook_no_lines_timeline)
 	else:
+		print("Player has cleaned a line. Opening notebook")
 		open_notebook()
 
 func open_notebook() -> void:

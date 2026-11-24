@@ -78,7 +78,7 @@ func _areas_to_clean(texts: Array[int], skip_dialogue: bool = false):
 	
 	var texts_cleaned: Array[int] = []
 	for text_num: int in texts:
-		if areas_data[text_num - 1].is_censored:
+		if areas_data[text_num - 1].is_censored():
 			texts_cleaned.append(text_num)
 			# Used to know which line Jynx will read when opening the notebook
 			Dialogic.VAR.Alley.Notebook.last_line_cleaned = float(text_num)

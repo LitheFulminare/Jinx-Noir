@@ -48,6 +48,7 @@ func _on_save_slot_button_pressed(slot: int) -> void:
 	if SaveManager._has_save(slot):
 		print("Loading game on slot ", slot)
 		SaveManager.current_save_slot = slot
+		GameState.reset_game_state()
 		SaveManager.load_game(slot)
 
 func _new_game_button_pressed(slot: int) -> void:
@@ -56,6 +57,7 @@ func _new_game_button_pressed(slot: int) -> void:
 	if SaveManager._has_save(slot):
 		overwrite_save_screen.show()
 	else:
+		GameState.reset_game_state()
 		start_game()
 
 func start_game() -> void:
@@ -92,7 +94,10 @@ func show_new_game_save_slots() -> void:
 func _on_leave_button_pressed() -> void:
 	hide_menu()
 
+# The player chose to overwrite a save
 func _on_confirm_button_pressed() -> void:
+	print("Ovewriting a save")
+	GameState.reset_game_state()
 	start_game()
 
 func _on_return_button_pressed() -> void:
