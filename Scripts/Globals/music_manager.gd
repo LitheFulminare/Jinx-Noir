@@ -3,6 +3,7 @@ extends AudioStreamPlayer
 var current_music_uid: String
 
 func _ready() -> void:
+	playback_type = AudioServer.PLAYBACK_TYPE_STREAM
 	bus = "Music"
 
 ## Plays a file using its UID. Can also fadeout the current song before playing

@@ -28,7 +28,7 @@ func _on_mouse_entered() -> void:
 	if !text_data:
 		return
 	
-	if text_data.is_censored:
+	if text_data.is_censored():
 		return
 	
 	Input.set_custom_mouse_cursor(CursorManager.PATAHOVER)
@@ -49,7 +49,7 @@ func _update_ui() -> void:
 ## Seleciona a textura que deve ser arrastada para outro espaço
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	## Se não tiver algo no espaço, irá acontecer nada
-	if !text_data || text_data.is_censored:
+	if !text_data || text_data.is_censored():
 		return
 	
 	# Remove da lista até o jogador soltar o texto na posição correta
@@ -82,7 +82,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# data é de onde o jogador está arrastando
 	
 	if text_data != null:
-		if text_data.is_censored:
+		if text_data.is_censored():
 			# cancela o drop se o texto no lugar for censurado
 			data.text.show()
 			return

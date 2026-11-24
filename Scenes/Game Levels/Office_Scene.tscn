@@ -223,3 +223,4 @@ process_physics_priority = 1
 stream = SubResource("AudioStreamInteractive_70ifn")
 volume_db = -6.0
 bus = &"Music"
+playback_type = 1
