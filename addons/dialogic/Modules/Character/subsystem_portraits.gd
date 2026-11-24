@@ -70,8 +70,11 @@ func _pause() -> void:
 
 func _resume() -> void:
 	for node in character_nodes.values():
+		if not is_instance_valid(node):
+			continue
+			
 		if node.has_meta('animation_node'):
-			node.get_meta('animation_node').resume()
+			node.get_meta('animation_node').pause()
 
 
 func _ready() -> void:
